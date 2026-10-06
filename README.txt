@@ -1,25 +1,17 @@
-DentalFlow V10 — Patient Records & Clinical Records
-Built directly on the stable DentalFlow V8 foundation.
+DentalFlow V11 — Advanced Search & Clinical Timeline
+Based on the stable DentalFlow V10 Patient Records foundation.
 
-V8 fixes/refinements:
-- Fixed + Appointment so the appointment form opens correctly.
-- Removed Search from bottom navigation.
-- Bottom navigation now includes Appointments and Billing for faster chairside access.
-
-V10 — Patient Records:
-- Patient Records module for Medical history, Allergy, Investigation, Referral, Consent, Document note and Other.
-- Add, edit and delete patient records.
-- Search records by patient, title, type, phone or Patient ID.
-- Record date, title and detailed notes.
-- Patient shortcut from each record.
-- Existing V1–V8 patient, clinical, treatment-plan, prescription-template, billing, reports and appointment data retained.
-- Existing dentalflow_v2 localStorage key retained.
-- Defensive data normalization upgraded to schema version 10.
-- Service worker cache updated to V10.
+Updates:
+- Advanced Search across patients, clinical visits, patient records, appointments, treatment plans and billing.
+- Search by name, phone, Patient ID, diagnosis, treatment, record text, appointment status and billing/service details.
+- Search remains in the hamburger menu; it does not add another footer item.
+- Patient Timeline combines visits, treatment plans, records, appointments and billing in one chronological view.
+- Existing V1–V10 data retained with defensive version upgrade to V11.
+- Existing dentalflow_v2 storage key retained.
+- Service worker cache updated to V11.
 - No external libraries.
 
 Recommended test:
-1. Existing patient → Appointments → + Appointment → form opens → Save → Waiting → Start → Complete.
-2. Footer → Appointments and Billing; confirm Search is no longer in footer.
-3. Menu → Patient Records → + record → Save → Edit → Delete → Reload.
-4. Test old Clinical Visit, Treatment Plan, Templates, Billing, Reports and Backup/Restore.
+☰ → Advanced Search → search a patient name/phone/ID → filter by type → open result.
+Patient → Profile → Patient timeline → verify visits/plans/records/appointments/billing.
+Then test existing appointment, clinical visit, treatment plan, billing, reports and backup/restore.
