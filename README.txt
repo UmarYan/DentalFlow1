@@ -21,3 +21,7 @@ Recommended test:
 5. Toggle Compact interface and confirm spacing changes.
 6. Reset preferences and confirm patient/clinical data remains untouched.
 7. Open Backup Center and verify V13 safety tools still work.
+
+
+DentalFlow V7.5.1 — Smart Input
+Type-first Smart Input is available across key chairside fields. Existing entries appear as suggestions while typing; new text can be added directly. Tooth/Area fields also accept free typing while retaining compatibility with the existing chart. Existing DentalFlow data/localStorage is preserved.
