@@ -1,17 +1,20 @@
-DentalFlow V11 — Advanced Search & Clinical Timeline
-Based on the stable DentalFlow V10 Patient Records foundation.
+DentalFlow V12 — Follow-up & Reminder Center
+Based directly on the stable DentalFlow V11 Advanced Search & Clinical Timeline foundation.
 
 Updates:
-- Advanced Search across patients, clinical visits, patient records, appointments, treatment plans and billing.
-- Search by name, phone, Patient ID, diagnosis, treatment, record text, appointment status and billing/service details.
-- Search remains in the hamburger menu; it does not add another footer item.
-- Patient Timeline combines visits, treatment plans, records, appointments and billing in one chronological view.
-- Existing V1–V10 data retained with defensive version upgrade to V11.
-- Existing dentalflow_v2 storage key retained.
-- Service worker cache updated to V11.
+- Patient-linked follow-up/reminder center.
+- Due date, reminder type and note.
+- Types: Follow-up, Call, Review, Payment, Treatment, Other.
+- Statuses: Pending, Done, Snoozed.
+- Dashboard reminder summary with overdue and due-today counts.
+- Dedicated Follow-up & Reminders screen with search.
+- Quick Done, Snooze, Edit, Delete and Patient actions.
+- Reminder activity appears in the Patient Timeline.
+- Existing V1–V11 data and dentalflow_v2 storage key retained.
+- Defensive schema upgraded to V12.
+- Service worker cache updated to V12.
 - No external libraries.
 
 Recommended test:
-☰ → Advanced Search → search a patient name/phone/ID → filter by type → open result.
-Patient → Profile → Patient timeline → verify visits/plans/records/appointments/billing.
-Then test existing appointment, clinical visit, treatment plan, billing, reports and backup/restore.
+Create reminder → dashboard → Done/Snooze → Edit/Delete → reload.
+Then verify Clinical Visit, Treatment Plan, Billing, Appointments, Advanced Search, Patient Timeline and Backup/Restore.
