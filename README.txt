@@ -1,21 +1,17 @@
-DentalFlow V7 — Clinic Dashboard & Reports
-Based on the stable DentalFlow V6 Billing & Payment foundation.
+DentalFlow V8 — Appointment & Queue
+Based directly on the stable DentalFlow V7 Dashboard & Reports foundation.
 
 Updates:
-- Expanded Home dashboard with monthly billed, collected, overall due and active treatment-plan metrics.
-- Added compact Outstanding Dues panel with quick Billing access.
-- Added dedicated Clinic Reports screen.
-- Monthly report filter for visits, new patients, billing and collections.
-- Billing status breakdown: Open, Partially paid, Paid.
-- Treatment plan status breakdown.
-- Payment-mode collection summary.
-- Recent monthly clinical/billing activity.
-- Existing patients, clinical visits, tooth chart, treatment plans, templates and billing data retained.
-- Existing dentalflow_v2 localStorage key retained for data continuity.
-- Data schema upgraded defensively to version 7.
+- Patient appointment records with date, time, reason/treatment, status and note.
+- Statuses: Scheduled, Confirmed, Waiting, In treatment, Completed, Cancelled, No-show.
+- Dedicated Appointments & Queue screen available from the hamburger menu.
+- Compact today queue with quick progression: Waiting → In treatment → Completed.
+- Edit/delete appointments and open the linked patient directly.
+- Existing V1–V7 features and dentalflow_v2 storage key retained.
+- Existing patient data, clinical visits, tooth chart, treatment plans, templates, billing and reports retained.
+- Service worker cache updated to V8.
 - No external libraries.
-- Service worker cache updated to V7.
 
 Recommended test:
-Home dashboard → Billing → patient bill/payment → Reports → change report month → check metrics/statuses/activity → reload.
-Then test existing Clinical Visit, Treatment Plan, Templates and Backup/Restore.
+Add appointment → Appointments & Queue → Waiting → Start → Complete → Edit/Delete → Reload.
+Then test existing Clinical Visit, Treatment Plan, Billing, Reports and Backup/Restore.
