@@ -1,15 +1,7 @@
-DentalFlow V2 — Patient Management
+DentalFlow V2 — Patient Management (FIXED)
 
-Built on the stable V1 foundation.
+V2 is a clean patient-management upgrade built on V1 principles. It includes patient profiles, Patient ID, search, edit/delete, visit history, contextual Visit/Edit actions, V1 localStorage migration, backup/restore, render recovery, pageshow recovery and versioned Service Worker caching.
 
-New in V2:
-- Patient profile and Patient ID
-- Age, gender, phone, address and medical alert
-- Fast patient search
-- Compact patient profile with contextual Visit/Edit actions
-- Visit history inside patient profile
-- V1 LocalStorage migration attempt
-- New service-worker cache namespace
+IMPORTANT: Replace ALL 7 files in the V1 repository with these V2 files. Do not mix V1 and V2 files.
 
-Deploy all 7 files over V1 in the same GitHub Pages repository.
-Test add/search/profile/edit/visit/reload/backup/restore before V3.
+Test: load -> Home -> Patients -> Visits -> Settings -> add patient -> profile -> edit -> visit -> reload -> backup/restore.
