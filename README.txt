@@ -1,7 +1,11 @@
-DentalFlow V2 — Patient Management (FIXED)
+DentalFlow V3 — Navigation & UX
 
-V2 is a clean patient-management upgrade built on V1 principles. It includes patient profiles, Patient ID, search, edit/delete, visit history, contextual Visit/Edit actions, V1 localStorage migration, backup/restore, render recovery, pageshow recovery and versioned Service Worker caching.
+- Icon-only bottom navigation: Home, Patients, Visits, Menu
+- Upper-left hamburger menu
+- Settings, Backup and Restore moved into the menu
+- Reports/About placeholders retained in menu for future versions
+- No external icon library; inline SVG icons
+- Existing localStorage key retained for V2 data continuity
+- New service-worker cache namespace dentalflow-v3
 
-IMPORTANT: Replace ALL 7 files in the V1 repository with these V2 files. Do not mix V1 and V2 files.
-
-Test: load -> Home -> Patients -> Visits -> Settings -> add patient -> profile -> edit -> visit -> reload -> backup/restore.
+Deploy all 7 files and test Home, Patients, Visits, Menu, Settings, Backup/Restore, reload, and navigation.
