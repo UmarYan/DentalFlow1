@@ -1,18 +1,18 @@
-DentalFlow V4 — Treatment Planning
+DentalFlow V5 — Prescription & Clinical Templates
 
-Based on the stable Clinical V3 Compact foundation.
+Based on the stable DentalFlow V4 Treatment Planning foundation.
 Updates:
-- Patient-specific Treatment Plans from the patient profile.
-- Multiple treatment items per plan with tooth/area, procedure, priority, estimated cost, item status and notes.
-- Quick-add procedure templates: RCT, Restoration, Crown, Extraction, Scaling, Prosthesis.
-- Plan-level status: Proposed, Accepted, In progress, On hold, Completed.
-- Automatic estimated total for each plan.
-- Compact plan summary shown inside the patient profile.
-- Edit and delete existing treatment plans.
+- Reusable templates for Examination, Diagnosis, Treatment, Advice and Prescription.
+- One-tap template insertion directly inside the Clinical Visit form.
+- Custom template creation, editing and deletion from Settings.
+- Default templates provide documentation structure; prescription text remains editable by the dentist.
+- Existing patient, clinical visit, tooth chart and treatment-plan data retained.
 - Existing dentalflow_v2 localStorage key retained for data continuity.
-- Existing Clinical V3 tooth chart, clinical notes and navigation retained.
+- Data schema upgraded defensively to version 5.
 - No external libraries.
+- Service worker cache updated to V5.
 
 Recommended test:
-Patient → Profile → + Plan → Add treatment items → Save → Profile → Edit plan → change item status → Reload.
-Also test existing Clinical Visit and old patient/visit data after deployment.
+Existing patient → Profile → Clinical visit → template buttons → edit text → Save → Profile.
+Then Settings → Clinical & Prescription Templates → New/Edit/Delete → reload.
+Also test old Treatment Plans and Backup/Restore.
