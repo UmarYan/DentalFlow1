@@ -1,8 +1,12 @@
-DentalFlow V3 — Clinical Visit & Dental Chart
+DentalFlow Clinical V3 — Compact Clinical Workflow
 
-Clinical visit includes Chief complaint, History, Examination, Diagnosis, Treatment done, Advice, Prescription, Next visit and Follow-up.
+Updates:
+- Clinical visit history cards are compact to reduce scrolling.
+- Tooth chart is collapsed by default; selected tooth/status summary stays compact.
+- Examination, Diagnosis and Treatment now have compact Tooth + Finding/Action selectors.
+- Added structured tooth-linked entries directly into Examination, Diagnosis and Treatment text.
+- Existing localStorage key remains dentalflow_v2 for data continuity.
+- No external libraries.
 
-Adult dentition: 11–18, 21–28, 31–38, 41–48. Each tooth can be selected and assigned a status: Caries, Restoration, Missing, RCT, Crown, Extraction, Mobility, Tenderness, Impacted, Prosthesis, Other.
-
-Existing localStorage key remains dentalflow_v2 for continuity.
-Service-worker cache namespace: dentalflow-clinical-v3.
+Recommended test:
+Patient → Clinical visit → Examination/Diagnosis/Treatment tooth selectors → Tooth chart → Save → Profile → Visit history → Reload.
