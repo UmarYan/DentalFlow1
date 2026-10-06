@@ -1,20 +1,26 @@
-DentalFlow V12 — Follow-up & Reminder Center
-Based directly on the stable DentalFlow V11 Advanced Search & Clinical Timeline foundation.
+DentalFlow V13 — Advanced Backup & Data Safety
+
+Based on the stable DentalFlow V12 Follow-up & Reminder foundation.
 
 Updates:
-- Patient-linked follow-up/reminder center.
-- Due date, reminder type and note.
-- Types: Follow-up, Call, Review, Payment, Treatment, Other.
-- Statuses: Pending, Done, Snoozed.
-- Dashboard reminder summary with overdue and due-today counts.
-- Dedicated Follow-up & Reminders screen with search.
-- Quick Done, Snooze, Edit, Delete and Patient actions.
-- Reminder activity appears in the Patient Timeline.
-- Existing V1–V11 data and dentalflow_v2 storage key retained.
-- Defensive schema upgraded to V12.
-- Service worker cache updated to V12.
+- Backup & Data Safety center.
+- Manual safety snapshots (metadata/count snapshots) before risky operations.
+- Export full clinic data as validated JSON backup.
+- Import JSON backup with structure validation and confirmation.
+- Data health check.
+- Clear safety/reset flow with double confirmation.
+- Existing V1–V12 patient, clinical, treatment, billing, appointment, record and reminder data retained.
+- Existing dentalflow_v2 localStorage key retained for data continuity.
+- Schema version upgraded defensively to version 13.
+- Service worker cache updated to V13.
 - No external libraries.
 
 Recommended test:
-Create reminder → dashboard → Done/Snooze → Edit/Delete → reload.
-Then verify Clinical Visit, Treatment Plan, Billing, Appointments, Advanced Search, Patient Timeline and Backup/Restore.
+1. Open Backup & Data Safety.
+2. Run data check.
+3. Create Snapshot.
+4. Export JSON and verify the file downloads.
+5. Import the exported JSON only after confirming; the app creates a safety snapshot first.
+6. Reload and verify all patient/visit/billing/appointment/reminder data.
+
+Note: Safety snapshots store metadata/counts, while Export JSON contains the full restorable dataset.
