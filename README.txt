@@ -1,11 +1,8 @@
-DentalFlow V3 — Navigation & UX
-
-- Icon-only bottom navigation: Home, Patients, Visits, Menu
-- Upper-left hamburger menu
-- Settings, Backup and Restore moved into the menu
-- Reports/About placeholders retained in menu for future versions
-- No external icon library; inline SVG icons
-- Existing localStorage key retained for V2 data continuity
-- New service-worker cache namespace dentalflow-v3
-
-Deploy all 7 files and test Home, Patients, Visits, Menu, Settings, Backup/Restore, reload, and navigation.
+DentalFlow V4 — Navigation UX refinement
+========================================
+- Bottom navigation has clear icon + label for each destination.
+- Removed duplicate three-dot/menu action from footer.
+- Added dedicated Search destination.
+- Upper-left hamburger remains the single place for Settings, Backup, Restore and secondary tools.
+- Existing localStorage data key retained for continuity.
+- Service-worker cache namespace updated to dentalflow-v4.
