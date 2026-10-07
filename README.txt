@@ -25,3 +25,7 @@ Recommended test:
 
 DentalFlow V7.5.3 — Compact Clinical Smart Input
 Clinical Examination, Diagnosis and Treatment sections now use a parallel Tooth / Area + clinical text Smart Input flow. Press Enter to add an entry and continue with the next one; previous entries are suggested while typing.
+
+
+DentalFlow V7.5.6 — Dynamic Clinical Smart Input
+Clinical Examination, Diagnosis and Treatment now use repeatable dynamic rows. Enter on Tooth/Area moves to the same row finding; Enter on finding saves the row, creates the next row and returns focus to the same section.
