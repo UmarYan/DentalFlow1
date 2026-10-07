@@ -21,3 +21,7 @@ Recommended test:
 5. Toggle Compact interface and confirm spacing changes.
 6. Reset preferences and confirm patient/clinical data remains untouched.
 7. Open Backup Center and verify V13 safety tools still work.
+
+
+DentalFlow V7.5.2 — Compact Clinical Smart Input
+Examination, Diagnosis and Treatment now use the same simple flow: Tooth / Area smart input first, then the clinical text smart input, with the existing optional template chip underneath. Dropdown-based Problem/Action controls were removed from these sections.
