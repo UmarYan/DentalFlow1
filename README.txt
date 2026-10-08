@@ -1,23 +1,21 @@
-DentalFlow V14 — Settings & Customization
-Based on the stable DentalFlow V13 Backup & Data Safety foundation.
+DentalFlow V7.5.4 — Update 1: Patient Context Layer
+Based on DentalFlow V7.5.3 Context-aware FAB.
 
-Updates:
-- Expanded clinic profile: clinic name, doctor, phone, address and registration/licence number.
-- Workflow defaults for new payments, appointments and reminders.
-- Receipt customization: show/hide doctor name and clinic contact details.
-- Compact interface option for faster chairside scanning.
-- Preference reset does not delete patient or clinical data.
-- Existing V1–V13 data retained; existing dentalflow_v2 localStorage key retained.
-- Data schema upgraded defensively to version 14.
-- Backup & Data Safety remains available as a dedicated center.
+New in this update:
+- Patient cards/names in key clinic lists are interactive and open a Quick Patient Context sheet.
+- Patient Context shows recent visit, active treatment plan, due balance, next follow-up, next appointment and visit count.
+- Quick actions: Profile, Clinical Visit, Treatment Plan, Billing, Appointment, Follow-up, Patient Record and Edit Patient.
+- Patient-linked actions automatically preselect the patient.
+- Patient Profile now has a direct Patient Context entry point.
+- Existing V7.5.3 Context-aware FAB and V7.5.1 Smart Input are retained.
+
+Not included yet:
+- Tooth Context
+- Diagnosis ↔ Treatment linking
+- Billing ↔ Treatment linking
+- Global context popups for every clinical object
+
+Stability:
+- Existing dentalflow_v2 localStorage key retained.
 - No external libraries.
-- Service worker cache updated to V14.
-
-Recommended test:
-1. Deploy and open DentalFlow.
-2. Settings → edit clinic profile → Save settings → reload.
-3. Set default payment/appointment/reminder values and create new entries to verify defaults.
-4. Enable receipt options and print a receipt to verify clinic details.
-5. Toggle Compact interface and confirm spacing changes.
-6. Reset preferences and confirm patient/clinical data remains untouched.
-7. Open Backup Center and verify V13 safety tools still work.
+- Service worker cache version bumped for this update.
