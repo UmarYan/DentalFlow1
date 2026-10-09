@@ -39,7 +39,7 @@ DentalFlow V7.5.6 — Diagnosis ↔ Treatment Linking (Update 3)
 Suggested test: open a patient profile → Clinical Visit → add a diagnosis and treatment (using structured controls or typing) → link them → save → check the Dx ↔ Tx line in clinical visit history → reload and confirm it remains.
 
 
-DentalFlow V7.5.7 — Treatment Plan ↔ Clinical Visit Linking (Update 4)
+DentalFlow V7.5.8 — Treatment Plan ↔ Clinical Visit Linking (Update 4)
 - Clinical Visit form can link one or more existing Treatment Plans for the same patient.
 - Treatment Plan form can link one or more existing Clinical Visits for the same patient.
 - Both records store reciprocal IDs (visit.linkedPlanIds and plan.linkedVisitIds).
@@ -57,3 +57,10 @@ Suggested test:
 4. Edit the Treatment Plan; in “Link Clinical Visit(s)”, choose the visit and tap Link. Save.
 5. Check the plan card and Patient Timeline. Reload the app and confirm links remain.
 6. Confirm other patients’ visits/plans do not appear in these link selectors.
+
+
+V7.5.8 Update 5 — Billing ↔ Treatment Linking
+- Bills can optionally link to one patient-specific treatment plan and one clinical visit.
+- Related plan/visit selectors update when the patient changes and reject cross-patient links.
+- Linked context appears in Billing, Patient Profile, plan summaries, and the patient timeline.
+- Existing bills remain valid with no links; data key remains unchanged.
