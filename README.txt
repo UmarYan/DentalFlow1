@@ -19,3 +19,11 @@ Stability:
 - Existing dentalflow_v2 localStorage key retained.
 - No external libraries.
 - Service worker cache version bumped for this update.
+
+
+DentalFlow V7.5.5 — Tooth / Area Context (Update 2)
+- Tap tooth-status chips in Patient Profile or Clinical Visit History to open Tooth / Area Context.
+- The context view summarizes recorded tooth status, related clinical visits, treatment-plan items, and billing items.
+- Quick actions start a new Clinical Visit, Treatment Plan, or Bill with the patient preselected.
+- While editing a Clinical Visit tooth chart, use History to open the selected tooth context.
+- Existing patient records and Smart Input storage keys are retained.
