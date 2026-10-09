@@ -27,3 +27,13 @@ DentalFlow V7.5.5 — Tooth / Area Context (Update 2)
 - Quick actions start a new Clinical Visit, Treatment Plan, or Bill with the patient preselected.
 - While editing a Clinical Visit tooth chart, use History to open the selected tooth context.
 - Existing patient records and Smart Input storage keys are retained.
+
+
+DentalFlow V7.5.6 — Diagnosis ↔ Treatment Linking (Update 3)
+- In Clinical Visit, select diagnosis text and treatment text, then tap Link to connect them.
+- Links are saved with the clinical visit and shown in the Patient Profile clinical visit history.
+- Multiple diagnosis-treatment links can be added; each can be removed before saving.
+- Existing localStorage key and patient/clinical data structure are retained; older visits without links continue to work.
+- Service worker cache updated for V7.5.6.
+
+Suggested test: open a patient profile → Clinical Visit → add a diagnosis and treatment (using structured controls or typing) → link them → save → check the Dx ↔ Tx line in clinical visit history → reload and confirm it remains.
