@@ -37,3 +37,23 @@ DentalFlow V7.5.6 — Diagnosis ↔ Treatment Linking (Update 3)
 - Service worker cache updated for V7.5.6.
 
 Suggested test: open a patient profile → Clinical Visit → add a diagnosis and treatment (using structured controls or typing) → link them → save → check the Dx ↔ Tx line in clinical visit history → reload and confirm it remains.
+
+
+DentalFlow V7.5.7 — Treatment Plan ↔ Clinical Visit Linking (Update 4)
+- Clinical Visit form can link one or more existing Treatment Plans for the same patient.
+- Treatment Plan form can link one or more existing Clinical Visits for the same patient.
+- Both records store reciprocal IDs (visit.linkedPlanIds and plan.linkedVisitIds).
+- Patient Profile shows linked plans in visit history and linked visits in treatment-plan cards.
+- Patient Timeline includes the linked plan/visit context.
+- Deleting a Treatment Plan removes its references from linked visits.
+- Older records remain compatible; missing link arrays default to empty arrays.
+- Existing localStorage key dentalflow_v2 is retained.
+- Service-worker cache updated to dentalflow-v7.5.7-plan-visit-link.
+
+Suggested test:
+1. Open a patient profile and create a Treatment Plan with at least one item.
+2. Create a Clinical Visit for that same patient; in “Link existing Treatment Plan”, choose the plan and tap Link. Save the visit.
+3. Check Patient Profile: the visit should show the linked plan.
+4. Edit the Treatment Plan; in “Link Clinical Visit(s)”, choose the visit and tap Link. Save.
+5. Check the plan card and Patient Timeline. Reload the app and confirm links remain.
+6. Confirm other patients’ visits/plans do not appear in these link selectors.
