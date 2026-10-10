@@ -1,4 +1,4 @@
-DentalFlow V7.6.1 — Update 8: Global Context Navigation & Cross-linking
+DentalFlow V7.6.2 — Update 8: Context Workflow Actions & Cross-linking
 
 WHAT'S NEW
 - Patient Timeline entries are now interactive. Tap a Clinical Visit, Treatment Plan, Patient Record, Appointment, Bill, or Reminder to open its context detail sheet directly.
@@ -22,3 +22,11 @@ VALIDATION
 - Inline JavaScript syntax checked with Node.js.
 - ZIP integrity checked.
 - Live interaction testing on the user's phone has not been performed; verify in the deployed app before relying on the new navigation.
+
+
+Update 9 — Context-aware Quick Actions & Workflow Integration:
+- Clinical Visit details can start a linked Treatment Plan, Bill, or Follow-up.
+- Treatment Plan details can start a linked Bill or Follow-up.
+- Bill details can start a payment reminder with the bill preselected.
+- Appointment details can start a Clinical Visit or Follow-up with the patient preselected.
+- Context is prefilled only when the selected source record belongs to the same patient.
