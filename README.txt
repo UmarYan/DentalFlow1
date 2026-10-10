@@ -1,4 +1,4 @@
-DentalFlow V7.5.9 — Update 6: Follow-up ↔ Clinical Story Linking
+DentalFlow V7.6.0 — Update 6: Follow-up ↔ Clinical Story Linking
 
 UPDATE 6 — FOLLOW-UP ↔ CLINICAL STORY LINKING
 - Reminders can optionally link to a same-patient Clinical Visit, Treatment Plan, and Bill.
@@ -34,3 +34,10 @@ IMPORTANT
 - The existing localStorage key `dentalflow_v2` is retained; replacing site files does not intentionally clear local patient data.
 - Keep an external JSON backup before deployment, because browser storage and in-app safety snapshots are not a substitute for an external backup.
 - JavaScript syntax and ZIP integrity were checked. Full live browser testing on the user's phone has not been performed.
+
+
+V7.6.0 Update 7 — Context-aware Quick Popup & Detail Views
+- Added compact detail sheet for Clinical Visits, Treatment Plans, Bills/Payments, Appointments, Follow-ups/Reminders, and Patient Records.
+- Added Details actions on relevant list cards; details show linked clinical context and quick actions where supported.
+- Patient context and Tooth/Area context remain available.
+- Existing localStorage key retained; no schema migration required.
