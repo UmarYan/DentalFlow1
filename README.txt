@@ -1,43 +1,24 @@
-DentalFlow V7.6.0 — Update 6: Follow-up ↔ Clinical Story Linking
+DentalFlow V7.6.1 — Update 8: Global Context Navigation & Cross-linking
 
-UPDATE 6 — FOLLOW-UP ↔ CLINICAL STORY LINKING
-- Reminders can optionally link to a same-patient Clinical Visit, Treatment Plan, and Bill.
-- Reminder cards show the linked clinical context; linked plans and bills can be opened directly.
-- Patient Timeline now includes the reminder's related context.
-- Existing reminders without links continue to work; patient data key is unchanged.
+WHAT'S NEW
+- Patient Timeline entries are now interactive. Tap a Clinical Visit, Treatment Plan, Patient Record, Appointment, Bill, or Reminder to open its context detail sheet directly.
+- Context detail sheets now show an "Open linked records" section when linked clinical visits, plans, bills, or reminders exist.
+- Patient Profile billing cards include a Details action.
+- Appointment cards include a Details action.
+- Existing context-detail views, patient context, tooth context, Smart Input, FAB actions, treatment links, billing links, and follow-up links are retained.
 
-
-WHAT'S NEW IN UPDATE 6
-- Each reminder can optionally link to a Clinical Visit, Treatment Plan, and/or Bill for the same patient.
-- Link selectors only show records belonging to the selected patient.
-- Reminder cards show linked clinical context.
-- Linked Treatment Plans and Bills can be opened directly from reminder cards.
-- Patient Timeline includes the reminder's linked visit/plan/bill context.
-- Existing reminders without links continue to work.
-
-FEATURES RETAINED FROM EARLIER UPDATES
-- Context-aware patient actions and quick patient context.
-- Tooth / Area Context.
-- Diagnosis ↔ Treatment linking.
-- Treatment Plan ↔ Clinical Visit linking.
-- Billing ↔ Treatment Plan / Clinical Visit linking.
-- Smart Input and context-aware FAB.
-- Patient management, clinical visits, treatment planning, billing, appointments, patient records, reminders, reports, and backup/data-safety tools.
-
-DEPLOYMENT
-1. Make an External Backup from DentalFlow before replacing files.
+DEPLOY
+1. Keep an external JSON backup before replacing app files.
 2. Extract this ZIP.
-3. Replace the current GitHub Pages deployment files with all 7 files from this ZIP.
-4. Open the app and test reminder create/edit, context links, patient timeline, and reload persistence.
+3. Replace the existing 7 GitHub Pages files with the 7 files from this ZIP.
+4. Reload the app and test the Patient Timeline: tap each kind of timeline entry.
+5. Open a Visit, Plan, Bill, or Reminder with linked records and test the "Open linked records" buttons.
 
-IMPORTANT
-- The existing localStorage key `dentalflow_v2` is retained; replacing site files does not intentionally clear local patient data.
-- Keep an external JSON backup before deployment, because browser storage and in-app safety snapshots are not a substitute for an external backup.
-- JavaScript syntax and ZIP integrity were checked. Full live browser testing on the user's phone has not been performed.
+DATA
+- Existing localStorage key remains dentalflow_v2.
+- No intentional data reset or schema migration is performed by this update.
 
-
-V7.6.0 Update 7 — Context-aware Quick Popup & Detail Views
-- Added compact detail sheet for Clinical Visits, Treatment Plans, Bills/Payments, Appointments, Follow-ups/Reminders, and Patient Records.
-- Added Details actions on relevant list cards; details show linked clinical context and quick actions where supported.
-- Patient context and Tooth/Area context remain available.
-- Existing localStorage key retained; no schema migration required.
+VALIDATION
+- Inline JavaScript syntax checked with Node.js.
+- ZIP integrity checked.
+- Live interaction testing on the user's phone has not been performed; verify in the deployed app before relying on the new navigation.
