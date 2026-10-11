@@ -1,22 +1,15 @@
-DentalFlow V7.6.5 — Update 12: Clinical Visit Open/Add Fix
+DentalFlow V7.7.0 — Simplified Workflow
 
-WHAT CHANGED
-- Fixed a function-name mismatch in the Clinical Visit form. The form called an undefined refreshVisitPlanOptions() function, so JavaScript stopped before the form could open.
-- The patient selector now uses the existing renderVisitPlanOptions() function when the selected patient changes.
-- This fixes both general Clinical Visit creation and patient-specific Clinical Visit creation from a Patient Profile/context action.
-- Preserved the existing dentalflow_v2 LocalStorage key and the other app features.
-- Updated the service-worker cache namespace to help browsers load the corrected files.
+This build is based on DentalFlow V7.6.5 Clinical Visit Open/Add Fix.
 
-DEPLOY
-1. Export an external JSON backup first.
-2. Extract this ZIP.
-3. Replace all 7 current GitHub Pages files with these 7 files.
-4. Open Clinical Visits > + New clinical visit; confirm the form opens.
-5. Open a Patient Profile > + Clinical visit; confirm the form opens with that patient selected.
-6. Save a test visit only when appropriate, then reload and confirm it remains visible.
+Simplification changes:
+- Home dashboard visual clutter reduced while retaining underlying metrics/data.
+- Diagnosis-to-treatment and visit-to-plan links are now inside a collapsed Advanced links (optional) section in Clinical Visit.
+- Treatment Plan to Clinical Visit linking is collapsed under an optional section.
+- Billing clinical-context links are collapsed under an optional section.
+- Quick-add FAB shows fewer primary actions; advanced actions remain available in their dedicated screens/menu.
+- Existing localStorage key dentalflow_v2 is unchanged. No intentional data reset or schema deletion.
 
-VALIDATION
-- JavaScript syntax checked with Node.js.
-- Browser runtime test checked the general and patient-specific open paths and the patient-change handler.
-- ZIP integrity checked; exactly 7 deployment files included.
-- Live test on the user's phone has not been performed.
+Deployment: replace the existing 7 GitHub Pages files with these 7 files. Back up data externally first. After deploy, test Patient, General Clinical Visit, Patient-specific Clinical Visit, Save/Reload, Billing and Backup/Restore.
+
+This package has static code/ZIP validation only; test on the target phone before relying on it clinically.
