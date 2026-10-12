@@ -20,7 +20,7 @@ Deployment: replace the existing 7 GitHub Pages files with these 7 files. Back u
 This package has static code/ZIP validation only; test on the target phone before relying on it clinically.
 
 
-V7.7.3 Minimal Whole-App UI update
+V7.7.4 Home UI Refinement update
 - Compact, consistent spacing and softer card hierarchy across screens and sheets.
 - Common secondary actions (Details, Edit, Delete, Close, Cancel, Done, Snooze, Receipt, etc.) display as accessible icon buttons with title/aria labels.
 - Action groups with four or more buttons keep the first two visible and place remaining actions in a tap-open More menu.
