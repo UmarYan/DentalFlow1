@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#087f55"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.7.1 — Simplified Workflow</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#087f55"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.7.3 — Minimal Whole-App UI</title><style>
 :root{--bg:#f3f7f4;--card:#fff;--text:#17342a;--muted:#687870;--p:#087f55;--p2:#065f42;--line:#dce8e2;--soft:#e8f3ee;--danger:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);padding:11px 14px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:20px;color:var(--p)}.sub,.muted{font-size:12px;color:var(--muted)}main{max-width:900px;margin:auto;padding:14px 14px 88px}.view{display:none}.view.active{display:block}.hero{background:var(--p);color:#fff;border-radius:18px;padding:18px}.hero h1{margin:0 0 4px}.hero p{margin:0;opacity:.9}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:0 1px 5px #1231}.card h2,.card h3{margin-top:0}.metric{font-size:27px;font-weight:850;color:var(--p)}.btn{border:0;border-radius:11px;padding:10px 13px;background:var(--p);color:#fff;font-weight:700}.btn.secondary{background:var(--soft);color:var(--p2)}.btn.ghost{background:#fff;color:var(--p);border:1px solid var(--line)}.btn.danger{background:#feeceb;color:var(--danger)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.search{margin:11px 0}.search input,.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff;outline:none}.field{margin:11px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px}.field textarea{min-height:76px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.list{display:flex;flex-direction:column;gap:9px}.patient{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:13px;background:#fff}.avatar{width:43px;height:43px;border-radius:50%;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:850;flex:none}.patient-main{min-width:0;flex:1}.patient-name{font-weight:750}.patient-meta{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty{text-align:center;padding:26px 12px;color:var(--muted)}.profile-head{display:flex;align-items:center;gap:12px}.big-avatar{width:58px;height:58px;border-radius:18px;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:900;font-size:20px}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.info{background:var(--bg);border-radius:11px;padding:10px}.info b{display:block;font-size:12px}.info span{font-size:12px;color:var(--muted)}.section{margin-top:12px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff}.bottom{position:fixed;left:0;right:0;bottom:0;z-index:10;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:3px;padding:7px max(5px,env(safe-area-inset-bottom))}.nav{border:0;background:transparent;color:var(--muted);padding:8px 13px;border-radius:10px;font-size:12px}.nav.active{background:var(--soft);color:var(--p);font-weight:800}.overlay{position:fixed;inset:0;background:#0005;display:none;align-items:flex-end;z-index:30}.overlay.show{display:flex}.sheet{background:#fff;width:100%;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:17px 15px calc(20px + env(safe-area-inset-bottom))}.sheet-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:var(--soft);color:var(--p);width:36px;height:36px;border-radius:50%;font-size:20px}.boot{position:fixed;inset:0;background:var(--bg);display:none;align-items:center;justify-content:center;padding:25px;text-align:center;z-index:99}.boot.show{display:flex}.bootbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;max-width:430px}.toast{position:fixed;left:50%;bottom:74px;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 15px;border-radius:10px;display:none;z-index:40;font-size:13px}@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}.overlay{align-items:center;justify-content:center}.sheet{max-width:620px;border-radius:20px}}
 
 /* V3 navigation and menu */
@@ -51,6 +51,34 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 #visitSheet .field textarea{min-height:60px}
 .fab-action{padding:8px 12px;font-size:12px}
 @media(max-width:420px){main{padding-left:10px;padding-right:10px} .card{padding:12px} .bottom .nav{width:58px}}
+</style><style>
+/* V7.7.3 — whole-app minimalist interaction layer */
+:root{--bg:#f5f8f6;--card:#fff;--text:#19382e;--muted:#718078;--p:#087f55;--p2:#066746;--line:#e1e9e4;--soft:#eaf4ef;--danger:#b42318}
+body{font-size:14px;line-height:1.42;letter-spacing:.005em;-webkit-tap-highlight-color:transparent}
+main{padding:10px 10px 92px;max-width:760px}
+.view>.card:first-child,.view>.hero:first-child{margin-top:2px}
+.card{padding:13px;border-radius:17px;box-shadow:0 2px 9px rgba(22,54,40,.045);margin-bottom:10px}
+.card h1,.card h2,.card h3,.card h4{letter-spacing:-.025em;line-height:1.2}
+.card h2{font-size:20px}.card h3{font-size:16px}.card h4{font-size:14px}
+.section{margin-top:9px}.grid{gap:8px;margin-top:9px}.metric{font-size:22px}.info-grid{gap:6px}.info{padding:8px}
+.row,.patient,.apt-card,.bill-card,.visit-card,.record-card,.reminder-card{border-radius:14px;box-shadow:none}
+.patient{padding:10px;gap:9px}.avatar{width:37px;height:37px}.patient-meta{font-size:11px}
+.actions{gap:6px;margin-top:8px}.btn{border-radius:12px;padding:9px 11px;font-size:13px;font-weight:700;min-height:40px}
+.btn.ghost{border-color:var(--line)}.field{margin:9px 0}.field input,.field select,.field textarea,.search input{padding:10px 12px;border-radius:12px;font-size:14px}
+.field label{font-size:12px;color:#50645a}.field textarea{min-height:68px}
+.bottom{gap:2px;padding:5px 4px max(5px,env(safe-area-inset-bottom));box-shadow:0 -3px 16px rgba(20,50,35,.045)}
+.bottom .nav{width:20vw;max-width:84px;padding:7px 3px;border-radius:13px;font-size:11px}.bottom .nav span{font-size:10px}
+.top{padding-top:9px;padding-bottom:9px}.brand{font-size:19px}.sheet{padding:16px 13px calc(18px + env(safe-area-inset-bottom));max-height:88dvh;border-radius:22px 22px 0 0}.overlay{backdrop-filter:blur(3px)}
+/* Secondary CRUD actions become accessible icon controls; tooltips retain the wording. */
+button.df-icon-action{width:40px;height:40px;min-width:40px;min-height:40px;padding:0!important;display:inline-grid;place-items:center;border-radius:12px;font-size:19px!important;line-height:1;letter-spacing:0;vertical-align:middle}
+button.df-icon-action .df-icon-glyph{font-size:20px;line-height:1}
+button.df-icon-action:focus-visible,.icon-btn:focus-visible,.nav:focus-visible{outline:3px solid #80c5a6;outline-offset:2px}
+button.df-icon-action[aria-label="Delete"]{color:var(--danger)}
+.df-more-menu{position:absolute;right:8px;top:calc(100% + 5px);z-index:25;min-width:160px;padding:6px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px #18382a22}
+.df-more-menu button{width:100%;display:flex;align-items:center;gap:9px;justify-content:flex-start;border:0;background:#fff;color:var(--text);padding:10px;border-radius:9px;text-align:left;font-size:13px}
+.df-more-menu button:active{background:var(--soft)}
+@media(min-width:650px){main{padding:14px 16px 95px}.card{padding:16px}.sheet{max-height:85vh}}
+@media(prefers-reduced-motion:no-preference){.card,.btn,.nav{transition:box-shadow .15s ease,background .15s ease,transform .15s ease}.btn:active{transform:scale(.98)}}
 </style></head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow couldn't load</h3><p class="muted">Your local data is kept. Please reload the app.</p><button class="btn" onclick="location.reload()">Reload</button></div></div>
 <header class="top"><button class="icon-btn menu-trigger" aria-label="Open menu" title="Menu" onclick="toggleMenu(true)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="brand-wrap"><div class="brand">DentalFlow</div><div id="clinicLabel" class="sub">Dental Clinic Management</div></div><button class="btn secondary add-top" onclick="openPatientForm()">+ Patient</button></header>
@@ -428,4 +456,25 @@ window.DentalFlowSmartInput={remember:remember,seed:seed,enhance:enhance};var ol
 })();
 </script>
 <div id="toothContextSheet" class="overlay"><div class="sheet"><div class="sheet-head"><h2 id="toothContextTitle" style="margin:0">Tooth / Area Context</h2><button class="close" onclick="closeSheet('toothContextSheet')">×</button></div><div id="toothContextContent"></div></div></div>
+
+<script>
+(function(){
+ const actions={
+  'details':['ⓘ','Details'],'open':['↗','Open'],'open patient':['↗','Open patient'],'view patient':['♙','Patient'],
+  'edit':['✎','Edit'],'edit patient':['✎','Edit patient'],'edit plan':['✎','Edit plan'],'edit bill':['✎','Edit bill'],'edit appointment':['✎','Edit appointment'],'edit reminder':['✎','Edit reminder'],'edit record':['✎','Edit record'],
+  'delete':['⌫','Delete'],'delete patient':['⌫','Delete patient'],'receipt':['▤','Receipt'],'close':['×','Close'],'cancel':['×','Cancel'],
+  'snooze':['◷','Snooze'],'done':['✓','Done'],'mark done':['✓','Mark done'],'complete':['✓','Complete'],'waiting':['◷','Waiting'],'start':['▶','Start'],
+  'patient':['♙','Patient'],'open plan':['▤','Open plan'],'open bill':['₹','Open bill'],'open record':['▤','Open record'],'restore':['↶','Restore'],
+  'link':['↔','Link'],'clear':['⌫','Clear'],'history':['◷','History'],'visit':['▣','Visit']
+ };
+ function decorate(root){(root||document).querySelectorAll('button').forEach(function(b){if(b.dataset.dfDecorated)return;let raw=(b.innerText||b.textContent||'').replace(/\s+/g,' ').trim();let key=raw.toLowerCase();if(!actions[key])return;
+  let item=actions[key];b.dataset.dfDecorated='1';b.setAttribute('aria-label',item[1]);b.title=item[1];b.dataset.dfLabel=item[1];b.classList.add('df-icon-action');b.innerHTML='<span class="df-icon-glyph" aria-hidden="true">'+item[0]+'</span>';
+ });}
+ function closeMenus(except){document.querySelectorAll('.df-more-menu').forEach(function(m){if(m!==except)m.remove()})}
+ function addOverflowMenus(root){(root||document).querySelectorAll('.actions,.apt-actions,.plan-actions').forEach(function(group){if(group.dataset.dfOverflow)return;let buttons=[...group.querySelectorAll(':scope > button')];if(buttons.length<4)return;group.dataset.dfOverflow='1';let extras=buttons.slice(2);extras.forEach(b=>b.hidden=true);group.style.position='relative';let more=document.createElement('button');more.type='button';more.className='btn ghost df-icon-action';more.title='More actions';more.setAttribute('aria-label','More actions');more.innerHTML='<span class="df-icon-glyph" aria-hidden="true">⋯</span>';more.addEventListener('click',function(e){e.stopPropagation();let old=group.querySelector('.df-more-menu');if(old){old.remove();return}closeMenus();let menu=document.createElement('div');menu.className='df-more-menu';extras.forEach(function(original){let item=document.createElement('button');item.type='button';let label=original.dataset.dfLabel||original.getAttribute('aria-label')||original.innerText.trim();let glyph=original.querySelector('.df-icon-glyph');item.innerHTML=(glyph?glyph.outerHTML:'<span aria-hidden="true">›</span>')+'<span>'+label+'</span>';item.addEventListener('click',function(ev){ev.stopPropagation();menu.remove();original.hidden=false;original.click();original.hidden=true});menu.appendChild(item)});group.appendChild(menu)});group.appendChild(more)});}
+ function refresh(){decorate(document);addOverflowMenus(document)}
+ document.addEventListener('click',function(e){if(!e.target.closest('.df-more-menu')&&!e.target.closest('[aria-label="More actions"]'))closeMenus()});
+ document.addEventListener('DOMContentLoaded',refresh);let obs=new MutationObserver(function(){refresh()});obs.observe(document.body,{childList:true,subtree:true});setTimeout(refresh,300);setTimeout(refresh,1200);
+})();
+</script>
 </body></html>
