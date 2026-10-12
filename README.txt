@@ -1,14 +1,6 @@
-DentalFlow V7.7.8 — Minimal Patient Profile Refresh
+DentalFlow V7.7.9 — Connected Patient Flow Update
 
-Base: V7.7.7 Connected Patient Flow, with the user's selected V7.7.5 stable baseline lineage.
+Base lineage: V7.7.5 stable baseline; update built on the supplied V7.7.8 package.
+Changes: treatment plan step added between Clinical Visit and Follow-up in Patient Flow; Patient Flow entry points added to Clinical Visits and Patient Profile; Appointment form patient picker repaired (missing populateAppointmentPatients function); outline icon styling refined.
 
-This update redesigns the Patient Profile screen only:
-- compact identity header with patient ID, age/gender and medical alert
-- compact contact details
-- one prominent Clinical Visit action
-- compact counts for visits, plans, bills and appointments
-- collapsible Tooth Status, Treatment Plans, Billing & Payments, Patient Timeline and Clinical Visit History
-- secondary Edit, Patient Record and Delete actions tucked into a More menu
-- visit details expand only when needed
-
-Existing record structures, localStorage keys and other screens are preserved. This is a UI refactor, not a claim of full end-to-end clinical testing. Test with a dummy patient and export a backup before deployment.
+Before deployment: export a JSON backup. Test appointment creation and the complete patient flow with a test patient first.
