@@ -1,9 +1,14 @@
-DentalFlow V7.7.0 — Simplified Workflow
+DentalFlow V7.7.2 — Minimal Home Screen
 
 This build is based on DentalFlow V7.6.5 Clinical Visit Open/Add Fix.
 
-Simplification changes:
-- Home dashboard visual clutter reduced while retaining underlying metrics/data.
+Home simplification changes:
+- Removed the Outstanding Dues section from Home; dues remain available in Billing.
+- Removed the monthly billing/plans metric row from Home.
+- Shortened the Home heading and made appointment rows compact (up to 3).
+- Made Home reminders compact (up to 3, details-only); full Done/Snooze/Edit/Delete actions remain on the Reminders screen.
+- Shortened clinical next-visit rows (up to 4) and retained context details.
+- Kept the four tappable Patients/New this month/Today's visits/Follow-ups metrics.
 - Diagnosis-to-treatment and visit-to-plan links are now inside a collapsed Advanced links (optional) section in Clinical Visit.
 - Treatment Plan to Clinical Visit linking is collapsed under an optional section.
 - Billing clinical-context links are collapsed under an optional section.
