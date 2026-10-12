@@ -20,11 +20,11 @@ Deployment: replace the existing 7 GitHub Pages files with these 7 files. Back u
 This package has static code/ZIP validation only; test on the target phone before relying on it clinically.
 
 
-V7.7.4 Home UI Refinement update
+V7.7.5 Dashboard & Appointment Fix update
 - Compact, consistent spacing and softer card hierarchy across screens and sheets.
 - Common secondary actions (Details, Edit, Delete, Close, Cancel, Done, Snooze, Receipt, etc.) display as accessible icon buttons with title/aria labels.
 - Action groups with four or more buttons keep the first two visible and place remaining actions in a tap-open More menu.
 - Existing app data key and data model are preserved.
 - Please export a JSON backup before deploying; test patient, visit, appointment, billing, reminders, backup/restore after deploy.
 
-V7.7.6: Android/browser Back navigates to the previous in-app screen; Back closes an open sheet first; root exit asks for confirmation. Quick Patient Search and Patients search show matching results inline below the field. New Patient name field has no suggestion popup.
+V7.7.5 changes: Dashboard card replaces Today heading; four key metrics grouped in the first card; Quick Patient Search is second; appointment patient picker population function restored so new appointments can be created. Action icons use thin outline SVGs without box borders.
