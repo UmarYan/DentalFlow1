@@ -8,3 +8,6 @@ Validation performed: ZIP integrity, manifest JSON parsing, PNG dimensions (192x
 Not tested: live GitHub Pages deployment, Android launcher display, or full application workflows.
 
 Before deploying, back up current source and patient data separately. Code rollback does not restore patient data.
+
+
+V7.7.5 Teal Theme Update: UI green theme colours aligned with the DentalFlow icon palette (deep teal and soft mint-teal). Clinical logic and patient data schema are unchanged.
