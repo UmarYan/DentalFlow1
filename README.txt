@@ -10,3 +10,6 @@ Focused update:
 - Updated service-worker cache version so the new interface can be picked up after deployment.
 
 Deployment note: replace the existing app files with the contents of this ZIP in the same GitHub Pages repository. Do not delete the browser/local app data. Before updating a live clinic app, export a Safety Snapshot / JSON backup. This source ZIP contains app files only, not patient data.
+
+
+V7.7.6 Unified Patient View layout update: patient details moved above overview; patient sections ordered Current Tooth Status, Treatment Plans, Visit History, Billing & Payments, Timeline. Existing patient data schema is unchanged.
