@@ -1,13 +1,7 @@
-DentalFlow V7.7.5 - Modern Elegant Icon Update
+DentalFlow V7.7.5 — Sky Blue Theme Update
 
-Base: DentalFlow V7.7.5 Dashboard & Appointment Fix.
-Changes: app icon assets, PWA theme/background colors, and service-worker cache name only.
-The application index.html and clinical/business logic are unchanged.
+Theme and app icon updated to a sky-blue palette. Semantic status/alert indicator colors (such as danger and other special indicators) are preserved. Clinical logic and patient-data storage code were not intentionally changed.
 
-Validation performed: ZIP integrity, manifest JSON parsing, PNG dimensions (192x192 and 512x512), and source comparison confirming index.html unchanged.
-Not tested: live GitHub Pages deployment, Android launcher display, or full application workflows.
+Before deployment: export a patient-data JSON backup and keep a separate copy of your current source ZIP. Upload these app files to the existing GitHub Pages repository.
 
-Before deploying, back up current source and patient data separately. Code rollback does not restore patient data.
-
-
-V7.7.5 Teal Theme Update: UI green theme colours aligned with the DentalFlow icon palette (deep teal and soft mint-teal). Clinical logic and patient data schema are unchanged.
+Validation performed: ZIP integrity, manifest JSON parse, CSS/HTML color-token checks, and icon PNG dimensions. Not tested on a live Android device or deployed GitHub Pages site.
