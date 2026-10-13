@@ -1,17 +1,13 @@
-DentalFlow V7.7.8 — Unified Patient View
+DentalFlow V7.7.10 — Patient Billing & Payment Update
 
-Based on DentalFlow V7.7.5 Sky Blue Menu Header Update.
+Based on the V7.7.8 Clean Patient Profile Accordion build.
 
-Focused update:
-- Patient list now opens the full patient profile directly; no mandatory context-card step.
-- Added a compact overview with recent visit, next appointment, due balance, next follow-up, active plans, visit count and medical alert when present.
-- Added quick actions for New Visit, Appointment, Treatment/Visit History and Payment/Bill.
-- Existing profile sections and their data links are retained: demographics, tooth status, treatment plans, billing, timeline, clinical visit history, editing and patient deletion.
-- Updated service-worker cache version so the new interface can be picked up after deployment.
+Focused changes:
+- Patient profile edit icon appears immediately to the right of Patient Name.
+- New Bill includes an optional initial payment amount and payment mode. Initial payment is saved as a payment transaction, and cannot exceed the bill total.
+- Patient Profile Billing & Payments includes a compact payment icon in the Payment History area when a balance is due; it opens the existing Record Payment flow. A shortcut is also shown when a bill has a due balance but no payment history yet.
+- Service-worker cache version updated to V7.7.10 to help deployed clients pick up the new files.
 
-Deployment note: replace the existing app files with the contents of this ZIP in the same GitHub Pages repository. Do not delete the browser/local app data. Before updating a live clinic app, export a Safety Snapshot / JSON backup. This source ZIP contains app files only, not patient data.
+Existing local data schema is retained. This ZIP contains app files only, not patient records. Before replacing a live clinic app, export a Safety Snapshot / JSON backup. Do not clear browser data during deployment.
 
-
-V7.7.8 Unified Patient View layout update: patient details moved above overview; patient sections ordered Current Tooth Status, Treatment Plans, Visit History, Billing & Payments, Timeline. Existing patient data schema is unchanged.
-
-V7.7.8: Patient profile cleaned; section order is Current Tooth Status, Treatment Plans, Billing & Payments, Visit History, Timeline. Create actions are on the profile FAB.
+Validation performed: inline JavaScript syntax check and ZIP integrity check. Interactive browser/device workflow was not run in this environment.
