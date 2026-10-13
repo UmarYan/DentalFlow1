@@ -1,12 +1,14 @@
-DentalFlow V7.7.10 — Patient Billing & Payment Update
+DentalFlow V7.7.11 — Focused FAB, Search & Payment Update
 
-Based on the V7.7.8 Clean Patient Profile Accordion build.
+Based on the V7.7.10 Patient Billing & Payment Update build.
 
-Focused changes:
-- Patient profile edit icon appears immediately to the right of Patient Name.
-- New Bill includes an optional initial payment amount and payment mode. Initial payment is saved as a payment transaction, and cannot exceed the bill total.
-- Patient Profile Billing & Payments includes a compact payment icon in the Payment History area when a balance is due; it opens the existing Record Payment flow. A shortcut is also shown when a bill has a due balance but no payment history yet.
-- Service-worker cache version updated to V7.7.10 to help deployed clients pick up the new files.
+Focused changes only:
+- Home FAB now includes Appointment, Clinical Visit, New Plan, Follow-up and New Bill; existing New Patient shortcut remains.
+- Removed automatic suggestion popups from Quick patient search, Patients section search and the New Patient name field. Patient search results appear in the existing results area below as the user types.
+- In New Bill / Edit Bill, Payment received is placed directly after bill items and before Bill note, without a separate card.
+- Edit Bill now accepts an optional additional payment; existing payments are retained as separate transactions and the new payment is validated against the remaining due.
+- Billing card action order is Details, Edit, Receipt, then a compact payment icon when due remains.
+- Updated service-worker cache version to V7.7.11.
 
 Existing local data schema is retained. This ZIP contains app files only, not patient records. Before replacing a live clinic app, export a Safety Snapshot / JSON backup. Do not clear browser data during deployment.
 
