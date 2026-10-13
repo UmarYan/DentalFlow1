@@ -12,4 +12,6 @@ Focused update:
 Deployment note: replace the existing app files with the contents of this ZIP in the same GitHub Pages repository. Do not delete the browser/local app data. Before updating a live clinic app, export a Safety Snapshot / JSON backup. This source ZIP contains app files only, not patient data.
 
 
-V7.7.6 Unified Patient View layout update: patient details moved above overview; patient sections ordered Current Tooth Status, Treatment Plans, Visit History, Billing & Payments, Timeline. Existing patient data schema is unchanged.
+V7.7.8 Unified Patient View layout update: patient details moved above overview; patient sections ordered Current Tooth Status, Treatment Plans, Visit History, Billing & Payments, Timeline. Existing patient data schema is unchanged.
+
+V7.7.8: Patient profile cleaned; section order is Current Tooth Status, Treatment Plans, Billing & Payments, Visit History, Timeline. Create actions are on the profile FAB.
