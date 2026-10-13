@@ -1,10 +1,12 @@
-DentalFlow V7.7.5 — Sky Blue Theme Update
+DentalFlow V7.7.8 — Unified Patient View
 
-Theme and app icon updated to a sky-blue palette. Semantic status/alert indicator colors (such as danger and other special indicators) are preserved. Clinical logic and patient-data storage code were not intentionally changed.
+Based on DentalFlow V7.7.5 Sky Blue Menu Header Update.
 
-Before deployment: export a patient-data JSON backup and keep a separate copy of your current source ZIP. Upload these app files to the existing GitHub Pages repository.
+Focused update:
+- Patient list now opens the full patient profile directly; no mandatory context-card step.
+- Added a compact overview with recent visit, next appointment, due balance, next follow-up, active plans, visit count and medical alert when present.
+- Added quick actions for New Visit, Appointment, Treatment/Visit History and Payment/Bill.
+- Existing profile sections and their data links are retained: demographics, tooth status, treatment plans, billing, timeline, clinical visit history, editing and patient deletion.
+- Updated service-worker cache version so the new interface can be picked up after deployment.
 
-Validation performed: ZIP integrity, manifest JSON parse, CSS/HTML color-token checks, and icon PNG dimensions. Not tested on a live Android device or deployed GitHub Pages site.
-
-
-Menu/Header refinement: matching sky-blue status-bar theme color and app header; sky-blue menu header with white text; subtitle: “Simple care. Connected clinic workflow.” Menu body remains white and semantic status colors remain unchanged.
+Deployment note: replace the existing app files with the contents of this ZIP in the same GitHub Pages repository. Do not delete the browser/local app data. Before updating a live clinic app, export a Safety Snapshot / JSON backup. This source ZIP contains app files only, not patient data.
