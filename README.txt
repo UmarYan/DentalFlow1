@@ -1,6 +1,9 @@
-DentalFlow V7.7.9 — Connected Patient Flow Update
+DentalFlow V7.7.10 — Consolidated Edition
 
-Base lineage: V7.7.5 stable baseline; update built on the supplied V7.7.8 package.
-Changes: treatment plan step added between Clinical Visit and Follow-up in Patient Flow; Patient Flow entry points added to Clinical Visits and Patient Profile; Appointment form patient picker repaired (missing populateAppointmentPatients function); outline icon styling refined.
+Consolidated build based on the V7.7.5 stable dashboard/appointment baseline, retaining the connected Patient Flow and minimal Patient Profile/navigation updates from V7.7.9.
 
-Before deployment: export a JSON backup. Test appointment creation and the complete patient flow with a test patient first.
+Included: compact V7.7.5 dashboard hierarchy and quiet outline action icons; minimal patient profile; connected Patient → Appointment → Clinical Visit → Treatment Plan → Follow-up → Billing/Payment flow entry points; appointment patient picker function; navigation recovery and versioned service-worker cache.
+
+IMPORTANT: This is a local-first app. Before replacing a deployed version, export a JSON backup if the app offers it. Deploy the ZIP contents to the same GitHub Pages repository/path, then reload the app. Test with a test patient: dashboard, patient search/profile, appointment add/patient selection, clinical visit, treatment plan, follow-up and billing. Do not delete old patient data to test.
+
+This package has been structurally checked as a ZIP and the embedded JavaScript syntax should be tested in-browser before clinical use. No guarantee is made that every workflow is clinically validated; verify on a test copy first.
