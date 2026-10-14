@@ -1,16 +1,19 @@
-DentalFlow V7.8.7 — Clinical Layout & Follow-up Time
+DentalFlow V7.8.8 — Smart Multi-Entry
 
-Base: DentalFlow V7.8.6 Workflow Error Recovery.
+This update focuses on multiple independent entries inside the Patient Workflow clinical fields.
 
-Changes in this build:
-- Patient Workflow now shows Chief complaint → Examination → Treatment done directly under Clinical, in that order.
-- History, Diagnosis, Prescription and Advice remain inside the expandable “More clinical details” section.
-- Follow-up includes Next visit date plus an optional time picker.
-- The optional follow-up time is stored with the visit and associated reminder, included in draft recovery, and shown in reminder details/cards and timeline where supported.
-- Existing visit/reminder records are normalized with empty time values when they predate this update; existing data and internal associations are preserved.
-- Service-worker cache version updated.
+Changes:
+- Chief complaint, Examination, Treatment done, History, Diagnosis, Prescription, and Advice now use an item-entry interface.
+- Type an item and press Enter to add it. There is no per-item Add button.
+- Tap a previous suggestion to add it as an item.
+- Each item can be edited or removed independently.
+- Each field uses its own suggestion group (complaint, examination, treatment, history, diagnosis, drug, advice).
+- Existing stored field values remain newline-separated strings for backward compatibility with prior visit records and the existing workflow save function.
+- Draft save/recovery continues to work through the original field backing values.
+- Pasting multiple lines into the entry box adds each non-empty line as a separate item.
+- Service worker cache name updated.
 
-Testing notes:
-- JavaScript syntax and ZIP integrity checks should be run before deployment.
-- Android end-to-end testing with a fictional patient and backup/restore acceptance testing are still required.
-- Export a normal JSON backup before deployment. Do not clear Chrome site data.
+Important testing notes:
+- This is a code update, not a claim of full real-device acceptance testing.
+- Test on Android using a fictional patient: add several items with Enter, edit/remove one, select a suggestion, close/reopen/resume draft, save, reload, and verify old records remain intact.
+- Export a JSON backup before deployment. Do not clear Chrome site data.
