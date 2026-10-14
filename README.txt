@@ -1,19 +1,14 @@
-DentalFlow V7.8.8 — Smart Multi-Entry
+DentalFlow V7.8.9 — Blank Screen & Raw-Code Fix
 
-This update focuses on multiple independent entries inside the Patient Workflow clinical fields.
+Purpose:
+- Fixes a malformed script/HTML boundary in V7.8.8 that caused JavaScript source to appear as visible text on the screen and could interfere with home-screen interaction.
+- Retains the V7.8.8 Smart Multi-Entry changes: type an item and press Enter to add it, with no per-item Add button; separate item suggestions; edit/remove individual entries; paste multiple lines as separate entries.
+- Updates service-worker cache version so the corrected app assets can be fetched.
 
-Changes:
-- Chief complaint, Examination, Treatment done, History, Diagnosis, Prescription, and Advice now use an item-entry interface.
-- Type an item and press Enter to add it. There is no per-item Add button.
-- Tap a previous suggestion to add it as an item.
-- Each item can be edited or removed independently.
-- Each field uses its own suggestion group (complaint, examination, treatment, history, diagnosis, drug, advice).
-- Existing stored field values remain newline-separated strings for backward compatibility with prior visit records and the existing workflow save function.
-- Draft save/recovery continues to work through the original field backing values.
-- Pasting multiple lines into the entry box adds each non-empty line as a separate item.
-- Service worker cache name updated.
+Before deployment:
+- Export a JSON backup first. Do not clear Chrome site data.
+- Replace repository files with the ZIP contents. If the old screen remains, verify the deployed files and let the service-worker update take effect; do not delete site data because patient records may be stored there.
 
-Important testing notes:
-- This is a code update, not a claim of full real-device acceptance testing.
-- Test on Android using a fictional patient: add several items with Enter, edit/remove one, select a suggestion, close/reopen/resume draft, save, reload, and verify old records remain intact.
-- Export a JSON backup before deployment. Do not clear Chrome site data.
+Testing status:
+- Automated JavaScript syntax and ZIP integrity checks are required/checked during packaging.
+- Real Android end-to-end testing, data migration, draft recovery, and backup/restore have not been verified in this environment. Test with a fictional patient before using in clinic.
