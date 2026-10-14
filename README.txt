@@ -1,16 +1,16 @@
-DentalFlow V7.8.6 — Workflow Error Recovery
+DentalFlow V7.8.7 — Clinical Layout & Follow-up Time
 
-Base: DentalFlow V7.8.5 Workflow Reliability Check.
+Base: DentalFlow V7.8.6 Workflow Error Recovery.
 
 Changes in this build:
-- Adds a safer startup failure path: if stored clinic data cannot be parsed or normalized, DentalFlow shows a recovery screen instead of continuing with an empty dataset.
-- Prevents the failed-load path from immediately writing a blank replacement over the existing primary local-storage record.
-- Adds an Export stored data action on the recovery screen. It exports the original raw stored value as JSON when parseable, or TXT if the stored value is malformed.
-- Keeps the existing patient workflow, draft recovery, data check, backup tools, and clinic features.
-- Updates app title, backup version label, and service-worker cache version.
+- Patient Workflow now shows Chief complaint → Examination → Treatment done directly under Clinical, in that order.
+- History, Diagnosis, Prescription and Advice remain inside the expandable “More clinical details” section.
+- Follow-up includes Next visit date plus an optional time picker.
+- The optional follow-up time is stored with the visit and associated reminder, included in draft recovery, and shown in reminder details/cards and timeline where supported.
+- Existing visit/reminder records are normalized with empty time values when they predate this update; existing data and internal associations are preserved.
+- Service-worker cache version updated.
 
-Important limits:
-- This recovery export is a raw copy of the primary local-storage value, not a guarantee that damaged data can be imported without review.
-- Data remains local to this browser/device unless separately exported. This is not cloud sync.
-- JavaScript syntax and ZIP integrity checks are performed for this package. Physical Android end-to-end testing, real patient data migration, and backup/restore acceptance testing remain to be done.
-- Test with a fictional patient first and export a normal JSON backup before replacing deployed files. Do not clear Chrome site data.
+Testing notes:
+- JavaScript syntax and ZIP integrity checks should be run before deployment.
+- Android end-to-end testing with a fictional patient and backup/restore acceptance testing are still required.
+- Export a normal JSON backup before deployment. Do not clear Chrome site data.
