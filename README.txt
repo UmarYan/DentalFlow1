@@ -1,19 +1,16 @@
-DentalFlow V7.8.5 — Workflow Reliability Check
+DentalFlow V7.8.6 — Workflow Error Recovery
 
-Base: DentalFlow V7.8.4 Save Verification & Data Safety.
+Base: DentalFlow V7.8.5 Workflow Reliability Check.
 
 Changes in this build:
-- Expands the non-destructive Data Check to report records missing IDs and duplicate IDs.
-- Checks patient references only when a record contains a patient ID, avoiding false alarms for intentionally unassigned records.
-- Checks existing internal references between visits, appointments, bills, reminders, and treatment plans.
-- Checks bill item and payment amounts for invalid or negative values.
-- The check reports issues but does not automatically edit, delete, or repair clinic records.
-- Keeps the existing continuous workflow, draft recovery, save verification, backup import/export, safety snapshots, and clinic sections.
-- Updates the app title and service-worker cache version.
+- Adds a safer startup failure path: if stored clinic data cannot be parsed or normalized, DentalFlow shows a recovery screen instead of continuing with an empty dataset.
+- Prevents the failed-load path from immediately writing a blank replacement over the existing primary local-storage record.
+- Adds an Export stored data action on the recovery screen. It exports the original raw stored value as JSON when parseable, or TXT if the stored value is malformed.
+- Keeps the existing patient workflow, draft recovery, data check, backup tools, and clinic features.
+- Updates app title, backup version label, and service-worker cache version.
 
 Important limits:
-- This app stores data locally on this device; JSON export is an external backup, not cloud sync.
-- A clean data check is not a guarantee that all clinical/financial data is correct. Review any warnings before making changes.
+- This recovery export is a raw copy of the primary local-storage value, not a guarantee that damaged data can be imported without review.
+- Data remains local to this browser/device unless separately exported. This is not cloud sync.
 - JavaScript syntax and ZIP integrity checks are performed for this package. Physical Android end-to-end testing, real patient data migration, and backup/restore acceptance testing remain to be done.
-- Test with a fictional patient first. Export a JSON backup before replacing deployed files. Do not clear Chrome site data.
-- If a save warning appears, do not reload/close the app until you have exported what you can and resolved the storage issue.
+- Test with a fictional patient first and export a normal JSON backup before replacing deployed files. Do not clear Chrome site data.
