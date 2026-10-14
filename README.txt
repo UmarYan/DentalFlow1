@@ -1,15 +1,18 @@
-DentalFlow V7.8.3 — Workflow Draft Recovery
+DentalFlow V7.8.4 — Save Verification & Data Safety
 
-Base: DentalFlow V7.8.2 Continuous Patient Workflow.
+Base: DentalFlow V7.8.3 Workflow Draft Recovery.
 
 Changes in this build:
-- Adds local draft autosave to the continuous Patient Workflow (debounced while typing).
-- Offers to resume a saved draft when opening the workflow again.
-- Adds a Discard draft action. Successfully saved workflows clear their draft.
-- Drafts are stored separately in this browser's local storage and do not create patient/visit/bill records until Save & finish is used.
-- Updates service-worker cache version and app version labels.
+- Verifies localStorage writes by reading back the exact saved payload.
+- Shows a persistent warning if clinic data cannot be saved to this device.
+- Exports a versioned JSON backup envelope with export time and record counts; import supports this format and older raw JSON backups.
+- Import preview shows patient/visit/bill counts and warns about duplicate IDs, missing patient references, or invalid bill/payment amounts before replacement.
+- Data check now includes invalid bill/payment amounts.
+- Keeps existing workflow draft recovery, internal record associations, and clinic sections.
+- Updates app labels and service-worker cache version.
 
 Important limits:
-- Draft recovery is device/browser-specific and is not a substitute for a clinic-data JSON backup.
-- This build has been checked for JavaScript syntax and ZIP integrity, but not exhaustively tested on a physical Android device. Test with a fictional patient first.
-- Do not clear Chrome site data; patient records and drafts use local storage. Export a JSON backup before replacing deployed files.
+- This is local-device storage; JSON export is an external backup, not cloud sync.
+- If a save warning appears, do not reload/close the app until you have exported what you can and resolved the storage issue.
+- JavaScript syntax and ZIP integrity checks are performed for this package. Physical Android end-to-end testing, real patient data migration, and backup/restore acceptance testing remain to be done.
+- Test with a fictional patient first. Do not clear Chrome site data. Export a JSON backup before replacing deployed files.
