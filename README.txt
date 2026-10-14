@@ -1,16 +1,17 @@
-DentalFlow V7.8.1 — Link-Free Simplified Build
+DentalFlow V7.8.2 — Continuous Patient Workflow
 
-Base archive: DentalFlow_V7.7.11_FAB_Search_Payment_Fixes.zip (designated V7.8.0 base).
+Base used: DentalFlow_V7.8.1_Link_Free_Simplified.zip supplied in this conversation.
 
-Only link-related features were removed in this update:
-- Diagnosis ↔ Treatment advanced linking.
-- Clinical Visit ↔ Treatment Plan linking.
-- Bill ↔ Visit / Treatment Plan linking.
-- Reminder links to Visits, Treatment Plans and Bills.
-- Linked-record summaries and navigation actions.
+Changes in this build:
+- Adds a single Patient Workflow entry from the Home FAB and the patient profile FAB.
+- The workflow can select an existing patient or create a patient without leaving the workflow.
+- Captures arrival type, clinical notes, diagnosis, treatment, prescription, advice, follow-up date, and optional billing/payment in one workspace.
+- Creates internal associations between a visit and any appointment, bill, or follow-up generated in this workflow. No manual linking UI is required.
+- Keeps existing standalone patient, visit, treatment plan, billing, appointment, reminder, records, search, reports, backup, and restore features available.
+- Data normalization now preserves existing association fields rather than deliberately deleting them.
+- Updates the service-worker cache version to reduce stale-app loading after deployment.
 
-Existing standalone features retained: patients, clinical visits, examination, diagnosis, treatment, treatment plans, billing, payments, appointments, reminders, patient records, search, FAB, reports, backup and restore.
-
-Legacy link fields are discarded during data normalization. The underlying patient, visit, plan, bill and reminder records remain independent. This ZIP contains app files only, not patient records.
-
-Validation performed: inline JavaScript syntax check and ZIP integrity check. Interactive browser/device testing was not available in this environment. Before deploying, export a Safety Snapshot / JSON backup. Do not clear browser data during deployment.
+Data and deployment notes:
+- Patient records are stored in this browser's local storage; this ZIP does not contain patient records.
+- Export a JSON backup before replacing the deployed files. Do not clear browser/site data during deployment.
+- JavaScript syntax and ZIP integrity are checked. Full real-device interaction, storage quota failure, and all workflow paths have not been exhaustively tested in a physical Android device.
