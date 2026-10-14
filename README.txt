@@ -1,17 +1,15 @@
-DentalFlow V7.8.2 — Continuous Patient Workflow
+DentalFlow V7.8.3 — Workflow Draft Recovery
 
-Base used: DentalFlow_V7.8.1_Link_Free_Simplified.zip supplied in this conversation.
+Base: DentalFlow V7.8.2 Continuous Patient Workflow.
 
 Changes in this build:
-- Adds a single Patient Workflow entry from the Home FAB and the patient profile FAB.
-- The workflow can select an existing patient or create a patient without leaving the workflow.
-- Captures arrival type, clinical notes, diagnosis, treatment, prescription, advice, follow-up date, and optional billing/payment in one workspace.
-- Creates internal associations between a visit and any appointment, bill, or follow-up generated in this workflow. No manual linking UI is required.
-- Keeps existing standalone patient, visit, treatment plan, billing, appointment, reminder, records, search, reports, backup, and restore features available.
-- Data normalization now preserves existing association fields rather than deliberately deleting them.
-- Updates the service-worker cache version to reduce stale-app loading after deployment.
+- Adds local draft autosave to the continuous Patient Workflow (debounced while typing).
+- Offers to resume a saved draft when opening the workflow again.
+- Adds a Discard draft action. Successfully saved workflows clear their draft.
+- Drafts are stored separately in this browser's local storage and do not create patient/visit/bill records until Save & finish is used.
+- Updates service-worker cache version and app version labels.
 
-Data and deployment notes:
-- Patient records are stored in this browser's local storage; this ZIP does not contain patient records.
-- Export a JSON backup before replacing the deployed files. Do not clear browser/site data during deployment.
-- JavaScript syntax and ZIP integrity are checked. Full real-device interaction, storage quota failure, and all workflow paths have not been exhaustively tested in a physical Android device.
+Important limits:
+- Draft recovery is device/browser-specific and is not a substitute for a clinic-data JSON backup.
+- This build has been checked for JavaScript syntax and ZIP integrity, but not exhaustively tested on a physical Android device. Test with a fictional patient first.
+- Do not clear Chrome site data; patient records and drafts use local storage. Export a JSON backup before replacing deployed files.
