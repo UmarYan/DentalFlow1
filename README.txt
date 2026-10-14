@@ -1,15 +1,16 @@
-DentalFlow V7.7.11 — Focused FAB, Search & Payment Update
+DentalFlow V7.8.1 — Link-Free Simplified Build
 
-Based on the V7.7.10 Patient Billing & Payment Update build.
+Base archive: DentalFlow_V7.7.11_FAB_Search_Payment_Fixes.zip (designated V7.8.0 base).
 
-Focused changes only:
-- Home FAB now includes Appointment, Clinical Visit, New Plan, Follow-up and New Bill; existing New Patient shortcut remains.
-- Removed automatic suggestion popups from Quick patient search, Patients section search and the New Patient name field. Patient search results appear in the existing results area below as the user types.
-- In New Bill / Edit Bill, Payment received is placed directly after bill items and before Bill note, without a separate card.
-- Edit Bill now accepts an optional additional payment; existing payments are retained as separate transactions and the new payment is validated against the remaining due.
-- Billing card action order is Details, Edit, Receipt, then a compact payment icon when due remains.
-- Updated service-worker cache version to V7.7.11.
+Only link-related features were removed in this update:
+- Diagnosis ↔ Treatment advanced linking.
+- Clinical Visit ↔ Treatment Plan linking.
+- Bill ↔ Visit / Treatment Plan linking.
+- Reminder links to Visits, Treatment Plans and Bills.
+- Linked-record summaries and navigation actions.
 
-Existing local data schema is retained. This ZIP contains app files only, not patient records. Before replacing a live clinic app, export a Safety Snapshot / JSON backup. Do not clear browser data during deployment.
+Existing standalone features retained: patients, clinical visits, examination, diagnosis, treatment, treatment plans, billing, payments, appointments, reminders, patient records, search, FAB, reports, backup and restore.
 
-Validation performed: inline JavaScript syntax check and ZIP integrity check. Interactive browser/device workflow was not run in this environment.
+Legacy link fields are discarded during data normalization. The underlying patient, visit, plan, bill and reminder records remain independent. This ZIP contains app files only, not patient records.
+
+Validation performed: inline JavaScript syntax check and ZIP integrity check. Interactive browser/device testing was not available in this environment. Before deploying, export a Safety Snapshot / JSON backup. Do not clear browser data during deployment.
