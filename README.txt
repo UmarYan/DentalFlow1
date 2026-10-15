@@ -1,17 +1,14 @@
-DentalFlow V7.8.12 — Billing Cursor Fix
+DentalFlow V7.8.9 — Blank Screen & Raw-Code Fix
 
-Fixes Enter after fee to add the treatment/fee item and return focus to Treatment / Service, even if another delegated Enter handler attempts to move focus. Fee input autocomplete/suggestions disabled.
+Purpose:
+- Fixes a malformed script/HTML boundary in V7.8.8 that caused JavaScript source to appear as visible text on the screen and could interfere with home-screen interaction.
+- Retains the V7.8.8 Smart Multi-Entry changes: type an item and press Enter to add it, with no per-item Add button; separate item suggestions; edit/remove individual entries; paste multiple lines as separate entries.
+- Updates service-worker cache version so the corrected app assets can be fetched.
 
-Based on the supplied V7.8.10 billing fix archive.
+Before deployment:
+- Export a JSON backup first. Do not clear Chrome site data.
+- Replace repository files with the ZIP contents. If the old screen remains, verify the deployed files and let the service-worker update take effect; do not delete site data because patient records may be stored there.
 
-DentalFlow V7.8.10 — Billing Enter & Fee Suggestion Fix
-
-Base: DentalFlow V7.8.9 Blank Screen & Raw-Code Fix.
-
-Fixes in this build:
-- Treatment/service Enter moves to individual fee.
-- Fee Enter commits the item, updates total, clears both inputs, and returns focus to treatment/service.
-- Fee field is excluded from DentalFlow smart suggestions and browser autofill hints.
-- Billing draft saving and visible item-count/total feedback retained.
-
-Before deploying, export a JSON backup. Test with a dummy patient first. Android end-to-end testing is not confirmed.
+Testing status:
+- Automated JavaScript syntax and ZIP integrity checks are required/checked during packaging.
+- Real Android end-to-end testing, data migration, draft recovery, and backup/restore have not been verified in this environment. Test with a fictional patient before using in clinic.
