@@ -1,14 +1,18 @@
-DentalFlow V7.8.9 — Blank Screen & Raw-Code Fix
+DentalFlow V7.8.13 — App-wide Smart Suggestion Manager
 
-Purpose:
-- Fixes a malformed script/HTML boundary in V7.8.8 that caused JavaScript source to appear as visible text on the screen and could interfere with home-screen interaction.
-- Retains the V7.8.8 Smart Multi-Entry changes: type an item and press Enter to add it, with no per-item Add button; separate item suggestions; edit/remove individual entries; paste multiple lines as separate entries.
-- Updates service-worker cache version so the corrected app assets can be fetched.
+Changes:
+- Add and delete suggestion actions are available in both the general smart-suggestion popup and the unified clinical multi-entry popup.
+- Applies to all supported smart-suggest fields throughout the app, including Chief complaint, History, Examination, Diagnosis, Treatment done, Prescription, Advice, patient/appointment/plan/record/reminder fields, and Treatment/Service.
+- Add saves a reusable suggestion; selecting a suggestion inserts it into the active field. Delete removes only the reusable suggestion, not existing patient or visit records.
+- Multi-entry clinical items still use Enter to commit, with per-item edit/remove controls.
+- Fee field remains excluded from auto-suggestions.
+- Service-worker cache version updated.
 
 Before deployment:
 - Export a JSON backup first. Do not clear Chrome site data.
-- Replace repository files with the ZIP contents. If the old screen remains, verify the deployed files and let the service-worker update take effect; do not delete site data because patient records may be stored there.
+- Replace repository files with the ZIP contents.
+- Test with a fictional patient before clinic use.
 
-Testing status:
-- Automated JavaScript syntax and ZIP integrity checks are required/checked during packaging.
-- Real Android end-to-end testing, data migration, draft recovery, and backup/restore have not been verified in this environment. Test with a fictional patient before using in clinic.
+Validation status:
+- JavaScript syntax checks and ZIP integrity are checked during packaging.
+- Real Android end-to-end behavior, draft recovery, data migration, and backup/restore are not verified here.
