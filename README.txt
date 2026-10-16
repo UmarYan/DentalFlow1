@@ -1,4 +1,4 @@
-DentalFlow V7.8.25 — Compact Patient Rows & Context Actions
+DentalFlow V7.8.26 — Compact Patient Rows & Context Actions — Print Script Fix
 
 Base: DentalFlow V7.8.19 — Chairside Workflow Revamp.
 
@@ -44,7 +44,7 @@ V7.8.24 — Shared Collapsible Date Groups & Clinical Visit Chronology
 V7.8.24 Compact Row UI: reduces patient-card padding and typography, keeps action buttons hidden until the row is expanded, exposes a three-dot action toggle, and supports optional long-press to reveal the same actions. Existing action handlers and record structures are retained. Full Android end-to-end testing has not been performed.
 
 
-V7.8.25 — Actual Compact Patient Row + Context Bottom Sheet
+V7.8.26 — Actual Compact Patient Row + Context Bottom Sheet
 - Converted rendered appointment, queue, follow-up, reminder and clinical visit cards to compact two-line rows: primary name/time and small secondary metadata/status.
 - Removed always-visible large action buttons from each row; actions are retained in the source markup and presented in a contextual bottom sheet through the three-dot button or optional long press.
 - Tapping the row/name opens the context sheet with the record's current status, metadata and applicable existing action handlers.
@@ -52,3 +52,5 @@ V7.8.25 — Actual Compact Patient Row + Context Bottom Sheet
 - Context actions clone existing action buttons/handlers rather than creating or linking new records. Existing record IDs and data model are unchanged.
 - Kept overdue/today/upcoming visual accents and collapsible date groups. Patient list rows also use reduced spacing and type scale.
 - Validation: ZIP integrity, inline JavaScript syntax and duplicate HTML IDs checked. Full Android end-to-end interaction testing has not been performed.
+
+V7.8.26 hotfix: fixed script placement that caused JavaScript from the main app to appear as visible text on screen. The print receipt document string is restored; the compact-row context script remains only at the end of the app document.
