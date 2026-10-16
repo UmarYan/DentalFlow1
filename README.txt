@@ -1,20 +1,20 @@
-DentalFlow V7.8.13 — Workflow Smart Suggestions
+DentalFlow V7.8.19 — Chairside Workflow Revamp
 
-Based on the supplied V7.8.12 Clinical Multi-Entry AutoSuggest build.
+Base: DentalFlow V7.8.18 — Reminder Modal & Icon Actions.
 
-Requested changes:
-- “＋ Add "…" to suggestions” is bold blue in both suggestion popup styles.
-- Patient Workflow new-patient name field no longer shows the auto-suggestion popup.
-- Patient Workflow Address and Medical Alert are separate fields; both use smart suggestions.
-- Medical Alert supports multiple entries using Enter only, without an Add button, and allows editing/removing entries and managing saved suggestions.
-- Advanced Search input no longer shows auto-suggestion popups.
-- Existing Treatment/Service and fee workflow was not intentionally changed.
+Chairside UX updates:
+- Appointments / Queue and Follow-up / Reminders now use paired tabs within the same workspace.
+- Tap a tab or swipe horizontally to switch within that pair; vertical scrolling remains available.
+- Tabs remain sticky while the workspace scrolls.
+- Active appointments and follow-ups/reminders are grouped by date (Overdue, Today, Tomorrow, then later dates) and sorted by time within each group.
+- Completed appointments, queue visits, follow-ups and reminders are separated from active lists in expandable Completed sections.
+- Queue is limited to today's checked-in active patients; completed queue visits are shown separately. Walk-ins remain supported.
+- Key chairside actions use compact icon buttons with accessible labels and tooltips.
+- Appointment completion does not automatically mark a linked follow-up complete; these statuses remain independent.
+- Existing patient, clinical visit, treatment/service, billing, smart suggestion, backup and record data structures are retained.
 
-Deployment notes:
-- Export a JSON backup before deployment and keep the previous ZIP as rollback.
-- Test with a fictional patient first, including draft recovery and backup/restore.
+Reminder notes:
+- In-app reminders do not send SMS, WhatsApp or push notifications.
+- This release focuses on presentation/navigation and chairside list handling; validate on a test dataset before deployment.
 
-Testing status:
-- JavaScript syntax checks passed for all embedded scripts.
-- Archive integrity check performed after packaging.
-- Real Android/browser end-to-end testing has not been performed in this environment.
+Validation performed for this package: JavaScript syntax check and ZIP integrity check. Full Android/browser end-to-end interaction testing has not been performed here.
