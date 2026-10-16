@@ -1,8 +1,11 @@
-DentalFlow V7.8.20 — Chairside Home & Navigation Revamp
+DentalFlow V7.8.23 — Compact Expandable Cards & Date-wise Visits
 
 Base: DentalFlow V7.8.19 — Chairside Workflow Revamp.
 
 Implemented in this update:
+- Removed the legacy extra Home follow-up strip that duplicated follow-ups already shown in the Follow-up workspace; the single main Follow-up list remains the clearly labeled source.
+- Compact follow-up/reminder cards reduce vertical padding, typography and action spacing while preserving usable touch targets.
+- Today groups/cards use green accents; Overdue groups/cards use red accents.
 - Home now embeds the paired Appointments / Queue workspace and Follow-up / Reminders workspace.
 - Home paired workspaces support both tab taps and independent horizontal swipe; tab active state stays in sync.
 - Primary bottom navigation is Home, Patients, Visits, Finance, More.
@@ -20,3 +23,19 @@ Interaction safeguards:
 - This is an in-app reminder experience; SMS, WhatsApp and push notification delivery are not added in this update.
 
 Validation performed: JavaScript syntax checks passed; duplicate HTML IDs check passed; ZIP integrity check performed after packaging. Full Android/browser end-to-end interaction testing has not been performed here, so test on a backup/test dataset before production deployment.
+
+
+V7.8.23 update notes
+- Compact-by-default patient cards across appointments, queue, follow-ups and reminders; tap the card body to expand optional details. Action buttons remain visible and independently tappable.
+- Appointment cards use red for overdue dates, green for today, and blue for upcoming dates. Queue cards for today use green status styling.
+- Clinical Visits are grouped by date, with newest dates first and items sorted by time within each date. Home Today's visits also shows a date group.
+- Existing records and core data structures are retained.
+- Validation: ZIP integrity and inline JavaScript syntax checked. Full Android end-to-end testing has not been performed.
+
+
+V7.8.23 — Shared Collapsible Date Groups & Clinical Visit Chronology
+- Clinical Visits are grouped Today, Future-dated visits (when present), Recent Visits (previous 7 days), and Older Visits. Clinical visits are never labeled Overdue merely because their date is in the past.
+- Date/status groups across appointments, queue, follow-ups, reminders, and history lists use collapsible headers with counts. Today/Overdue active groups default open; upcoming/completed/older groups default closed where applicable.
+- Multiple groups may remain open; toggled state is preserved while the page remains open.
+- Compact-by-default expandable visit cards remain in place; existing records and data structure are not intentionally changed.
+- Validation is limited to ZIP integrity and static JavaScript/HTML checks; no full Android end-to-end test performed.
