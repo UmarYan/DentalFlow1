@@ -1,4 +1,4 @@
-DentalFlow V7.8.23 — Compact Expandable Cards & Date-wise Visits
+DentalFlow V7.8.25 — Compact Patient Rows & Context Actions
 
 Base: DentalFlow V7.8.19 — Chairside Workflow Revamp.
 
@@ -25,7 +25,7 @@ Interaction safeguards:
 Validation performed: JavaScript syntax checks passed; duplicate HTML IDs check passed; ZIP integrity check performed after packaging. Full Android/browser end-to-end interaction testing has not been performed here, so test on a backup/test dataset before production deployment.
 
 
-V7.8.23 update notes
+V7.8.24 update notes
 - Compact-by-default patient cards across appointments, queue, follow-ups and reminders; tap the card body to expand optional details. Action buttons remain visible and independently tappable.
 - Appointment cards use red for overdue dates, green for today, and blue for upcoming dates. Queue cards for today use green status styling.
 - Clinical Visits are grouped by date, with newest dates first and items sorted by time within each date. Home Today's visits also shows a date group.
@@ -33,9 +33,22 @@ V7.8.23 update notes
 - Validation: ZIP integrity and inline JavaScript syntax checked. Full Android end-to-end testing has not been performed.
 
 
-V7.8.23 — Shared Collapsible Date Groups & Clinical Visit Chronology
+V7.8.24 — Shared Collapsible Date Groups & Clinical Visit Chronology
 - Clinical Visits are grouped Today, Future-dated visits (when present), Recent Visits (previous 7 days), and Older Visits. Clinical visits are never labeled Overdue merely because their date is in the past.
 - Date/status groups across appointments, queue, follow-ups, reminders, and history lists use collapsible headers with counts. Today/Overdue active groups default open; upcoming/completed/older groups default closed where applicable.
 - Multiple groups may remain open; toggled state is preserved while the page remains open.
 - Compact-by-default expandable visit cards remain in place; existing records and data structure are not intentionally changed.
 - Validation is limited to ZIP integrity and static JavaScript/HTML checks; no full Android end-to-end test performed.
+
+
+V7.8.24 Compact Row UI: reduces patient-card padding and typography, keeps action buttons hidden until the row is expanded, exposes a three-dot action toggle, and supports optional long-press to reveal the same actions. Existing action handlers and record structures are retained. Full Android end-to-end testing has not been performed.
+
+
+V7.8.25 — Actual Compact Patient Row + Context Bottom Sheet
+- Converted rendered appointment, queue, follow-up, reminder and clinical visit cards to compact two-line rows: primary name/time and small secondary metadata/status.
+- Removed always-visible large action buttons from each row; actions are retained in the source markup and presented in a contextual bottom sheet through the three-dot button or optional long press.
+- Tapping the row/name opens the context sheet with the record's current status, metadata and applicable existing action handlers.
+- The three-dot menu and long press open the action-focused version of the same sheet; no action executes merely from long press.
+- Context actions clone existing action buttons/handlers rather than creating or linking new records. Existing record IDs and data model are unchanged.
+- Kept overdue/today/upcoming visual accents and collapsible date groups. Patient list rows also use reduced spacing and type scale.
+- Validation: ZIP integrity, inline JavaScript syntax and duplicate HTML IDs checked. Full Android end-to-end interaction testing has not been performed.
