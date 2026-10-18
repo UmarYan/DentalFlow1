@@ -1,10 +1,42 @@
-DentalFlow V7.8.28 — Universal Contextual Details
+DentalFlow V7.8.33 — Smart Collapsible Home
 
-Changes:
-- Patient list card tap opens the patient profile/details; right-side info icon expands contextual patient information inline.
-- Clinical Visit card tap and info icon show visit-specific details inline; patient/visit detail buttons removed from the visit card action row.
-- Appointments, Queue, Follow-ups, Reminders, Bills and treatment-plan rows use a consistent right-side info affordance where supported by the record list.
-- Details expand inline (no three-dot popup or bottom sheet for this interaction) and expose context-appropriate edit actions.
-- Existing records/data schema preserved.
+Based on DentalFlow V7.8.32.
 
-Validation: ZIP integrity and JavaScript syntax checked. Full end-to-end testing on a real Android device has not been performed.
+Home screen improvement:
+- Appointments, Queue, Follow-ups, and Reminders now use individual compact collapsible sections.
+- Each section header stays visible and shows a relevant count and concise status summary.
+- Queue auto-expands when active waiting/in-treatment patients exist.
+- Follow-ups and Reminders auto-expand when due today or overdue items exist.
+- Appointments default to collapsed to keep Home compact.
+- Manual expand/collapse preference is remembered for the current day.
+- Expanding/collapsing is UI-only and does not change clinical, appointment, reminder, follow-up, or financial records.
+- Existing detail lists, record actions, and View All destinations are retained.
+
+Validation performed: ZIP integrity, HTML parsing, JavaScript syntax checks, and static checks for expected Home section IDs/functions. Full real-device end-to-end clinical/finance testing has not been performed.
+
+Before deployment: export an external JSON backup and test the app with sample records.
+
+
+V7.8.34 — Advanced Search category filtering fix; date-wise Clinical Visits and Finance grouping.
+- Selected category now limits search results to that type; All shows all matching record types.
+- Added Follow-ups, Reminders and Payments search categories.
+- Clinical Visits and Bills are grouped under date headings, with compact patient/record rows under each date.
+- Existing records and data schema are unchanged.
+
+
+V7.8.35 — Adaptive Home Spacing
+- Reduced excess vertical space for the Home Quick Patient Search empty hint.
+- Reduced excess vertical space for the Today's Visits empty state.
+- Content remains visible; cards can grow naturally when search results or visits are present.
+- CSS-only UI adjustment; existing record and save logic unchanged.
+
+
+V7.8.36 — Icon-free Date-wise Category Headers
+- Removed decorative plus/minus icons from date-group headers throughout the app.
+- Date headings remain full-width, tap-to-expand/collapse controls using native details/summary behavior.
+- Date labels and item counts remain visible in collapsed state.
+- Inner record action buttons remain outside the summary header, so their clicks do not toggle the date group.
+- Added keyboard focus indication and bumped the service-worker cache version.
+- No data schema, record, clinical, or finance save logic was changed.
+
+Validation performed: ZIP integrity, HTML parsing, JavaScript syntax checks, and static checks for date-group styles and collapsibleDateGroup markup. Full Android device end-to-end testing has not been performed.
