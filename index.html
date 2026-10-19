@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0284C7"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.8.47 — Global UI Cleanup</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0284C7"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.8.49 — Startup Freeze Fix</title><style>
 :root{--bg:#F0F9FF;--card:#FFFFFF;--text:#1E293B;--muted:#64748B;--p:#0284C7;--p2:#0369A1;--line:#BAE6FD;--soft:#E0F2FE;--danger:#B91C1C}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:10;background:#0284C7;border-bottom:1px solid #0369A1;padding:11px 14px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:20px;color:#FFFFFF}.sub,.muted{font-size:12px;color:var(--muted)}.top .sub{color:#BAE6FD}main{max-width:900px;margin:auto;padding:14px 14px 88px}.view{display:none}.view.active{display:block}.hero{background:var(--p);color:#fff;border-radius:18px;padding:18px}.hero h1{margin:0 0 4px}.hero p{margin:0;opacity:.9}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:0 1px 5px #0284C71F}.card h2,.card h3{margin-top:0}.metric{font-size:27px;font-weight:850;color:var(--p)}.btn{border:0;border-radius:11px;padding:10px 13px;background:var(--p);color:#fff;font-weight:700}.btn.secondary{background:var(--soft);color:var(--p2)}.top .btn.secondary{background:#E0F2FE;color:#0369A1}.btn.ghost{background:#fff;color:var(--p);border:1px solid var(--line)}.btn.danger{background:#feeceb;color:var(--danger)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.search{margin:11px 0}.search input,.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff;outline:none}.field{margin:11px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px}.field textarea{min-height:76px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.list{display:flex;flex-direction:column;gap:9px}.patient{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:13px;background:#fff}.avatar{width:43px;height:43px;border-radius:50%;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:850;flex:none}.patient-main{min-width:0;flex:1}.patient-name{font-weight:750}.patient-meta{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty{text-align:center;padding:26px 12px;color:var(--muted)}.profile-head{display:flex;align-items:center;gap:12px}.big-avatar{width:58px;height:58px;border-radius:18px;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:900;font-size:20px}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.info{background:var(--bg);border-radius:11px;padding:10px}.info b{display:block;font-size:12px}.info span{font-size:12px;color:var(--muted)}.section{margin-top:12px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff}.bottom{position:fixed;left:0;right:0;bottom:0;z-index:10;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:3px;padding:7px max(5px,env(safe-area-inset-bottom))}.nav{border:0;background:transparent;color:var(--muted);padding:8px 13px;border-radius:10px;font-size:12px}.nav.active{background:var(--soft);color:var(--p);font-weight:800}.overlay{position:fixed;inset:0;background:#0005;display:none;align-items:flex-end;z-index:30}.overlay.show{display:flex}.sheet{background:#fff;width:100%;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:17px 15px calc(20px + env(safe-area-inset-bottom))}.sheet-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:var(--soft);color:var(--p);width:36px;height:36px;border-radius:50%;font-size:20px}.boot{position:fixed;inset:0;background:var(--bg);display:none;align-items:center;justify-content:center;padding:25px;text-align:center;z-index:99}.boot.show{display:flex}.bootbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;max-width:430px}.toast{position:fixed;left:50%;bottom:74px;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 15px;border-radius:10px;display:none;z-index:40;font-size:13px}@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}.overlay{align-items:center;justify-content:center}.sheet{max-width:620px;border-radius:20px}}
 
 /* V3 navigation and menu */
@@ -227,7 +227,7 @@ details > summary::before, details > summary::after { content:none !important; d
 .profile-visit-card:focus-visible { outline:2px solid #38bdf8; outline-offset:2px; }
 .profile-visit-card .tooth-link { position:relative; z-index:1; }
 </style>
-<style id="df-v7848-final-fixes">.top{justify-content:flex-start!important}.brand-wrap{flex:1 1 auto!important;margin-left:0!important;margin-right:auto!important;text-align:left!important}.brand-wrap>*{text-align:left!important}#fabWrap,#fabMain{pointer-events:auto!important;z-index:10050!important}#fabWrap{position:fixed!important}.df-v7848-count{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 7px;margin-left:7px;border-radius:999px;background:#E0F2FE;color:#0369A1;font-size:12px;font-weight:800;vertical-align:middle}.df-v7848-purpose{margin-top:8px}</style></head><body>
+<style id="df-v7848-final-fixes">.top{justify-content:flex-start!important}.brand-wrap{flex:1 1 auto!important;margin-left:0!important;margin-right:auto!important;text-align:left!important}.brand-wrap>*{text-align:left!important}#fabWrap,#fabMain{pointer-events:auto!important;z-index:10050!important}#fabWrap{position:fixed!important}.df-v7848-count{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 7px;margin-left:7px;border-radius:999px;background:#E0F2FE;color:#0369A1;font-size:12px;font-weight:800;vertical-align:middle}.df-v7848-purpose{margin-top:8px}</style><style id="df-v7849-header-left-fix">.top{justify-content:flex-start!important;text-align:left!important}.top .brand{margin-right:auto!important;text-align:left!important}</style></head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow needs recovery</h3><p id="bootErrorText" class="muted">The app could not safely read its saved data. Do not reset or clear site data. Export the stored data first, then retry loading.</p><div class="actions" style="justify-content:center"><button class="btn secondary" onclick="exportRecoveryData()">Export stored data</button><button class="btn" onclick="location.reload()">Retry load</button></div></div></div>
 <header class="top"><button class="icon-btn menu-trigger" aria-label="Open menu" title="Menu" onclick="toggleMenu(true)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="brand-wrap"><div class="brand">DentalFlow</div><div id="clinicLabel" class="sub">Dental Clinic Management</div></div></header>
 <main>
@@ -1084,12 +1084,53 @@ input,select,textarea{border-radius:10px!important;border-color:#d4e3ec!importan
 </script>
 
 
-<script id="df-v7847-required-field-markers">(function(){'use strict';var ids=['pName','wfName','aptPatient','fuPatient','billPatient','visitPatient','planPatient','planProcedure','paymentAmount'];function mark(){ids.forEach(function(id){var e=document.getElementById(id);if(!e)return;var f=e.closest('.field');if(!f)return;var l=f.querySelector('label');if(l){l.classList.add('df-required-label');l.setAttribute('data-required-marker','true')}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mark,{once:true});else mark()})();</script><script id="df-v7848-final-runtime-fixes">
-(function(){'use strict';function $(id){return document.getElementById(id)}function t(el){return (el&&(el.textContent||'').trim())||''}
-function count(){var b=$('dfAppointmentTotalCount');if(b){var n=(window.data&&Array.isArray(window.data.appointments))?window.data.appointments.length:0;b.textContent=String(n);b.setAttribute('aria-label',n+' appointments')}}
-function stars(){document.querySelectorAll('label').forEach(function(l){var old=l.querySelectorAll('.df-v7848-star');for(var i=1;i<old.length;i++)old[i].remove();var f=l.closest('.field'),el=f&&f.querySelector('input,select,textarea');var required=!!(el&&(el.required||el.getAttribute('aria-required')==='true'||el.dataset.required==='true'));if(el&&['pName','wfName','aptPatient','fuPatient','billPatient','visitPatient','recPatient','remPatient','recTitle'].indexOf(el.id)>=0)required=true;l.innerHTML=l.innerHTML.replace(/(?:\s*\*\s*)+$/,'');if(required&&!l.querySelector('.df-v7848-star')){var s=document.createElement('span');s.className='df-v7848-star';s.textContent=' *';s.style.cssText='color:#B91C1C;font-weight:800';l.appendChild(s)}})}
-function financeFab(){var v=document.querySelector('.view.active');if(!v||!['billing','finance'].includes(v.id))return;var b=$('fabMain');if(!b)return;b.setAttribute('aria-label','New bill');b.setAttribute('title','New bill');b.onclick=function(e){if(e){e.preventDefault();e.stopPropagation()}try{if(typeof openBillForm==='function')openBillForm(window.currentPatientId||'');var sh=$('billSheet');if(sh)sh.classList.add('show')}catch(err){console.error('Finance FAB failed',err)}}}
-function run(){stars();count();financeFab();['visitFollowupPurpose','wfFollowupPurpose'].forEach(function(id){var s=$(id);if(s){s.required=false;s.removeAttribute('required')}})}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();var mo=new MutationObserver(run);mo.observe(document.documentElement,{childList:true,subtree:true});window.addEventListener('load',run);
+<script id="df-v7847-required-field-markers">(function(){'use strict';var ids=['pName','wfName','aptPatient','fuPatient','billPatient','visitPatient','planPatient','planProcedure','paymentAmount'];function mark(){ids.forEach(function(id){var e=document.getElementById(id);if(!e)return;var f=e.closest('.field');if(!f)return;var l=f.querySelector('label');if(l){l.classList.add('df-required-label');l.setAttribute('data-required-marker','true')}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mark,{once:true});else mark()})();</script><script id="df-v7849-startup-freeze-fix">
+(function(){
+ 'use strict';
+ function $(id){return document.getElementById(id)}
+ function updateAppointmentCount(){
+   var b=$('dfAppointmentTotalCount');
+   if(!b)return;
+   var n=(window.data&&Array.isArray(window.data.appointments))?window.data.appointments.length:0;
+   b.textContent=String(n);b.setAttribute('aria-label',n+' appointments');
+ }
+ function normalizeStars(){
+   document.querySelectorAll('label').forEach(function(l){
+     var old=l.querySelectorAll('.df-v7848-star');
+     for(var i=1;i<old.length;i++)old[i].remove();
+     var plain=(l.textContent||'').replace(/\s*\*+\s*$/,'').trim();
+     if(l.querySelector('.df-v7848-star')){
+       l.childNodes.forEach(function(n){if(n.nodeType===3)n.textContent=n.textContent.replace(/\s*\*+\s*$/,'')});
+       return;
+     }
+     if(/\*\s*$/.test(l.textContent||'')){
+       l.childNodes.forEach(function(n){if(n.nodeType===3)n.textContent=n.textContent.replace(/\s*\*+\s*$/,'')});
+       var s=document.createElement('span');s.className='df-v7849-star';s.textContent=' *';s.style.cssText='color:#B91C1C;font-weight:800';l.appendChild(s);
+     }
+   });
+ }
+ function financeFab(){
+   var view=document.querySelector('.view.active');
+   if(!view||view.id!=='billing')return;
+   var b=$('fabMain');if(!b||b.dataset.dfV7849FinanceWired)return;
+   b.dataset.dfV7849FinanceWired='1';
+   b.addEventListener('click',function(e){
+     // Only intercept the FAB while Billing & Payments is the active section.
+     e.preventDefault();e.stopImmediatePropagation();
+     if(typeof window.openBillForm==='function')window.openBillForm(window.currentPatientId||'');
+     var sheet=$('billSheet');if(sheet)sheet.classList.add('show');
+   },true);
+ }
+ function run(){normalizeStars();updateAppointmentCount();financeFab();}
+ function boot(){run();setTimeout(run,250);setTimeout(run,1000);}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+ window.addEventListener('load',run);
+ document.addEventListener('click',function(){setTimeout(financeFab,0);setTimeout(updateAppointmentCount,0)},true);
+ // Refresh counts after app's appointment renderer runs; do not observe the entire DOM.
+ if(typeof window.renderAppointments==='function'&&!window.renderAppointments.__dfV7849Wrapped){
+   var original=window.renderAppointments;
+   window.renderAppointments=function(){var r=original.apply(this,arguments);updateAppointmentCount();return r};
+   window.renderAppointments.__dfV7849Wrapped=true;
+ }
 })();
 </script></body></html>
