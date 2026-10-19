@@ -19,3 +19,5 @@ Creation actions are launched directly from the single FAB according to the curr
 
 
 V7.8.47 Global UI Cleanup: removes repeated helper copy and adds consistent * markers to key required fields. Existing data model and save handlers are preserved.
+
+V7.8.48 — Based on V7.8.47 Global UI Cleanup. Restored left-aligned brand/header with right-side + Patient action, explicit Finance FAB routing, optional follow-up purpose/reason in workflow and clinical visit, appointment total count, and single required-field markers.
