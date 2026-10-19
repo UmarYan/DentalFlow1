@@ -19,3 +19,5 @@ Creation actions are launched directly from the single FAB according to the curr
 
 
 V7.8.47 Global UI Cleanup: removes repeated helper copy and adds consistent * markers to key required fields. Existing data model and save handlers are preserved.
+
+V7.8.48: header left alignment, Billing FAB fallback, Clinical Visit and unified workflow follow-up purpose fields, visible appointment total, duplicate-star cleanup.
