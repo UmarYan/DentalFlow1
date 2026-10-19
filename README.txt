@@ -20,4 +20,4 @@ Creation actions are launched directly from the single FAB according to the curr
 
 V7.8.47 Global UI Cleanup: removes repeated helper copy and adds consistent * markers to key required fields. Existing data model and save handlers are preserved.
 
-V7.8.50 Header & Finance FAB Fix: hamburger icon remains white on the sky-blue header, top-level + Patient action is removed, and Finance FAB opens a new bill by default or payment form for a selected due bill.
+V7.8.51 Script Leak Fix: moved the main application script to app.js to prevent JavaScript source from being rendered as visible page text.
