@@ -10,3 +10,6 @@ Deployment: Extract this ZIP and publish the DentalFlow folder contents to the e
 Rollback: Redeploy the previous ZIP. Do not clear LocalStorage; this update does not intentionally change stored data.
 
 Validation performed: JavaScript syntax, HTML parsing/IDs, service-worker syntax, ZIP integrity, and required-file checks. Browser end-to-end testing was not performed.
+
+
+V7.8.59 — App-wide helper-text cleanup: removed static explanatory helper copy across section headings, forms, Settings and More cards. Labels, placeholders, dynamic record details, validation and empty states are retained.
