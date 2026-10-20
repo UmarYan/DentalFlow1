@@ -259,6 +259,16 @@ details > summary::before, details > summary::after { content:none !important; d
 .header-quick-search #homeResults .empty{padding:10px 0;text-align:left;font-size:12px}
 @media(max-width:380px){#home .home-workflow-grid{gap:6px}#home .home-workflow-tile{padding:9px}#home .home-workflow-label,#home .home-workflow-count{font-size:14px}}
 </style>
+
+<style id="df-v7-8-51-workflow-horizontal-alignment">
+/* V7.8.51: horizontal-only alignment for all Today's Workflow rows. */
+#home .home-workflow-toggle{flex-direction:row;align-items:center;gap:8px}
+#home .home-workflow-toggle-head{display:contents}
+#home .home-workflow-count{order:0;display:inline-flex;align-items:center;justify-content:center;min-width:30px;min-height:28px;padding:3px 9px;border-radius:999px;background:#e0f2fe;color:#075985;line-height:1.1}
+#home .home-workflow-label{order:1;flex:0 1 auto;min-width:0}
+#home .home-workflow-summary{order:2;flex:0 1 auto;margin-left:auto;text-align:right}
+@media(max-width:380px){#home .home-workflow-toggle{gap:7px}#home .home-workflow-count{min-width:28px;min-height:26px;padding:3px 7px}}
+</style>
 </head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow needs recovery</h3><p id="bootErrorText" class="muted">The app could not safely read its saved data. Do not reset or clear site data. Export the stored data first, then retry loading.</p><div class="actions" style="justify-content:center"><button class="btn secondary" onclick="exportRecoveryData()">Export stored data</button><button class="btn" onclick="location.reload()">Retry load</button></div></div></div>
 <header class="top"><button class="icon-btn menu-trigger" aria-label="Open menu" title="Menu" onclick="toggleMenu(true)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="brand-wrap"><div class="brand">DentalFlow</div><div id="clinicLabel" class="sub">Dental Clinic Management</div></div><div class="header-actions"><button class="icon-btn" aria-label="Quick patient search" title="Quick patient search" aria-expanded="false" onclick="toggleHeaderQuickSearch()"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button><button class="icon-btn" aria-label="Add patient" title="Add patient" onclick="openPatientForm()"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M19 8v6M16 11h6"/></svg></button></div></header>
