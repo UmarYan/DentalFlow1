@@ -10,10 +10,3 @@ Deployment: Extract this ZIP and publish the DentalFlow folder contents to the e
 Rollback: Redeploy the previous ZIP. Do not clear LocalStorage; this update does not intentionally change stored data.
 
 Validation performed: JavaScript syntax, HTML parsing/IDs, service-worker syntax, ZIP integrity, and required-file checks. Browser end-to-end testing was not performed.
-
-
-V7.8.57 — Unified Navigation Revamp (2026-10-20)
-- Added consistent context-aware More actions beside section headings.
-- Refined mobile navigation, footer tabs, menu spacing, focus states and menu surfaces.
-- Preserved the existing hamburger drawer, footer More utility page, bottom navigation, FAB, data model and PWA files.
-- Contextual actions reuse existing application functions; no data migration or storage-key changes.
