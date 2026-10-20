@@ -13,3 +13,7 @@ Validation performed: JavaScript syntax, HTML parsing/IDs, service-worker syntax
 
 
 V7.8.59 — App-wide helper-text cleanup: removed static explanatory helper copy across section headings, forms, Settings and More cards. Labels, placeholders, dynamic record details, validation and empty states are retained.
+
+
+V7.8.60 — Finance New Bill Fix
+Fixed openBillForm referencing the removed billPaymentHint helper-text element. The hint is now optional, so New Bill/Edit Bill can open without a null-element exception. No data keys or bill/payment data structures changed.
