@@ -17,3 +17,8 @@ V7.8.59 — App-wide helper-text cleanup: removed static explanatory helper copy
 
 V7.8.60 — Finance New Bill Fix
 Fixed openBillForm referencing the removed billPaymentHint helper-text element. The hint is now optional, so New Bill/Edit Bill can open without a null-element exception. No data keys or bill/payment data structures changed.
+
+
+V7.8.61 — Appointments tab count fix
+Added a count badge to the Appointments tab in Appointments & Queue. It displays today's active appointments (excluding Completed and Cancelled), matching the existing Today metric, and updates whenever renderAppointments runs. Queue count behavior is unchanged.
+Validation: JavaScript syntax, HTML parsing/IDs, manifest JSON, service-worker syntax, ZIP integrity and required-file checks. Browser end-to-end testing was not performed.
