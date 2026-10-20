@@ -23,3 +23,8 @@ Checks performed:
 Browser end-to-end testing was not performed. Before deployment, export a data backup and manually test header search, Add Patient, and direct FAB behavior on each relevant section.
 
 Rollback: redeploy the original DentalFlow_V7.8.45_Script_Boundary_Fix.zip files. Do not clear LocalStorage when rolling back.
+
+
+DentalFlow V7.8.48 — Today's Workflow Grid & Bold Home Titles
+Base: DentalFlow V7.8.47_Header_Alignment_Context_FAB.zip
+Changes: Today's Workflow presented as four icon-free cards in a 2x2 grid; each card shows title, count and readable summary and opens its corresponding list. Home-screen card titles and Dashboard metric labels are bold. No data schema or LocalStorage keys changed.
