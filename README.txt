@@ -1,4 +1,4 @@
-DentalFlow V7.8.71 — Finance Accordion & FAB Actions
+DentalFlow V7.8.72 — Finance Accordion & FAB Actions
 
 Base: DentalFlow V7.8.69_Simple_Finance_Automated_Accounting.zip
 
