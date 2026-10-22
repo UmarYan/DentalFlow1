@@ -1,34 +1,31 @@
-DentalFlow V7.8.70 — Compact Finance Dashboard
+DentalFlow V7.9.0 — Refined Finance UI/UX
 
-Base: DentalFlow V7.8.69_Simple_Finance_Automated_Accounting.zip
+Base: DentalFlow_V7.8.70_Compact_Finance_Dashboard.zip (the approved stable base).
 
 Purpose
-- Reduce excessive vertical scrolling in Clinic Finance without removing existing finance tools.
-- Organize finance into four compact sections: Overview, Transactions, Accounts, and Reports.
+- Refine Clinic Finance into a cleaner, more modern and sophisticated workspace.
+- Reduce visual density and form scrolling on mobile without removing finance functionality.
 
 Changes
-- Added compact, sticky four-tab navigation within Clinic Finance.
-- Overview retains the monthly financial summary and account balances, with quick links to transactions, accounts/dues, and reports.
-- Transactions groups the existing new-transaction form and transaction list.
-- Accounts groups patient receivables, opening balances, and supplier payables.
-- Reports groups budgets, fund allocations, expense-category reporting, and the collapsed Advanced Accounting & Reconciliation section.
-- Added compact mobile spacing and summary tiles while preserving the existing finance forms and transaction handlers.
-- The selected finance tab is remembered for the current browser session only.
-- Updated app title, About label, and service-worker cache version.
+- Applied a finance-scoped visual system with calmer surfaces, refined typography, consistent spacing, subtle borders and restrained semantic colours.
+- Improved the sticky four-tab navigation and active-state clarity.
+- Refined the overview hierarchy, compacted summary metrics and account balances, and tightened quick actions.
+- Added progressive disclosure for optional transaction note and receipt/invoice attachment fields; their original IDs and handlers remain intact.
+- Improved form controls, transaction rows, budget/fund rows, and advanced-accounting presentation across narrow and wider screens.
+- Updated app title, About label, and service-worker cache version to V7.9.0.
 
 Preserved
-- Patient, clinical, appointment, treatment plan, billing/payment, and receipt workflows.
-- Existing Clinic Finance transaction records, receivables, payables, opening balances, budgets, funds, exports, journal generation, and reconciliation records.
-- Existing LocalStorage schema and data keys; no data reset or migration was performed.
-- Existing transaction creation and accounting-generation logic.
+- Existing patient, clinical, appointment, treatment-plan, billing/payment, receipt and clinic workflows.
+- Existing finance transaction logic, patient receivables, opening balances, supplier payables, budgets, fund allocations, CSV exports, automatic double-entry journal generation and reconciliation.
+- Existing DOM IDs used by finance scripts, LocalStorage schema/data keys and transaction handlers. No data reset or migration was performed.
 
 Validation
 - ZIP integrity and required-file presence checked.
 - HTML parsed; manifest JSON parsed; inline JavaScript syntax checked with Node.js.
-- Verified all original finance form/list IDs remain in the HTML and all four tabs map to their intended panels.
-- Full browser end-to-end testing was not performed in this environment.
+- Verified finance form IDs and tab/panel names remain present and optional transaction fields remain accessible in the DOM.
+- Automated structural checks passed. Full interactive browser end-to-end testing was not available in this environment.
 
 Deployment / rollback
 - Export a fresh DentalFlow JSON backup before deployment.
 - Do not clear LocalStorage during deployment.
-- If issues occur, roll back to DentalFlow_V7.8.69_Simple_Finance_Automated_Accounting.zip without clearing LocalStorage.
+- If issues occur, roll back to DentalFlow_V7.8.70_Compact_Finance_Dashboard.zip without clearing LocalStorage.
