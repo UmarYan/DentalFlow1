@@ -300,6 +300,15 @@ details > summary::before, details > summary::after { content:none !important; d
 .df-finance-tools{display:grid;grid-template-columns:1fr;gap:12px}.df-finance-tools .card{margin:0}.df-budget-row{padding:10px 0;border-bottom:1px solid var(--line)}.df-budget-row:last-child{border-bottom:0}.df-budget-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.df-budget-head>div:first-child{min-width:0}.df-budget-bar{height:7px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin-top:7px}.df-budget-bar>span{display:block;height:100%;border-radius:99px;background:#0284c7}.df-budget-bar>span.over{background:#dc2626}.df-budget-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);margin-top:5px}.df-fund-row{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.df-fund-row:last-child{border-bottom:0}.df-fund-main{min-width:0;overflow-wrap:anywhere}.df-fund-value{text-align:right;flex-shrink:0}.df-fund-void{font-size:11px;padding:4px 7px;margin-top:4px}.df-finance-note{background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:10px;font-size:12px;color:#075985}
 @media(min-width:720px){.df-finance-tools{grid-template-columns:1fr 1fr}}
 </style>
+<style id="df-v7872-finance-misc-layout">
+#finance .df-finance-category{border:1px solid var(--line,#dbe7ef);border-radius:12px;background:var(--card,#fff);margin:0 0 10px;overflow:hidden}
+#finance .df-finance-category>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 14px;font-weight:750;cursor:pointer;color:var(--text,#17324a)}
+#finance .df-finance-category>summary::-webkit-details-marker{display:none}
+#finance .df-finance-category>summary:after{content:'⌄';font-size:15px;color:var(--primary,#1769aa);transition:transform .16s ease}
+#finance .df-finance-category[open]>summary:after{transform:rotate(180deg)}
+#finance .df-finance-category-body{padding:0 10px 10px}
+#finance .df-finance-category-body>.card{margin-bottom:10px}
+</style>
 </head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow needs recovery</h3><p id="bootErrorText" class="muted">The app could not safely read its saved data. Do not reset or clear site data. Export the stored data first, then retry loading.</p><div class="actions" style="justify-content:center"><button class="btn secondary" onclick="exportRecoveryData()">Export stored data</button><button class="btn" onclick="location.reload()">Retry load</button></div></div></div>
 <header class="top"><button class="icon-btn menu-trigger" aria-label="Open menu" title="Menu" onclick="toggleMenu(true)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="brand-wrap"><div class="brand">DentalFlow</div><div id="clinicLabel" class="sub">Dental Clinic Management</div></div><div class="header-actions"><button class="icon-btn" aria-label="Quick patient search" title="Quick patient search" aria-expanded="false" onclick="toggleHeaderQuickSearch()"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button><button class="icon-btn" aria-label="Add patient" title="Add patient" onclick="openPatientForm()"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M19 8v6M16 11h6"/></svg></button></div></header>
@@ -732,15 +741,7 @@ function printBill(id){let b=data.bills.find(function(x){return x.id===id});if(!
 </script>
 
 
-<style id="df-v7872-finance-misc-layout">
-#finance .df-finance-category{border:1px solid var(--line,#dbe7ef);border-radius:12px;background:var(--card,#fff);margin:0 0 10px;overflow:hidden}
-#finance .df-finance-category>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 14px;font-weight:750;cursor:pointer;color:var(--text,#17324a)}
-#finance .df-finance-category>summary::-webkit-details-marker{display:none}
-#finance .df-finance-category>summary:after{content:'⌄';font-size:15px;color:var(--primary,#1769aa);transition:transform .16s ease}
-#finance .df-finance-category[open]>summary:after{transform:rotate(180deg)}
-#finance .df-finance-category-body{padding:0 10px 10px}
-#finance .df-finance-category-body>.card{margin-bottom:10px}
-</style>
+
 </body></html>';w.document.open();w.document.write(html);w.document.close();w.focus();w.print()}
 </script>
 <script id="df-v7867-finance-receipts-core">
