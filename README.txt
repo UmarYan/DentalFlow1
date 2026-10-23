@@ -1,43 +1,60 @@
-DentalFlow V7.9.6 — Automatic Payables
+DentalFlow V7.8.65 — Simple Finance & Inventory Usability
 
-Changes: Dues labels Receivables and Payables; Supplier Payables entry is separated from the outstanding Payables list; expense entries can be marked Unpaid and automatically added to Payables without reducing cash/bank balances until payment is recorded.
+Base: DentalFlow V7.8.64 Simple Finance & Inventory (which was created from the supplied V7.8.63 stable base).
 
-Base package: V7.9.5 Finance Workspace Refinement.
+Changes in V7.8.65:
+- Added compact inventory filters: All, Low stock, Out of stock, and Expiring soon.
+- Added a live count to the Expiring soon filter (expiry within the next 30 days).
+- Added edit actions for manually entered expenses and other income; edits update the existing record rather than creating duplicates.
+- Added a collapsed Other income list to keep the Finance screen compact while making income entries reviewable and editable.
+- Added savings-goal editing so the saved amount can be updated over time.
+- Added budget edit shortcut while preserving the existing category/month upsert behavior.
+- Linked stock-purchase expenses remain edited through the Inventory purchase workflow to reduce mismatched stock/expense records.
+- Preserved existing patient, clinical, appointment, billing, and LocalStorage data structures. No data migration or clearing is performed.
 
-DentalFlow V7.8.70 — Compact Finance Dashboard
+Deployment: Extract the ZIP and publish the contents of the DentalFlow folder to the existing GitHub Pages deployment.
+Rollback: Redeploy DentalFlow_V7.8.63_Settings_Template_Section_Removed.zip if needed; preserve browser data and export a backup before deployment.
 
-Base: DentalFlow V7.8.69_Simple_Finance_Automated_Accounting.zip
+Validation performed: JavaScript syntax checks, HTML parsing, duplicate-ID scan, manifest JSON parsing, service-worker syntax, ZIP integrity, required-file checks, and static feature-handler checks. Browser end-to-end testing was not performed.
 
-Purpose
-- Reduce excessive vertical scrolling in Clinic Finance without removing existing finance tools.
-- Organize finance into four compact sections: Overview, Transactions, Accounts, and Reports.
+--- Previous release notes ---
+DentalFlow V7.8.64 — Simple Clinic Finance & Materials Inventory
 
-Changes
-- Added compact, sticky four-tab navigation within Clinic Finance.
-- Overview retains the monthly financial summary and account balances, with quick links to transactions, accounts/dues, and reports.
-- Transactions groups the existing new-transaction form and transaction list.
-- Accounts groups patient receivables, opening balances, and supplier payables.
-- Reports groups budgets, fund allocations, expense-category reporting, and the collapsed Advanced Accounting & Reconciliation section.
-- Added compact mobile spacing and summary tiles while preserving the existing finance forms and transaction handlers.
-- The selected finance tab is remembered for the current browser session only.
-- Updated app title, About label, and service-worker cache version.
+Changes in this version (based on the current V7.8.49 build):
+- Today's Workflow cards are stacked vertically in this order: Appointments, Queue, Follow-ups, Reminders.
+- Tapping a card header expands/collapses its list inline on the Home screen; it no longer navigates away.
+- Preserves the existing card title, count, summary, list rendering, search/header controls, and underlying data structures.
+- Updated service-worker cache name for the new release.
 
-Preserved
-- Patient, clinical, appointment, treatment plan, billing/payment, and receipt workflows.
-- Existing Clinic Finance transaction records, receivables, payables, opening balances, budgets, funds, exports, journal generation, and reconciliation records.
-- Existing LocalStorage schema and data keys; no data reset or migration was performed.
-- Existing transaction creation and accounting-generation logic.
+Deployment: Extract this ZIP and publish the DentalFlow folder contents to the existing GitHub Pages deployment.
+Rollback: Redeploy the previous ZIP. Do not clear LocalStorage; this update does not intentionally change stored data.
 
-Validation
-- ZIP integrity and required-file presence checked.
-- HTML parsed; manifest JSON parsed; inline JavaScript syntax checked with Node.js.
-- Verified all original finance form/list IDs remain in the HTML and all four tabs map to their intended panels.
-- Full browser end-to-end testing was not performed in this environment.
-
-Deployment / rollback
-- Export a fresh DentalFlow JSON backup before deployment.
-- Do not clear LocalStorage during deployment.
-- If issues occur, roll back to DentalFlow_V7.8.69_Simple_Finance_Automated_Accounting.zip without clearing LocalStorage.
+Validation performed: JavaScript syntax, HTML parsing/IDs, service-worker syntax, ZIP integrity, and required-file checks. Browser end-to-end testing was not performed.
 
 
-V7.9.5 Change log: Finance navigation now uses five horizontally scrollable tabs: Overview, Transactions, Dues, Planning and Miscellaneous. Transactions title row has New/Search/Filter icons; Budget and Allocation forms open from their title-row plus icons. Expense Category Report moved to Miscellaneous immediately after Opening Balances.
+V7.8.59 — App-wide helper-text cleanup: removed static explanatory helper copy across section headings, forms, Settings and More cards. Labels, placeholders, dynamic record details, validation and empty states are retained.
+
+
+V7.8.60 — Finance New Bill Fix
+Fixed openBillForm referencing the removed billPaymentHint helper-text element. The hint is now optional, so New Bill/Edit Bill can open without a null-element exception. No data keys or bill/payment data structures changed.
+
+
+V7.8.61 — Appointments tab count fix
+Added a count badge to the Appointments tab in Appointments & Queue. It displays today's active appointments (excluding Completed and Cancelled), matching the existing Today metric, and updates whenever renderAppointments runs. Queue count behavior is unchanged.
+Validation: JavaScript syntax, HTML parsing/IDs, manifest JSON, service-worker syntax, ZIP integrity and required-file checks. Browser end-to-end testing was not performed.
+
+
+V7.8.63 — Settings template section removal
+- Completely removed the “Clinical & Prescription Templates” management card from Settings.
+- Kept the existing clinical/prescription template data and chairside template insertion workflow intact; no stored data is deleted or migrated.
+- Updated the About version label and service-worker cache name.
+Validation: JavaScript syntax, HTML parsing/structure, manifest JSON, service-worker syntax, ZIP integrity and required-file checks. Browser end-to-end testing was not performed.
+Rollback: Redeploy the supplied DentalFlow_V7.8.63_Settings_Template_Section_Removed.zip. Do not clear LocalStorage.
+
+
+V7.8.64 — Simple Clinic Finance & Materials Inventory
+- Added lightweight Materials Inventory: item catalogue, opening stock, stock-in/out, minimum-stock warnings, expiry field, and recent stock activity.
+- Added Clinic Finance: simple expense entry, accounts with opening balances, transfers, monthly collection/expense summary, basic budgets, and savings goals.
+- Stock purchases can create a linked expense record when a payment account is selected; stock and expense are not entered twice.
+- Existing patient, clinical, appointment, billing, and LocalStorage structures are retained; new finance/inventory data is stored in additional arrays.
+- Service-worker cache version updated for deployment.
