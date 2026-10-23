@@ -1,3 +1,9 @@
+DentalFlow V7.9.6 — Automatic Payables
+
+Changes: Dues labels Receivables and Payables; Supplier Payables entry is separated from the outstanding Payables list; expense entries can be marked Unpaid and automatically added to Payables without reducing cash/bank balances until payment is recorded.
+
+Base package: V7.9.5 Finance Workspace Refinement.
+
 DentalFlow V7.8.70 — Compact Finance Dashboard
 
 Base: DentalFlow V7.8.69_Simple_Finance_Automated_Accounting.zip
