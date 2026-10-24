@@ -1,23 +1,22 @@
-DentalFlow V7.10.0 — Unified Patient Workflow
+DentalFlow V7.9.2 — Treatment Plan Before Treatment Done
 
-Base: DentalFlow V7.9.1 — Clinic Management Tabs (the explicitly selected stable base).
+Stable base: DentalFlow_V7.9.1_Clinic_Management_Tabs.zip
 
-Changes in V7.10.0:
-- Reorganized the unified Patient Workflow into a compact ordered journey: Patient → Appointment & Arrival → Clinical Visit → Treatment Plan → Follow-up → Billing & Payment → Visit Completion.
-- Added an optional planned-treatment entry linked to the patient and, when present, the clinical visit; planned treatment remains separate from treatment performed and billing.
-- Added Existing Appointment and Follow-up Visit entry types alongside Walk-in and Schedule a New Appointment. Existing appointments can be selected for the chosen patient.
-- Added a compact step indicator, clearer section labels, mobile-first spacing, and Continue Later / Save & Finish actions. Existing local draft autosave remains in place.
-- Main menu order: Home, Patients, Visits, Advanced Search, Clinical Workflow, Billing & Payments, Clinic Management, Reports, Settings.
-- Grouped Data Safety, Backup Data, and Restore Data under Data & Security; Data Safety remains outside Settings.
-- More contains only Clinical Workflow, Clinic Management, Treatment Plans, Reports, Backup Data, and Restore Data.
-- Renamed the footer Finance label to Billing.
-- Preserved the existing LocalStorage key and record collections; no data reset or migration is performed.
+Changes in V7.9.2:
+- Added a compact optional Treatment Plan section before Treatment Done in the standard Clinical Visit and Unified Patient Workflow.
+- Planned procedure, tooth/area, estimated fee, and priority are saved as a treatment-plan item linked to the patient and clinical visit.
+- “Completed today” is an explicit choice; a planned item is marked Completed only when selected and actual treatment is documented.
+- Immediate treatment remains supported: leave the plan fields blank and record the actual Treatment Done directly.
+- Preserved existing patient, visit, plan, appointment, billing, payment, and LocalStorage structures; no migration or reset is performed.
+- Updated the service-worker cache version.
 
 Deployment:
-1. Export a DentalFlow JSON backup before deployment.
+1. Export a DentalFlow backup before deployment.
 2. Extract the ZIP and publish the contents of the DentalFlow folder to the existing GitHub Pages deployment.
-3. Reload the PWA and check navigation, patient workflow, and existing records.
+3. Reload the app and test both planned-treatment and immediate-treatment paths.
 
 Rollback:
 - Redeploy DentalFlow_V7.9.1_Clinic_Management_Tabs.zip.
-- Export a backup first; do not clear LocalStorage.
+- Export a backup first and do not clear LocalStorage.
+
+Checks performed for this build are listed in the delivery message. Browser end-to-end testing is not claimed unless explicitly stated.
