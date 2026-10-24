@@ -1,13 +1,13 @@
-DentalFlow V7.9.0 — Unified Clinical Workflow Tabs
+DentalFlow V7.9.1 — Clinic Management Tabs
 
-Base: DentalFlow V7.8.69 Materials Purchase Account Sync.
+Base: DentalFlow V7.9.0 Clinical Workflow Tabs.
 
-Changes in V7.9.0:
-- Replaced the two separate More menu entries for “Appointments & Queue” and “Follow-ups & Reminders” with one “Clinical Workflow” entry.
-- Combined Appointments, Queue, Follow Up, and Reminders into four consecutive horizontal tabs under one Clinical Workflow heading.
-- Reused the existing panes, record lists, forms, counts, actions, and rendering logic; no clinical data structure or LocalStorage key was changed.
-- Legacy calls to switchView('reminders') now open Clinical Workflow directly on the Follow Up tab. Calls to switchView('appointments') open it on Appointments.
-- Updated service-worker cache version so deployed clients can load the new UI.
+Changes in V7.9.1:
+- Replaced the separate More entries for Clinic Finance, Materials Inventory, and Laboratory Tracking with one Clinic Management entry.
+- Added one Clinic Management workspace with three horizontal-scroll tabs: Finance, Inventory, and Lab Tracking. Tabs remain horizontally scrollable on narrow mobile screens.
+- Preserved the existing Finance, Inventory, and Laboratory Tracking content, record IDs, action handlers, rendering functions, and LocalStorage structures by reusing the original module elements.
+- Legacy navigation calls to clinicFinance, inventory, and labTracking now open Clinic Management and select the corresponding tab.
+- Updated the hamburger menu and service-worker cache version.
 
 Deployment:
 1. Export a DentalFlow backup before deployment.
@@ -15,16 +15,7 @@ Deployment:
 3. Reload the app. If an older cached version remains, close/reopen the PWA or refresh after the service worker updates.
 
 Rollback:
-- Redeploy the prior DentalFlow V7.8.69 ZIP.
+- Redeploy the prior DentalFlow V7.9.0 ZIP.
 - Export a backup first and do not clear LocalStorage.
 
-Automated checks performed for this build:
-- JavaScript syntax checks for all inline scripts.
-- Service-worker syntax check.
-- HTML parsing and duplicate-ID scan.
-- Manifest JSON parsing.
-- ZIP integrity and required-file checks.
-- Static navigation checks for all four tabs and legacy reminder navigation alias.
-
-Limitations:
-- Browser end-to-end testing was not performed.
+Automated checks to perform before release: JavaScript syntax, service-worker syntax, HTML parsing and duplicate IDs, manifest JSON, navigation/tab static checks, and ZIP integrity. Browser end-to-end testing is not claimed.
