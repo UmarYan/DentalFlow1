@@ -1,4 +1,4 @@
-DentalFlow V7.9.1 — Clinic Management Tabs
+DentalFlow V7.9.2 — Navigation & Data Security
 
 Base: DentalFlow V7.9.0 Clinical Workflow Tabs.
 
@@ -19,3 +19,12 @@ Rollback:
 - Export a backup first and do not clear LocalStorage.
 
 Automated checks to perform before release: JavaScript syntax, service-worker syntax, HTML parsing and duplicate IDs, manifest JSON, navigation/tab static checks, and ZIP integrity. Browser end-to-end testing is not claimed.
+
+
+V7.9.2 change log
+- Renamed bottom navigation Finance to Billing.
+- Kept Clinic Management Finance, Inventory and Lab Tracking as peer horizontal tabs.
+- Reordered the main menu and added Data & Security grouping for Backup Data, Restore Data and Data Safety.
+- Removed Data Safety shortcut from Settings.
+- More now contains only Clinical Workflow, Clinic Management, Treatment Plans, Reports, Backup Data and Restore Data.
+- Removed Global Search and Settings from More.
