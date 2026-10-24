@@ -1,30 +1,23 @@
-DentalFlow V7.9.2 — Navigation & Data Security
+DentalFlow V7.10.0 — Unified Patient Workflow
 
-Base: DentalFlow V7.9.0 Clinical Workflow Tabs.
+Base: DentalFlow V7.9.1 — Clinic Management Tabs (the explicitly selected stable base).
 
-Changes in V7.9.1:
-- Replaced the separate More entries for Clinic Finance, Materials Inventory, and Laboratory Tracking with one Clinic Management entry.
-- Added one Clinic Management workspace with three horizontal-scroll tabs: Finance, Inventory, and Lab Tracking. Tabs remain horizontally scrollable on narrow mobile screens.
-- Preserved the existing Finance, Inventory, and Laboratory Tracking content, record IDs, action handlers, rendering functions, and LocalStorage structures by reusing the original module elements.
-- Legacy navigation calls to clinicFinance, inventory, and labTracking now open Clinic Management and select the corresponding tab.
-- Updated the hamburger menu and service-worker cache version.
+Changes in V7.10.0:
+- Reorganized the unified Patient Workflow into a compact ordered journey: Patient → Appointment & Arrival → Clinical Visit → Treatment Plan → Follow-up → Billing & Payment → Visit Completion.
+- Added an optional planned-treatment entry linked to the patient and, when present, the clinical visit; planned treatment remains separate from treatment performed and billing.
+- Added Existing Appointment and Follow-up Visit entry types alongside Walk-in and Schedule a New Appointment. Existing appointments can be selected for the chosen patient.
+- Added a compact step indicator, clearer section labels, mobile-first spacing, and Continue Later / Save & Finish actions. Existing local draft autosave remains in place.
+- Main menu order: Home, Patients, Visits, Advanced Search, Clinical Workflow, Billing & Payments, Clinic Management, Reports, Settings.
+- Grouped Data Safety, Backup Data, and Restore Data under Data & Security; Data Safety remains outside Settings.
+- More contains only Clinical Workflow, Clinic Management, Treatment Plans, Reports, Backup Data, and Restore Data.
+- Renamed the footer Finance label to Billing.
+- Preserved the existing LocalStorage key and record collections; no data reset or migration is performed.
 
 Deployment:
-1. Export a DentalFlow backup before deployment.
+1. Export a DentalFlow JSON backup before deployment.
 2. Extract the ZIP and publish the contents of the DentalFlow folder to the existing GitHub Pages deployment.
-3. Reload the app. If an older cached version remains, close/reopen the PWA or refresh after the service worker updates.
+3. Reload the PWA and check navigation, patient workflow, and existing records.
 
 Rollback:
-- Redeploy the prior DentalFlow V7.9.0 ZIP.
-- Export a backup first and do not clear LocalStorage.
-
-Automated checks to perform before release: JavaScript syntax, service-worker syntax, HTML parsing and duplicate IDs, manifest JSON, navigation/tab static checks, and ZIP integrity. Browser end-to-end testing is not claimed.
-
-
-V7.9.2 change log
-- Renamed bottom navigation Finance to Billing.
-- Kept Clinic Management Finance, Inventory and Lab Tracking as peer horizontal tabs.
-- Reordered the main menu and added Data & Security grouping for Backup Data, Restore Data and Data Safety.
-- Removed Data Safety shortcut from Settings.
-- More now contains only Clinical Workflow, Clinic Management, Treatment Plans, Reports, Backup Data and Restore Data.
-- Removed Global Search and Settings from More.
+- Redeploy DentalFlow_V7.9.1_Clinic_Management_Tabs.zip.
+- Export a backup first; do not clear LocalStorage.
