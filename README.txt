@@ -1,21 +1,22 @@
-DentalFlow V7.9.1 — Clinic Management Tabs
+DentalFlow V7.9.2 — Treatment Plan Workflow
 
-Base: DentalFlow V7.9.0 Clinical Workflow Tabs.
+Base: DentalFlow V7.9.1 Clinic Management Tabs.
 
-Changes in V7.9.1:
-- Replaced the separate More entries for Clinic Finance, Materials Inventory, and Laboratory Tracking with one Clinic Management entry.
-- Added one Clinic Management workspace with three horizontal-scroll tabs: Finance, Inventory, and Lab Tracking. Tabs remain horizontally scrollable on narrow mobile screens.
-- Preserved the existing Finance, Inventory, and Laboratory Tracking content, record IDs, action handlers, rendering functions, and LocalStorage structures by reusing the original module elements.
-- Legacy navigation calls to clinicFinance, inventory, and labTracking now open Clinic Management and select the corresponding tab.
-- Updated the hamburger menu and service-worker cache version.
+Changes in V7.9.2:
+- Added a working More → Treatment Plans view with cross-patient search, status and patient filters, details, edit and patient-profile actions.
+- Added an optional “Add Treatment Plan” choice to Patient Workflow. After the workflow is saved, the linked Treatment Plan form opens with patient, visit link, examination and diagnosis context prefilled. The plan is not saved until treatment items are added and the user confirms Save.
+- Treatment Plan details now allow selecting items to include in a bill. Completed and In progress items are preselected; Planned items are not automatically selected.
+- Selected plan items, tooth/area and estimated fees populate a new bill; fee fields remain editable before saving. The bill stores its linkedPlanId.
+- Existing Patient, Clinical Visit, Appointment, Billing, Finance, Inventory, Lab Tracking and LocalStorage structures are preserved; no data reset or migration was added.
+- Updated title, backup version label, and service-worker cache.
 
 Deployment:
 1. Export a DentalFlow backup before deployment.
 2. Extract the ZIP and publish the contents of the DentalFlow folder to the existing GitHub Pages deployment.
-3. Reload the app. If an older cached version remains, close/reopen the PWA or refresh after the service worker updates.
+3. Reload the app and test More → Treatment Plans, Patient Workflow → Add Treatment Plan, and plan → bill.
 
 Rollback:
-- Redeploy the prior DentalFlow V7.9.0 ZIP.
-- Export a backup first and do not clear LocalStorage.
+- Redeploy DentalFlow V7.9.1_Clinic_Management_Tabs.zip.
+- Export a backup first and do not clear LocalStorage. Bills created from plans in this version keep their plan link in the new version's data; older app versions may not display that link.
 
-Automated checks to perform before release: JavaScript syntax, service-worker syntax, HTML parsing and duplicate IDs, manifest JSON, navigation/tab static checks, and ZIP integrity. Browser end-to-end testing is not claimed.
+Browser end-to-end testing is not claimed.
