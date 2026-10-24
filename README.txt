@@ -1,3 +1,15 @@
+DentalFlow V7.9.10 — Patient Autocomplete Workflow
+
+Changes:
+- Replaced visible patient dropdown with type-to-search autocomplete in Patient Workflow.
+- Search by patient name, phone, or patient ID.
+- Select an existing patient from live suggestions.
+- If no exact name match exists, offer Add New Patient with the typed name prefilled.
+- Retained the underlying patient select value, existing IDs, LocalStorage keys, and data schema for compatibility.
+- No patient records are deleted or migrated.
+
+Checks: HTML structure and JavaScript syntax checked; ZIP integrity checked after packaging. Real browser testing not performed.
+
 DentalFlow V7.9.7 — Reference-Matched Workflow Section Layout
 
 Stable base: DentalFlow_V7.9.2_Navigation_Data_Security.zip
