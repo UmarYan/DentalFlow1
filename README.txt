@@ -1,4 +1,4 @@
-DentalFlow V7.9.5 — Collapsible Patient Workflow
+DentalFlow V7.9.6 — Notion-Style Workflow Toggles
 
 Stable base: DentalFlow_V7.9.2_Navigation_Data_Security.zip
 
@@ -41,7 +41,7 @@ Rollback
 - Export a backup first. Do not clear LocalStorage.
 
 
-V7.9.5 — Collapsible Patient Workflow:
+V7.9.6 — Notion-Style Workflow Toggles:
 - Added consistent compact accordion sections for Patient, Appointment/Arrival, Clinical Visit, Follow-up, Billing & Payment, and existing record management.
 - Kept Patient and Clinical Visit sections expanded by default; optional/longer sections start collapsed to reduce visual clutter and scrolling.
 - Standardized compact section spacing, keyboard focus indication, chevron state, and reduced-motion behavior.
@@ -53,3 +53,6 @@ Automated checks performed for V7.9.5:
 - JavaScript syntax checks: PASS for all 13 inline script blocks and the Service Worker.
 - ZIP integrity: PASS after packaging.
 - Browser end-to-end tests: not performed.
+
+
+V7.9.6 change log: Added Notion-style triangular caret indicators to expandable/collapsible sections within Patient Workflow, including nested advanced sections. No data keys or record structures changed.
