@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0284C7"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.9.6 — Notion-Style Workflow Toggles</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0284C7"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.9.5 — Collapsible Patient Workflow</title><style>
 :root{--bg:#F0F9FF;--card:#FFFFFF;--text:#1E293B;--muted:#64748B;--p:#0284C7;--p2:#0369A1;--line:#BAE6FD;--soft:#E0F2FE;--danger:#B91C1C}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:10;background:#0284C7;border-bottom:1px solid #0369A1;padding:11px 14px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:20px;color:#FFFFFF}.sub,.muted{font-size:12px;color:var(--muted)}.top .sub{color:#BAE6FD}main{max-width:900px;margin:auto;padding:14px 14px 88px}.view{display:none}.view.active{display:block}.hero{background:var(--p);color:#fff;border-radius:18px;padding:18px}.hero h1{margin:0 0 4px}.hero p{margin:0;opacity:.9}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:0 1px 5px #0284C71F}.card h2,.card h3{margin-top:0}.metric{font-size:27px;font-weight:850;color:var(--p)}.btn{border:0;border-radius:11px;padding:10px 13px;background:var(--p);color:#fff;font-weight:700}.btn.secondary{background:var(--soft);color:var(--p2)}.top .btn.secondary{background:#E0F2FE;color:#0369A1}.btn.ghost{background:#fff;color:var(--p);border:1px solid var(--line)}.btn.danger{background:#feeceb;color:var(--danger)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.search{margin:11px 0}.search input,.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff;outline:none}.field{margin:11px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px}.field textarea{min-height:76px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.list{display:flex;flex-direction:column;gap:9px}.patient{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:13px;background:#fff}.avatar{width:43px;height:43px;border-radius:50%;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:850;flex:none}.patient-main{min-width:0;flex:1}.patient-name{font-weight:750}.patient-meta{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty{text-align:center;padding:26px 12px;color:var(--muted)}.profile-head{display:flex;align-items:center;gap:12px}.big-avatar{width:58px;height:58px;border-radius:18px;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:900;font-size:20px}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.info{background:var(--bg);border-radius:11px;padding:10px}.info b{display:block;font-size:12px}.info span{font-size:12px;color:var(--muted)}.section{margin-top:12px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff}.bottom{position:fixed;left:0;right:0;bottom:0;z-index:10;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:3px;padding:7px max(5px,env(safe-area-inset-bottom))}.nav{border:0;background:transparent;color:var(--muted);padding:8px 13px;border-radius:10px;font-size:12px}.nav.active{background:var(--soft);color:var(--p);font-weight:800}.overlay{position:fixed;inset:0;background:#0005;display:none;align-items:flex-end;z-index:30}.overlay.show{display:flex}.sheet{background:#fff;width:100%;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:17px 15px calc(20px + env(safe-area-inset-bottom))}.sheet-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:var(--soft);color:var(--p);width:36px;height:36px;border-radius:50%;font-size:20px}.boot{position:fixed;inset:0;background:var(--bg);display:none;align-items:center;justify-content:center;padding:25px;text-align:center;z-index:99}.boot.show{display:flex}.bootbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;max-width:430px}.toast{position:fixed;left:50%;bottom:74px;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 15px;border-radius:10px;display:none;z-index:40;font-size:13px}@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}.overlay{align-items:center;justify-content:center}.sheet{max-width:620px;border-radius:20px}}
 
 /* V3 navigation and menu */
@@ -112,35 +112,6 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 #wfPlanItems .wf-bill-line small{font-size:10px}
 #wfPatientDetails[open] summary,#wfTreatmentPlanSection[open] summary{margin-bottom:8px}
 #wfPatientDetails input,#wfPatientDetails textarea,#wfPatientDetails select,#wfPlanItems input{max-width:100%}
-
-/* V7.9.6: Notion-style triangular toggle indicators for Patient Workflow sections */
-#workflowSheet details.wf-section>summary,
-#workflowSheet details.advanced-fields>summary,
-#workflowSheet details:not(.wf-section):not(.advanced-fields)>summary{
-  list-style:none;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-#workflowSheet details>summary::-webkit-details-marker{display:none!important}
-#workflowSheet details>summary::before{
-  content:""!important;
-  display:inline-block!important;
-  width:0!important;height:0!important;flex:0 0 auto;
-  border-top:4px solid transparent;
-  border-bottom:4px solid transparent;
-  border-left:6px solid var(--muted);
-  transform:rotate(0deg);
-  transform-origin:40% 50%;
-  transition:transform .15s ease;
-  margin-right:1px;
-}
-#workflowSheet details[open]>summary::before{transform:rotate(90deg)}
-#workflowSheet details.wf-section>summary::after,
-#workflowSheet details.advanced-fields>summary::after,
-#workflowSheet details:not(.wf-section):not(.advanced-fields)>summary::after{content:none!important;display:none!important}
-#workflowSheet details>summary:focus-visible{outline:2px solid var(--p);outline-offset:2px;border-radius:6px}
-@media(prefers-reduced-motion:reduce){#workflowSheet details>summary::before{transition:none}}
 </style><style>.v8-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.v8-metrics>div{background:var(--bg);border-radius:11px;padding:9px}.v8-metrics b{display:block;font-size:19px;color:var(--p)}.v8-metrics span{font-size:10px;color:var(--muted)}.apt-card{border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}.apt-top{display:flex;justify-content:space-between;gap:8px;align-items:center}.apt-name{font-weight:800}.apt-meta{font-size:11px;color:var(--muted);margin-top:3px}.apt-status{font-size:10px;padding:4px 7px;border-radius:999px;background:var(--soft);color:var(--p2);white-space:nowrap}.apt-actions{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.apt-actions button{padding:6px 8px;font-size:11px}@media(max-width:380px){.v8-metrics b{font-size:16px}}</style><style>.record-card{padding:11px}.record-card p{font-size:12px;line-height:1.45;margin:7px 0}.record-top{display:flex;justify-content:space-between;gap:8px}.bottom .nav{width:68px}@media(max-width:430px){.bottom .nav{width:20vw;padding:0 3px}.bottom .nav span{font-size:10px}}</style><style>.reminder-card{margin:8px 0}.rem-overdue{border-left:4px solid var(--danger)}#reminderPageList .card{margin:0}</style><style>
 /* DentalFlow V14 Settings & Customization */
 .settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.settings-card h3{margin-bottom:4px}.setting-note{font-size:11px;color:var(--muted);margin-top:4px}.setting-toggle{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;border:1px solid var(--line);border-radius:11px;background:#fff}.setting-toggle input{width:20px;height:20px;accent-color:var(--p)}.settings-saved{font-size:11px;color:var(--p);font-weight:700}.compact-ui main{padding-top:9px}.compact-ui .card{padding:11px}.compact-ui .section{margin-top:8px}.compact-ui .patient{padding:9px}.compact-ui .field{margin:7px 0}@media(max-width:560px){.settings-grid{grid-template-columns:1fr}}
@@ -350,6 +321,50 @@ details > summary::before, details > summary::after { content:none !important; d
 @media(max-width:380px){#workflowSheet .wf-section>summary{padding:9px 10px;gap:7px}#workflowSheet .wf-section-hint{font-size:10px}#workflowSheet .wf-section-body{padding:0 9px 9px}}
 @media(prefers-reduced-motion:reduce){#workflowSheet .wf-section>summary::after{transition:none}}
 </style>
+
+<style id="df-v7-9-7-unified-section-card-layout">
+/* V7.9.7: unify every Patient Workflow section to the reference card layout. */
+#workflowSheet .wf-section{
+  display:block!important;margin:10px 0!important;border:1px solid #dbe5ea!important;
+  border-radius:17px!important;background:#fff!important;overflow:hidden!important;
+  box-shadow:0 1px 1px rgba(15,45,60,.025)!important
+}
+#workflowSheet .wf-section:nth-of-type(even){background:#eef8fc!important}
+#workflowSheet .wf-section>summary{
+  display:flex!important;align-items:center!important;justify-content:flex-start!important;
+  gap:12px!important;min-height:53px!important;padding:12px 15px!important;
+  cursor:pointer!important;list-style:none!important;font-weight:750!important;
+  font-size:15px!important;line-height:1.25!important;color:#203541!important;
+  -webkit-tap-highlight-color:transparent!important
+}
+#workflowSheet .wf-section>summary::-webkit-details-marker{display:none!important}
+#workflowSheet .wf-section>summary::before{
+  content:""!important;display:inline-block!important;flex:0 0 auto!important;width:0!important;height:0!important;
+  border-top:6px solid transparent!important;border-bottom:6px solid transparent!important;
+  border-left:7px solid #718592!important;transform:none!important;transition:transform .15s ease!important
+}
+#workflowSheet .wf-section[open]>summary::before{
+  transform:rotate(90deg)!important
+}
+#workflowSheet .wf-section>summary::after{content:none!important;display:none!important}
+#workflowSheet .wf-section>summary .wf-section-hint{
+  margin-left:auto!important;color:#71808a!important;font-size:12px!important;font-weight:450!important;
+  line-height:1.25!important;text-align:right!important;flex:0 1 auto!important
+}
+#workflowSheet .wf-section>summary:focus-visible{outline:2px solid var(--p);outline-offset:-3px;border-radius:15px}
+#workflowSheet .wf-section>summary:active{background:rgba(2,132,199,.06)!important}
+#workflowSheet .wf-section-body{padding:0 15px 14px!important}
+#workflowSheet .wf-section-body>.field:first-child{margin-top:4px!important}
+#workflowSheet .wf-subsection{margin-top:9px!important;border-radius:12px!important}
+#workflowSheet .wf-subsection>summary{min-height:43px!important;padding:10px 12px!important}
+@media(max-width:380px){
+ #workflowSheet .wf-section>summary{min-height:49px!important;padding:10px 11px!important;gap:9px!important;font-size:14px!important}
+ #workflowSheet .wf-section>summary .wf-section-hint{font-size:10px!important}
+ #workflowSheet .wf-section-body{padding:0 10px 11px!important}
+}
+@media(prefers-reduced-motion:reduce){#workflowSheet .wf-section>summary::before{transition:none!important}}
+</style>
+
 </head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow needs recovery</h3><p id="bootErrorText" class="muted">The app could not safely read its saved data. Do not reset or clear site data. Export the stored data first, then retry loading.</p><div class="actions" style="justify-content:center"><button class="btn secondary" onclick="exportRecoveryData()">Export stored data</button><button class="btn" onclick="location.reload()">Retry load</button></div></div></div>
 <header class="top"><button class="icon-btn menu-trigger" aria-label="Open menu" title="Menu" onclick="toggleMenu(true)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="brand-wrap"><div class="brand">DentalFlow</div><div id="clinicLabel" class="sub">Dental Clinic Management</div></div><div class="header-actions"><button class="icon-btn" aria-label="Quick patient search" title="Quick patient search" aria-expanded="false" onclick="toggleHeaderQuickSearch()"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button></div></header>
