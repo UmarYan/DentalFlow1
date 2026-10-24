@@ -36,3 +36,9 @@ Not performed:
 Rollback:
 - Redeploy DentalFlow_V7.9.2_Navigation_Data_Security.zip if a regression occurs.
 - Export a backup before deployment; do not clear LocalStorage.
+
+
+V7.9.12 — Inline Patient Matching
+- Removed floating/shadowed patient suggestion popup styling. Matching patients and “Add new patient” render as a normal white list directly beneath the search field.
+- Hid the separate always-visible New Patient button; the add-new action remains in the inline match list.
+- Kept existing patient selection logic, storage keys, and record structures unchanged.
