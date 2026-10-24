@@ -1,8 +1,8 @@
-DentalFlow V7.9.4 — Central Edit Workspace
+DentalFlow V7.9.5 — Collapsible Patient Workflow
 
 Stable base: DentalFlow_V7.9.2_Navigation_Data_Security.zip
 
-Change log — V7.9.4
+Change log — V7.9.5
 Inherited from V7.9.3 Unified Patient Workflow:
 - Patient Workflow remains the central creation entry point for patients, clinical visits, follow-ups, appointments, treatment plans, bills, payments, patient records and reminders.
 - Existing Tooth Chart / individual tooth-area UI cleanup and legacy-data preservation are retained from the supplied base.
@@ -39,3 +39,17 @@ Deployment checklist
 Rollback
 - Redeploy `DentalFlow_V7.9.2_Navigation_Data_Security.zip`.
 - Export a backup first. Do not clear LocalStorage.
+
+
+V7.9.5 — Collapsible Patient Workflow:
+- Added consistent compact accordion sections for Patient, Appointment/Arrival, Clinical Visit, Follow-up, Billing & Payment, and existing record management.
+- Kept Patient and Clinical Visit sections expanded by default; optional/longer sections start collapsed to reduce visual clutter and scrolling.
+- Standardized compact section spacing, keyboard focus indication, chevron state, and reduced-motion behavior.
+- Preserved existing record/payment edit flows, field IDs, LocalStorage keys and data schemas.
+- Updated the service-worker cache name to dentalflow-v795-collapsible-patient-workflow.
+
+Automated checks performed for V7.9.5:
+- Python HTML parser integrity check: PASS; no duplicate HTML IDs found.
+- JavaScript syntax checks: PASS for all 13 inline script blocks and the Service Worker.
+- ZIP integrity: PASS after packaging.
+- Browser end-to-end tests: not performed.
