@@ -1,22 +1,29 @@
-DentalFlow V7.9.2 — Treatment Plan Workflow
+DentalFlow V7.9.3 — Unified Treatment Workflow
 
-Base: DentalFlow V7.9.1 Clinic Management Tabs.
+Base: DentalFlow V7.9.2 Treatment Plan Workflow.
 
-Changes in V7.9.2:
-- Added a working More → Treatment Plans view with cross-patient search, status and patient filters, details, edit and patient-profile actions.
-- Added an optional “Add Treatment Plan” choice to Patient Workflow. After the workflow is saved, the linked Treatment Plan form opens with patient, visit link, examination and diagnosis context prefilled. The plan is not saved until treatment items are added and the user confirms Save.
-- Treatment Plan details now allow selecting items to include in a bill. Completed and In progress items are preselected; Planned items are not automatically selected.
-- Selected plan items, tooth/area and estimated fees populate a new bill; fee fields remain editable before saving. The bill stores its linkedPlanId.
-- Existing Patient, Clinical Visit, Appointment, Billing, Finance, Inventory, Lab Tracking and LocalStorage structures are preserved; no data reset or migration was added.
-- Updated title, backup version label, and service-worker cache.
+Changes in V7.9.3:
+- Replaced the separate Tooth/Area selector in Treatment Plan item entry with one Treatment / Service Name field. Tooth or area can be included in that name. Legacy plan items keep their previous tooth information, displayed together with the service name.
+- Added service-name suggestions from existing bills, plans, and clinical visits to reduce repeated typing.
+- Clinical Visit now has independent optional Create Treatment Plan and Create Bill actions. Patient, examination, diagnosis, chief complaint, treatment done, and visit link are carried into the next form when relevant. Multiple lines in Treatment Done are prefilled as separate bill items, with fees to review.
+- Treatment Plan has an optional Create Bill action. Completed and In progress items are prefilled; Planned items are not automatically billed. The Bill form also lets the user explicitly select other items from the linked plan. Fees remain editable before saving.
+- Patient Workflow keeps its optional Treatment Plan action and now has an explicit optional Create Bill choice. Adding a billing item selects it automatically; unchecking the option saves the workflow without creating a bill. If both plan and bill are requested before bill items exist, the plan is saved first and billing opens afterwards.
+- Bills created from Clinical Visit / Treatment Plan retain visit and/or plan references.
+- No data reset or blanket migration; existing patient, clinical, appointment, billing, finance, inventory, laboratory, and LocalStorage records are preserved.
+
+Checks performed:
+- Inline JavaScript syntax checks (all inline scripts).
+- Service worker syntax check.
+- HTML parsing, duplicate ID scan, manifest JSON validation, and ZIP integrity check.
+- Targeted static checks for unified treatment-name rendering, optional plan/bill hand-off, and recent-service suggestions.
+- Browser launch was attempted in headless Chromium but blocked by the environment; no browser E2E test is claimed.
 
 Deployment:
 1. Export a DentalFlow backup before deployment.
 2. Extract the ZIP and publish the contents of the DentalFlow folder to the existing GitHub Pages deployment.
-3. Reload the app and test More → Treatment Plans, Patient Workflow → Add Treatment Plan, and plan → bill.
+3. Test Patient Workflow, Clinical Visit, Treatment Plan add/edit, service suggestions, and each optional next-step combination.
+4. Confirm planned items are not automatically billed and review all fees before saving a bill.
 
 Rollback:
-- Redeploy DentalFlow V7.9.1_Clinic_Management_Tabs.zip.
-- Export a backup first and do not clear LocalStorage. Bills created from plans in this version keep their plan link in the new version's data; older app versions may not display that link.
-
-Browser end-to-end testing is not claimed.
+- Redeploy DentalFlow V7.9.2_Treatment_Plan_Workflow.zip.
+- Export a backup first and do not clear LocalStorage. New records use the existing collections; older versions may not display the newer visit/plan link fields.
