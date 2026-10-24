@@ -1,3 +1,33 @@
+DentalFlow V7.9.18 — Patient & Visit List Clinical Summary
+
+Changes:
+- Patient List cards no longer display Patient ID; they show the patient name and a compact address · phone line when those values exist.
+- Visit List cards show Complaint, Examination findings, and Treatment done instead of Diagnosis, with empty fields omitted.
+- Preserved internal patient IDs, record links, LocalStorage keys, and stored clinical data.
+- Updated the service-worker cache name to ensure deployed clients can fetch the new UI.
+
+Quality checks performed:
+- ZIP integrity check.
+- JavaScript syntax check for all inline script blocks and service worker.
+- Manifest JSON parse.
+- HTML structure parse and targeted renderer assertions.
+
+Not performed:
+- Real browser/mobile PWA testing.
+- Live LocalStorage regression testing with an existing clinic dataset.
+
+Post-deployment checklist:
+1. Open Patient List and verify each card shows name, address and phone (no ID).
+2. Open Visits and verify cards show Complaint, Examination and Treatment done—not Diagnosis.
+3. Check visits with missing fields and long clinical text.
+4. Open visit details, edit a visit, and open its patient profile.
+5. Confirm existing patients, visits, bills and payments remain present.
+
+Rollback:
+- Redeploy DentalFlow_V7.9.17_Compact_Patient_Matching.zip.
+- Export a data backup before deployment; do not clear LocalStorage.
+
+--- Previous release notes ---
 DentalFlow V7.9.10 — Patient Autocomplete Workflow
 
 Changes:
