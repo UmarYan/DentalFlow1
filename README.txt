@@ -1,22 +1,25 @@
-DentalFlow V7.9.2 — Treatment Plan Before Treatment Done
+DentalFlow V7.9.3 — Compact Treatment Plan & Auto Sync
 
-Stable base: DentalFlow_V7.9.1_Clinic_Management_Tabs.zip
+Base: DentalFlow V7.9.2_Treatment_Plan_Before_Treatment_Done.zip
 
-Changes in V7.9.2:
-- Added a compact optional Treatment Plan section before Treatment Done in the standard Clinical Visit and Unified Patient Workflow.
-- Planned procedure, tooth/area, estimated fee, and priority are saved as a treatment-plan item linked to the patient and clinical visit.
-- “Completed today” is an explicit choice; a planned item is marked Completed only when selected and actual treatment is documented.
-- Immediate treatment remains supported: leave the plan fields blank and record the actual Treatment Done directly.
-- Preserved existing patient, visit, plan, appointment, billing, payment, and LocalStorage structures; no migration or reset is performed.
-- Updated the service-worker cache version.
+Changes in V7.9.3:
+- Simplified Treatment Plan item entry: Planned Treatment, Estimated Cost, and Status are aligned horizontally on desktop; compact responsive layout on mobile.
+- Tooth/Area remains available as a compact field. Priority and notes moved under optional “More details”.
+- Added “Completed today” as a clear status choice.
+- When a plan item is saved as Completed, its treatment is added to the patient’s Treatment Done record (linked to a clinical visit) and an open billing record is created once per plan item.
+- The generated bill carries the estimated cost as a suggested fee and clearly notes that the actual fee must be verified before finalizing. No payment is recorded automatically.
+- Sync is idempotent for linked plan items to avoid duplicate bills on repeated saves.
+- Existing immediate-treatment workflow remains available.
+- Existing LocalStorage keys and data structure remain in place; no reset or migration is performed.
 
 Deployment:
-1. Export a DentalFlow backup before deployment.
+1. Export a DentalFlow JSON backup before deployment.
 2. Extract the ZIP and publish the contents of the DentalFlow folder to the existing GitHub Pages deployment.
-3. Reload the app and test both planned-treatment and immediate-treatment paths.
+3. Test a Planned item, then mark it Completed today. Confirm Treatment Done and Billing show the item, check the generated bill fee, and verify no payment was recorded automatically.
+4. Test an immediate treatment without a plan and verify existing records remain intact.
 
 Rollback:
-- Redeploy DentalFlow_V7.9.1_Clinic_Management_Tabs.zip.
-- Export a backup first and do not clear LocalStorage.
+- Redeploy DentalFlow_V7.9.2_Treatment_Plan_Before_Treatment_Done.zip (the immediate previous build) or the designated stable base DentalFlow_V7.9.1_Clinic_Management_Tabs.zip.
+- Export a backup first. Do not clear LocalStorage.
 
-Checks performed for this build are listed in the delivery message. Browser end-to-end testing is not claimed unless explicitly stated.
+Quality checks: see delivery notes. Browser end-to-end testing is not claimed unless explicitly performed.
