@@ -1,13 +1,11 @@
-DentalFlow V7.9.4 — Simple Enter-Based Treatment Plan
+DentalFlow V7.9.5 — Patient Workflow Cleanup
 
-Changes
-- Treatment Plan editor now contains only Planned procedures, Estimated cost, and Status (plus required Patient selection).
-- Removed plan title, tooth/area, priority, quick templates, notes, and the Add button from the Treatment Plan editor.
-- Enter in Planned procedures moves to Estimated cost; Enter in Estimated cost or Status adds the current item.
-- Multiple procedures can be entered in sequence without an Add button.
-- Each item can be Planned or Completed today. Completed items continue to sync to Treatment Done and Billing with fee review; no payment is marked received automatically.
-- Existing stored plan item fields and LocalStorage compatibility are retained.
+Base: user-designated stable base DentalFlow_V7.9.2_Navigation_Data_Security.zip (V7.9.2).
 
-Base: DentalFlow V7.9.3 Compact Treatment Plan & Auto Sync.
+Change log
+- Removed the tooth chart, individual tooth/area selection and status editor, tooth-context sheet, profile tooth chips, and tooth/area fields from new clinical, treatment-plan, billing, and laboratory forms.
+- Removed the corresponding tooth-specific picker, chart-rendering, context and hide-only helper code.
+- Kept Patient Workflow as the unified creation entry point and retained the single Patient Workflow FAB.
+- Kept existing saved records and legacy tooth-related properties in stored data for backward compatibility; no patient or clinical data was cleared or migrated.
 
-Checks: JavaScript syntax, HTML parsing, manifest JSON, and ZIP integrity checked. Browser interaction testing was not performed.
+Checks performed: HTML parser, inline JavaScript syntax checks, service-worker syntax, manifest JSON parsing, ZIP integrity, and static checks for removed tooth-chart UI/handlers. Browser-based testing was not performed.
