@@ -1,17 +1,33 @@
-DentalFlow V7.8.66 — Simple Laboratory Tracking
+DentalFlow V7.8.69 — Materials Purchase Account Sync
 
-Base: DentalFlow V7.8.65 Finance & Inventory Usability.
+Base: DentalFlow V7.8.68 Lab Expense Account Balance Sync.
 
-Changes in V7.8.66:
-- Added a simple Laboratory Tracking workspace for crown, bridge, denture, inlay/onlay, night guard and other lab cases.
-- Each case links to an existing patient and records work type, tooth/area, laboratory, sent date, expected return date, lab cost, status and optional note.
-- Added compact status summaries for In progress, Ready to fit and Overdue, plus search and status filters.
-- Added quick status actions: Mark sent, Received and Mark fitted. Cases can be edited; Cancelled status is available instead of deleting history.
-- Overdue is shown when a case is marked Sent to lab and its expected return date has passed.
-- Laboratory data is stored in the existing DentalFlow data object, included in normal backup/restore, and normalized without changing existing patient, clinical, appointment, billing, finance or inventory records.
-- No external dependencies added.
+Changes in V7.8.69:
+- Materials Inventory Stock In now requires a valid existing Cash, Bank, UPI or other Finance account when Total purchase cost is greater than ₹0.
+- The selected account is stored on the linked Materials expense, so the existing Finance account-balance calculation deducts the purchase amount from that account.
+- A zero-cost stock-in can still be recorded without a payment account.
+- The account check happens before stock or finance records are changed.
+- Adding opening stock does not create a new Finance expense, because the opening stock may represent a purchase already accounted for.
+- Existing stock, purchase, expense, lab, patient, clinical, appointment, billing and LocalStorage records are preserved; no data reset or new dependency added.
 
-Deployment: Extract the ZIP and publish the contents of the DentalFlow folder to the existing GitHub Pages deployment.
-Rollback: Redeploy the previous V7.8.65 ZIP (or the designated V7.8.63 stable base if required). Export a backup first and do not clear LocalStorage. Lab records created in this version may not appear in older versions.
+Deployment:
+1. Export a DentalFlow backup before deployment.
+2. Extract the ZIP and publish the contents of the DentalFlow folder to the existing GitHub Pages deployment.
+3. Reload the app. If an older cached version remains, close/reopen the PWA or refresh after the service worker updates.
 
-Validation performed: JavaScript syntax checks, HTML parsing, duplicate-ID scan, manifest JSON parsing, service-worker syntax, ZIP integrity, required-file checks and static laboratory-handler checks. Browser end-to-end testing was not performed.
+Rollback:
+- Redeploy the prior DentalFlow V7.8.68 ZIP.
+- Export a backup first and do not clear LocalStorage.
+
+Automated checks performed for this build:
+- JavaScript syntax checks for all inline scripts.
+- Service-worker syntax check.
+- HTML parsing and duplicate-ID scan.
+- Manifest JSON parsing.
+- ZIP integrity and required-file checks.
+- Static and targeted logic checks for required account selection on paid stock-in, valid account assignment, and compatibility with Finance expense account-balance calculation.
+
+Limitations:
+- Browser end-to-end testing was not performed.
+- The app records the selected account as the payment source; it does not independently verify that money was actually paid.
+- Historical stock-in records without a linked expense are not retroactively converted to expenses, to avoid duplicate accounting.
