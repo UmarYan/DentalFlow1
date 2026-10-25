@@ -1,10 +1,9 @@
-DentalFlow V7.9.40 — Record-Specific Edit Headers Fix
+DentalFlow V7.9.39 — Patient Workflow Header
 
 Stable base: V7.9.33 — Patient Workflow Visit Edit Fix ZIP supplied for this task.
 Changes:
-- Restored dynamic “Edit · …” header labels for central workflow editing.
-- Every edit invocation sets the title from the current record type, including Bill and Payment, preventing stale headers from a previous edit.
-- No workflow fields, save logic, data schema, or LocalStorage keys intentionally changed.
+- Renamed the central workflow edit sheet header from the record-specific “Edit · …” title to “Patient Workflow”.
+- No workflow fields, save behavior, data structures, or LocalStorage keys intentionally changed.
 - Updated Service Worker cache name.
 
 Previous release notes retained below:

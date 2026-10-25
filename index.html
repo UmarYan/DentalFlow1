@@ -871,7 +871,7 @@ function openCentralWorkflowEdit(type,id){
      var pm=bill&&(bill.payments||[]).find(function(q){return q.id===id});if(!bill||!pm){toast('Payment not found');return}
      sh.dataset.editBillId=bill.id;centralEditSet('wfExistingBill',bill.id);centralEditSet('wfExistingPayment',pm.amount);centralEditSet('wfExistingMode',pm.mode||'Cash');$('wfCollectExistingPayment').open=true;
    }
-   var wh=sh.querySelector('.sheet-head h2');if(wh){var editTypeLabel={patient:'Patient information',visit:'Clinical visit',plan:'Treatment plan',appointment:'Appointment',followup:'Follow-up',reminder:'Reminder / task',record:'Record / document',bill:'Bill',payment:'Payment'}[type]||'Record';wh.textContent='Edit · '+editTypeLabel;}
+   var wh=sh.querySelector('.sheet-head h2');if(wh)wh.textContent='Patient Workflow';
  },0);
 }
 function saveCentralWorkflowEdit(){
