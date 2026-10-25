@@ -1,6 +1,33 @@
-DentalFlow V7.9.41 — Treatment Plan Info Icon Position
-Change log: Preserved the patient-name-first Treatment Plans list; removed the auto-inserted left-side info button by placing the info trigger in the right action cluster, where it opens inline plan details. Edit and Schedule actions remain. Existing data structures and LocalStorage keys are unchanged.
-Base: user-designated Stable Base V7.9.38. Only the approved Treatment Plans list changes were reapplied.
+DentalFlow V7.9.42 — Treatment Plan Name List & Info Actions
+
+Stable base: DentalFlow V7.9.39 — Treatment Plan Cards (explicitly designated by the user).
+Changes in this build:
+- More → Treatment Plans now uses a patient-name-first card list; the plan title, status, item count/completion and date remain in the secondary line.
+- Kept the Details/Info icon in the right-side action group alongside Edit and Schedule.
+- Excluded Treatment Plan list cards from the generic inline-expansion enhancer so it no longer injects an extra info button at the left edge.
+- Preserved treatment-plan search, existing handlers, records, LocalStorage keys/data structures, and other app files.
+- Updated page title, Service Worker cache name, and this change log.
+
+Checks performed: ZIP integrity, required-file inventory, HTML parsing, JavaScript syntax (Node.js when available), and targeted source assertions. Browser interaction testing was not performed.
+Rollback: redeploy the unchanged user-designated DentalFlow_V7.9.39_Treatment_Plan_Cards.zip.
+
+--- Previous release notes ---
+
+DentalFlow V7.9.39 — Treatment Plan List Cards
+
+Stable base: DentalFlow_V7.9.38_Global_Action_Icons_Fix.zip (user-designated stable base).
+Changes:
+- Restored/implemented the More → Treatment Plans destination as a working all-patient treatment-plan list (the base linked to a `plans` view but had no matching section).
+- Treatment plan cards reuse the compact Visits card geometry and typography, with Patient Details-style Details, Edit, and Schedule icons where applicable.
+- Added search across plan title/status/notes, patient identity, and treatment-item details.
+- Existing treatment-plan records, handlers, LocalStorage keys, and data structures are preserved; no migration or data reset added.
+- Updated the document version label and Service Worker cache name.
+
+Checks planned/performed are reported in the delivery note; browser interaction testing was not performed.
+
+Rollback: redeploy the unchanged DentalFlow_V7.9.38_Global_Action_Icons_Fix.zip.
+
+--- Previous release notes ---
 
 DentalFlow V7.9.38 — Global Action Icons Fix
 
