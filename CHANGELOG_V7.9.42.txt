@@ -1,5 +1,0 @@
-DentalFlow V7.9.42 — Info Icon Render Fix
-- Standardized information icon SVGs across patient, clinical visit, and billing records.
-- Added explicit SVG stroke/fill overrides to prevent icons rendering as solid black dots.
-- No data keys or record schemas changed.
-- Browser/Android testing not performed.
