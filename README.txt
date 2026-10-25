@@ -1,9 +1,11 @@
-DentalFlow V7.9.39 — Patient Workflow Header
+DentalFlow V7.9.38 — Global Action Icons Fix
 
 Stable base: V7.9.33 — Patient Workflow Visit Edit Fix ZIP supplied for this task.
 Changes:
-- Renamed the central workflow edit sheet header from the record-specific “Edit · …” title to “Patient Workflow”.
-- No workflow fields, save behavior, data structures, or LocalStorage keys intentionally changed.
+- Fixed the global .df-action-icon CSS rule that set font-size:0!important, hiding text-glyph Details/Edit/action icons throughout the app.
+- Global action buttons now allow visible text glyphs while retaining their existing icon SVG styling.
+- Kept patient profile compact card styling and the agreed section names: Treatment Plans, Bills & Payments, Clinical Visits.
+- No data schema or LocalStorage keys intentionally changed.
 - Updated Service Worker cache name.
 
 Previous release notes retained below:
