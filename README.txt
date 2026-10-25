@@ -1,13 +1,3 @@
-DentalFlow V7.9.38 — Patient Workflow
-
-Change log:
-- Treatment Plan cards show only plan title, status, completion count and estimate; full details remain under View.
-- Billing cards show bill title, status, date, total, paid and due; payment details remain under View.
-- Visit History cards show date/time and diagnosis/reason; full clinical details remain under View.
-- View and Edit actions remain visible on each record card.
-- Existing data keys and record structures are unchanged.
-
-Previous rollback version: V7.9.34.
 DentalFlow V7.9.28 — Compact Workflow Forms
 
 Changes:
@@ -70,28 +60,3 @@ Version 7.9.33 — Patient Workflow
 - Browser/Android interaction testing was not performed.
 
 Rollback: redeploy DentalFlow_V7.9.32_Central_Patient_Workflow_Editing.zip.
-
-V7.9.34 — Patient Workflow Compact Record Cards
-- Made individual Treatment Plan, Bill/Payment, and Clinical Visit records inside Patient Details more compact, matching the existing compact appointment/follow-up/reminder/document row style.
-- Added visible, consistently sized View and Edit icon actions to patient-detail clinical visits and bills; treatment-plan cards retain visible details/edit icons.
-- Added visible View/Edit actions for individual payments in bill payment history.
-- Edit actions continue routing to Central Patient Workflow for the selected existing record.
-- No intentional changes to LocalStorage keys or record schemas.
-
-Checks performed for V7.9.34:
-- HTML parser check passed.
-- All 13 inline JavaScript blocks passed Node.js syntax checks.
-- Service Worker JavaScript syntax check passed.
-- manifest.json parsed successfully.
-- ZIP integrity checked after packaging.
-- Existing duplicate IDs were detected in the source (appointments, clinicManagement, dfF_); not introduced intentionally by this update.
-- Real browser/Android interaction testing was not performed.
-
-Rollback:
-- Redeploy DentalFlow_V7.9.33_Patient_Workflow_Visit_Edit_Fix.zip.
-
-
-V7.9.38 — Restored visible View (eye) and Edit (pencil) actions. View opens the details popup; Edit opens the central Patient Workflow. Clinical visit editor heading remains “Patient Workflow”.
-
-
-V7.9.38 change log: Replaced eye/view icons with information icons across the application. Information actions continue to open the existing details view/popup. No data schema or LocalStorage keys changed.
