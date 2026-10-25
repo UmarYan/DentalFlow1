@@ -1,13 +1,13 @@
-DentalFlow V7.9.22 — Patient & Visit List Cleanup
+DentalFlow V7.9.24 - Simplified Patient Workflow
 
 Changes:
-- Patient List cards show address and phone after the patient name; Patient ID is no longer shown in the visible card metadata.
-- Clinical Visits cards show the actual complaint, examination finding, and treatment content without the labels “Complaint:”, “Examination:”, or “Treatment done:”.
-- Patient IDs remain stored and searchable internally; existing linked records and LocalStorage structures are unchanged.
-- Preserved prior Clinic Management tab layout and other existing functionality.
+- Combined the Patient Workflow existing-records directory label with Visit History so previous visits and other saved records are found in one expandable section.
+- The combined section continues to manage visits, patient records, treatment plans, appointments, follow-ups, reminders, bills and payments using their existing record structures.
+- Removed the separate Timeline accordion from the patient profile to reduce duplication. Underlying timeline data and records are not deleted; only the separate UI entry was removed.
+- Preserved other workflow sections, visit-time alignment, Clinic Management Finance/Inventory/Lab Tracking tabs, and LocalStorage structures.
 
-Base: DentalFlow V7.9.21 — Clinical Workflow Tab Spacing Fix.
+Base: DentalFlow V7.9.23 - Visit Time & Aligned Management Tabs.
 
 Checks performed: ZIP integrity, HTML parsing, inline JavaScript syntax, service worker syntax, manifest JSON parsing, and targeted UI assertions. Real browser/mobile testing and existing LocalStorage regression testing were not performed.
 
-Rollback: redeploy the previous DentalFlow V7.9.21 ZIP if needed. Do not clear LocalStorage.
+Rollback: redeploy DentalFlow V7.9.23 if needed. Do not clear LocalStorage.
