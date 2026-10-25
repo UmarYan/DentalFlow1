@@ -1,3 +1,15 @@
+DentalFlow V7.9.34 — Patient Profile Section Renaming
+
+Changes:
+- Renamed the patient-profile section “Billing & Payments” to “Bills & Payments”.
+- Renamed the patient-profile section “Visit History” to “Clinical Visits”.
+- Kept “Treatment Plans” unchanged, as requested.
+- No data structures, patient records, clinical data, appointments, billing logic, or LocalStorage keys were intentionally changed.
+- Updated the Service Worker cache name to ensure clients refresh to this release.
+
+Base: DentalFlow V7.9.33 — Patient Workflow Visit Edit Fix ZIP supplied for this task.
+Previous README content retained below as historical notes:
+
 DentalFlow V7.9.28 — Compact Workflow Forms
 
 Changes:
