@@ -1,22 +1,28 @@
-DentalFlow V7.9.45 — Treatment Plan Inline Info Fix
+DentalFlow V7.9.46 — Visits Search
 
-Development starting point: DentalFlow V7.9.43 — Treatment Plan Date Groups (explicitly authorized by the user for this update).
-Official Stable Base remains: DentalFlow V7.9.39 — Treatment Plan Cards.
+Base:
+- Built directly on the user-provided DentalFlow_V7.9.45_Treatment_Plan_Inline_Info_Fix.zip.
+- V7.9.45 remains unchanged for rollback.
 
-Changes in V7.9.45:
-- Excluded More → Treatment Plans cards from the legacy global inline-info enhancement, preventing an unwanted left-side ⓘ button from being injected.
-- Preserved the existing right-side Details (ⓘ), Edit, and Schedule actions and their handlers.
-- Preserved patient-name-first cards, date-wise grouping, search, and existing plan rendering.
-- Updated document version label and Service Worker cache name.
+Changes:
+- Added a compact search field to the Clinical Visits section.
+- Searches visit patient name, linked patient name, visit date/time, visit IDs, complaint/reason, history, examination, diagnosis, treatment, prescription, advice, notes, and follow-up values.
+- Shows the number of matching visits and a clear-search button.
+- Search results retain the existing date groups, visit cards, inline details, patient profile action, and edit action.
+- Added an accessible label and live result count.
+- Updated the document version and Service Worker cache name.
 
-Data safety: No LocalStorage keys, data structures, patient records, or treatment-plan records were changed or migrated.
+Data safety:
+- No LocalStorage keys, data structures, patient records, visit records, or clinical data were reset, migrated, or renamed.
 
-Verification performed for this build:
-- ZIP integrity and required project files.
-- HTML parsing and JavaScript syntax checks.
-- Service Worker syntax and manifest JSON validation.
-- Source inspection confirming the Treatment Plans exclusion is applied before legacy inline-details injection.
-- File-level comparison against V7.9.43; only index.html, sw.js, and README.txt changed.
-- Browser interaction testing was not performed.
+Checks:
+- ZIP integrity checked after packaging.
+- HTML parser check.
+- Inline JavaScript syntax check with Node.js.
+- Service Worker syntax check with Node.js.
+- Manifest JSON validation.
+- Targeted source checks for search input, filtering, result count, clear action, and existing visit card actions.
+- Browser/Android interaction testing was not performed.
 
-Rollback: Redeploy the unchanged DentalFlow_V7.9.43_Treatment_Plan_Date_Groups.zip to restore the immediate prior build. The user's officially designated Stable Base remains DentalFlow_V7.9.39_Treatment_Plan_Cards.zip unless explicitly changed by the user.
+Rollback:
+- Redeploy the unchanged DentalFlow_V7.9.45_Treatment_Plan_Inline_Info_Fix.zip.
