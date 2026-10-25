@@ -1,4 +1,4 @@
-DentalFlow V7.9.35 — Patient Record Cards: Essential Info
+DentalFlow V7.9.36 — Patient Record Cards: Essential Info
 
 Change log:
 - Treatment Plan cards show only plan title, status, completion count and estimate; full details remain under View.
@@ -89,3 +89,6 @@ Checks performed for V7.9.34:
 
 Rollback:
 - Redeploy DentalFlow_V7.9.33_Patient_Workflow_Visit_Edit_Fix.zip.
+
+
+V7.9.36 — Plain eye/pencil icons (no circles); strengthened Patient Workflow Clinical Visit edit prefill and opens advanced clinical fields.
