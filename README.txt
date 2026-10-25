@@ -1,10 +1,10 @@
-DentalFlow V7.9.36 — Patient Profile Card Style Match
+DentalFlow V7.9.38 — Global Action Icons Fix
 
 Stable base: V7.9.33 — Patient Workflow Visit Edit Fix ZIP supplied for this task.
 Changes:
-- Treatment Plans, Bills & Payments, and Clinical Visits records now use the exact existing profile-mini-row card structure and styles used by Appointments & Follow-ups, Reminders & Tasks, and Records & Documents.
-- Main/secondary text hierarchy, font sizes, row padding, border, radius, and compact layout are shared rather than separately redefined.
-- Kept concise summaries and Details/Edit actions; billing retains payment/receipt actions and treatment plans retain a schedule action where applicable.
+- Fixed the global .df-action-icon CSS rule that set font-size:0!important, hiding text-glyph Details/Edit/action icons throughout the app.
+- Global action buttons now allow visible text glyphs while retaining their existing icon SVG styling.
+- Kept patient profile compact card styling and the agreed section names: Treatment Plans, Bills & Payments, Clinical Visits.
 - No data schema or LocalStorage keys intentionally changed.
 - Updated Service Worker cache name.
 
