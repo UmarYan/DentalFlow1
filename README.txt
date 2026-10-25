@@ -42,3 +42,10 @@ Checks performed for V7.9.30:
 - Real browser/Android interaction testing was not performed.
 
 Rollback: redeploy DentalFlow_V7.9.29_OneLine_Treatment_Entry.zip.
+
+
+Version 7.9.32 — Central Patient Workflow Editing
+- Patient Details edit actions route into the central Patient Workflow.
+- The selected record type is prefilled and its matching workflow section is opened while other sections remain collapsed.
+- Central save updates the existing patient, visit, treatment plan, appointment, follow-up, reminder, record, bill, or payment record rather than creating a duplicate.
+- Static validation: inline JavaScript syntax, service-worker syntax, manifest JSON, HTML parser, and ZIP integrity checked. Browser interaction testing was not performed.
