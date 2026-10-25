@@ -1,4 +1,4 @@
-DentalFlow V7.9.37 — Patient Workflow
+DentalFlow V7.9.38 — Patient Workflow
 
 Change log:
 - Treatment Plan cards show only plan title, status, completion count and estimate; full details remain under View.
@@ -91,4 +91,7 @@ Rollback:
 - Redeploy DentalFlow_V7.9.33_Patient_Workflow_Visit_Edit_Fix.zip.
 
 
-V7.9.37 — Restored visible View (eye) and Edit (pencil) actions. View opens the details popup; Edit opens the central Patient Workflow. Clinical visit editor heading remains “Patient Workflow”.
+V7.9.38 — Restored visible View (eye) and Edit (pencil) actions. View opens the details popup; Edit opens the central Patient Workflow. Clinical visit editor heading remains “Patient Workflow”.
+
+
+V7.9.38 change log: Replaced eye/view icons with information icons across the application. Information actions continue to open the existing details view/popup. No data schema or LocalStorage keys changed.
