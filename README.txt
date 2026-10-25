@@ -28,14 +28,8 @@ Rollback:
 - Redeploy the unchanged DentalFlow_V7.9.45_Treatment_Plan_Inline_Info_Fix.zip.
 
 
-Version: V7.9.48
+Version: V7.9.47
 Change log:
 - Visits list cards reuse the Patient Details Clinical Visits mini-card layout and Details/Edit actions.
 - Billing list cards reuse the Patient Details Bills & Payments mini-card layout and Details/Edit/Payment/Receipt actions.
 - Preserved visit search, billing search, billing summary metrics, and existing data structures.
-
-
-V7.9.48 — Visits & Billing Card Parity
-- Visits cards use Patient Details compact-card geometry, Patient Name as the title, visit details as content, and visible View/Edit icons. Existing date grouping and search are retained.
-- Billing cards use compact card sizing and typography; Patient Name is the title and bill/date/paid/due amounts remain in the content. Existing billing/payment actions are retained.
-- No older-version features were reintroduced; no data schema or LocalStorage keys were changed.
