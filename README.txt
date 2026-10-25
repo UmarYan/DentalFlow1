@@ -1,18 +1,21 @@
-DentalFlow V7.9.27 - Compact Treatment Plan Cards
+DentalFlow V7.9.28 — Compact Workflow Forms
 
 Changes:
-- Fixed the Treatment Plans card layout on Patient Details. The context-row grid was forcing card children into narrow columns, causing the large blank area and awkward wrapping shown in the supplied screenshot.
-- Treatment plan cards now use a full-width compact flow; treatment, status, fee and actions stay close together and use fewer lines where practical.
-- Kept the existing quick-pick and custom treatment entry.
-- No patient, clinical, treatment-plan, appointment, billing, payment or LocalStorage data structures were intentionally changed.
+- Compactened the Treatment Plan editor: reduced field spacing, smaller quick-pick buttons, tighter item rows, and a more compact estimated-total area.
+- Quick-pick procedures wrap neatly instead of forcing a horizontally clipped row.
+- Compactened Patient Workflow section headers, fields, bill items and billing summaries.
+- Advanced existing-bill collection and extra billing options start collapsed in a fresh workflow; open them when needed. Existing functionality remains available.
+- Kept the existing plan, visit, billing and payment logic and LocalStorage structures unchanged.
+- No intentionally removed features or data migrations.
 
 Checks performed:
-- ZIP integrity checked.
+- ZIP integrity tested after packaging.
 - HTML parser check performed.
-- Inline JavaScript syntax check performed with Node.js where available.
-- Service Worker syntax and manifest JSON checked.
-- Targeted assertions checked for the new scoped CSS, treatment-plan renderer and retained quick-pick.
-- Real browser/Android interaction testing was not performed in this environment.
+- Inline JavaScript syntax checked with Node.js.
+- Service Worker syntax checked with Node.js.
+- Manifest JSON validated.
+- Targeted checks verified compact CSS, quick-pick controls, plan item renderer and workflow billing controls remain present.
+- Real browser/Android interaction testing was not performed.
 
 Rollback:
-- Redeploy DentalFlow_V7.9.26_Treatment_Quick_Pick.zip.
+- Redeploy DentalFlow_V7.9.27_Compact_Treatment_Plan_Cards.zip.
