@@ -1,5 +1,6 @@
-DentalFlow V7.9.40 — Treatment Plan List Refinement
-Change log: More > Treatment Plans now uses patient-name-first cards, retains plan title/status summary, and removes the Details/info action while preserving Edit and Schedule actions. Based on user-designated Stable Base V7.9.38; prior V7.9.39 list implementation was used only as a reference for the previously requested feature.
+DentalFlow V7.9.41 — Treatment Plan Info Icon Position
+Change log: Preserved the patient-name-first Treatment Plans list; removed the auto-inserted left-side info button by placing the info trigger in the right action cluster, where it opens inline plan details. Edit and Schedule actions remain. Existing data structures and LocalStorage keys are unchanged.
+Base: user-designated Stable Base V7.9.38. Only the approved Treatment Plans list changes were reapplied.
 
 DentalFlow V7.9.38 — Global Action Icons Fix
 
