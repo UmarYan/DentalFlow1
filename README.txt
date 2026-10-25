@@ -1,18 +1,18 @@
-DentalFlow V7.9.26 - Treatment Quick Pick
+DentalFlow V7.9.27 - Compact Treatment Plan Cards
 
 Changes:
-- Added a compact native quick-pick list for common treatment names in Patient Workflow.
-- Custom procedure names remain supported by free-text entry.
-- No default fees are assumed; enter the clinic's actual estimate for each treatment.
-- Kept the supplied V7.9.25 patient, clinical, treatment plan, appointment, billing, payment and LocalStorage structures unchanged.
+- Fixed the Treatment Plans card layout on Patient Details. The context-row grid was forcing card children into narrow columns, causing the large blank area and awkward wrapping shown in the supplied screenshot.
+- Treatment plan cards now use a full-width compact flow; treatment, status, fee and actions stay close together and use fewer lines where practical.
+- Kept the existing quick-pick and custom treatment entry.
+- No patient, clinical, treatment-plan, appointment, billing, payment or LocalStorage data structures were intentionally changed.
 
 Checks performed:
 - ZIP integrity checked.
 - HTML parser check performed.
-- Inline JavaScript syntax check performed where supported.
-- Manifest JSON and service worker syntax checked.
-- Targeted assertion confirmed the treatment quick-pick is present and custom text input remains enabled.
-- Real browser/mobile interaction testing was not performed in this environment.
+- Inline JavaScript syntax check performed with Node.js where available.
+- Service Worker syntax and manifest JSON checked.
+- Targeted assertions checked for the new scoped CSS, treatment-plan renderer and retained quick-pick.
+- Real browser/Android interaction testing was not performed in this environment.
 
 Rollback:
-- Redeploy DentalFlow_V7.9.25_Compact_Treatment_Plans.zip.
+- Redeploy DentalFlow_V7.9.26_Treatment_Quick_Pick.zip.
