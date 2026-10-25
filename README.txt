@@ -1,14 +1,14 @@
-DentalFlow V7.9.35 — Patient Profile Compact Cards
+DentalFlow V7.9.36 — Patient Profile Card Style Match
 
-Base: DentalFlow V7.9.33 Patient Workflow Visit Edit Fix ZIP.
+Stable base: V7.9.33 — Patient Workflow Visit Edit Fix ZIP supplied for this task.
 Changes:
-- Treatment Plans, Bills & Payments, and Clinical Visits content now uses compact appointment-style cards.
-- Reduced visible details to a short title and one summary line; detailed information remains available through the info button.
-- Retained edit, payment, and receipt actions where applicable.
-- No data schema or LocalStorage keys were intentionally changed.
+- Treatment Plans, Bills & Payments, and Clinical Visits records now use the exact existing profile-mini-row card structure and styles used by Appointments & Follow-ups, Reminders & Tasks, and Records & Documents.
+- Main/secondary text hierarchy, font sizes, row padding, border, radius, and compact layout are shared rather than separately redefined.
+- Kept concise summaries and Details/Edit actions; billing retains payment/receipt actions and treatment plans retain a schedule action where applicable.
+- No data schema or LocalStorage keys intentionally changed.
 - Updated Service Worker cache name.
 
-Previous release notes:
+Previous release notes retained below:
 
 DentalFlow V7.9.28 — Compact Workflow Forms
 
