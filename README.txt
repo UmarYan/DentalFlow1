@@ -25,3 +25,20 @@ V7.9.29 — One-Line Treatment Entry
 - Procedure, estimate, priority and status share one compact row on mobile.
 - Planned-treatment rows use less height and a shorter bill action.
 - No LocalStorage keys or existing record structures changed.
+
+
+V7.9.30 — Compact UI Across Sections
+- Applied consistent compact spacing to Patient, Visits, Billing, settings, summaries, forms, cards and expandable workflow sections.
+- Reduced excess padding, gaps, field heights and card whitespace while preserving readable text and usable touch targets.
+- Kept existing features, event handlers, LocalStorage keys and record structures unchanged; no data migration.
+
+Checks performed for V7.9.30:
+- ZIP integrity verified after packaging.
+- HTML parser check performed.
+- Inline JavaScript syntax checked with Node.js.
+- Service Worker syntax checked with Node.js.
+- Manifest JSON validated.
+- Confirmed compact CSS override is present and version title updated.
+- Real browser/Android interaction testing was not performed.
+
+Rollback: redeploy DentalFlow_V7.9.29_OneLine_Treatment_Entry.zip.
