@@ -1,14 +1,14 @@
-DentalFlow V7.9.34 — Patient Profile Section Renaming
+DentalFlow V7.9.35 — Patient Profile Compact Cards
 
+Base: DentalFlow V7.9.33 Patient Workflow Visit Edit Fix ZIP.
 Changes:
-- Renamed the patient-profile section “Billing & Payments” to “Bills & Payments”.
-- Renamed the patient-profile section “Visit History” to “Clinical Visits”.
-- Kept “Treatment Plans” unchanged, as requested.
-- No data structures, patient records, clinical data, appointments, billing logic, or LocalStorage keys were intentionally changed.
-- Updated the Service Worker cache name to ensure clients refresh to this release.
+- Treatment Plans, Bills & Payments, and Clinical Visits content now uses compact appointment-style cards.
+- Reduced visible details to a short title and one summary line; detailed information remains available through the info button.
+- Retained edit, payment, and receipt actions where applicable.
+- No data schema or LocalStorage keys were intentionally changed.
+- Updated Service Worker cache name.
 
-Base: DentalFlow V7.9.33 — Patient Workflow Visit Edit Fix ZIP supplied for this task.
-Previous README content retained below as historical notes:
+Previous release notes:
 
 DentalFlow V7.9.28 — Compact Workflow Forms
 
