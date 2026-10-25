@@ -1,0 +1,6 @@
+DentalFlow V7.9.41 — Global Information Icon Consistency
+Base: V7.9.40 Navigation JavaScript Fix.
+- Normalizes dynamically rendered View/Details icon controls to a consistent information (i) symbol across the app.
+- Edit controls are excluded and retain pencil icons.
+- Retains Patient Workflow naming and existing data structures.
+- Browser/Android interaction testing not performed.
