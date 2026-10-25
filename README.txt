@@ -19,3 +19,9 @@ Checks performed:
 
 Rollback:
 - Redeploy DentalFlow_V7.9.27_Compact_Treatment_Plan_Cards.zip.
+
+
+V7.9.29 — One-Line Treatment Entry
+- Procedure, estimate, priority and status share one compact row on mobile.
+- Planned-treatment rows use less height and a shorter bill action.
+- No LocalStorage keys or existing record structures changed.
