@@ -1,4 +1,4 @@
-DentalFlow V7.10.8 — Individual Visit Central Workspace Completion
+DentalFlow V7.10.9 — Individual Visit Central Workspace Completion
 
 Base: DentalFlow_V7.10.7_Visit_Workspace_Render_Fix.zip (user-provided current version).
 
@@ -6,7 +6,7 @@ Change log:
 - Added a “+ Investigation / Record” action to the Individual Visit Summary workspace.
 - The action opens the existing unified workflow record section, preselects Investigation, and prefills the selected visit date and a visit-related title.
 - Reuses the existing record workflow and data structure; no parallel record store or new LocalStorage schema was introduced.
-- Updated the service-worker cache identifier to V7.10.8 so deployed clients can fetch the new app assets.
+- Updated the service-worker cache identifier to V7.10.9 so deployed clients can fetch the new app assets.
 - Preserved existing visit, treatment-plan, billing, payment, follow-up, appointment, reminder, and linked-record rendering.
 
 Validation performed:
