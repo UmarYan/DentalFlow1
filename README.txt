@@ -40,3 +40,5 @@ V7.10.22 — Direct Patient Profile Actions
 
 
 V7.10.29 note: Patient Workflow UI remains retired. See LEGACY_WORKFLOW_AUDIT_V7.10.29.txt for the dependency audit and testing limitations.
+
+V7.10.31: Added visible section-level Add buttons for Clinical Visits, Treatment Plans, Patient Records, Billing, Appointments, Follow-ups, and Reminders. Buttons route to existing standalone forms; no data schema or stored records were changed.
