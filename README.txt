@@ -25,3 +25,6 @@ Post-deployment checklist:
 
 Rollback:
 Redeploy the original V7.9.59 ZIP. Do not clear browser storage or LocalStorage.
+
+
+V7.10.4 Individual Visit Central Workspace update based on V7.10.3. The Visit Workspace script block has been relocated to the end of the document to avoid it being rendered as page text in malformed parser contexts. Service-worker cache is versioned to force refresh.
