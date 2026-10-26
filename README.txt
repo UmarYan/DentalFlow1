@@ -1,35 +1,18 @@
-DentalFlow V7.9.46 — Visits Search
+DentalFlow V7.9.52 — Startup Recovery Fix
 
 Base:
-- Built directly on the user-provided DentalFlow_V7.9.45_Treatment_Plan_Inline_Info_Fix.zip.
-- V7.9.45 remains unchanged for rollback.
+- Built from the current provided V7.9.51 artifact.
+- Keep V7.9.47 as the declared stable base/rollback reference unless the user explicitly changes it.
 
 Changes:
-- Added a compact search field to the Clinical Visits section.
-- Searches visit patient name, linked patient name, visit date/time, visit IDs, complaint/reason, history, examination, diagnosis, treatment, prescription, advice, notes, and follow-up values.
-- Shows the number of matching visits and a clear-search button.
-- Search results retain the existing date groups, visit cards, inline details, patient profile action, and edit action.
-- Added an accessible label and live result count.
-- Updated the document version and Service Worker cache name.
+- Removed the write-to-LocalStorage call from the Billing list render path; rendering/searching the list should not save or mutate data.
+- Retained the date-wise collapsible grouping in Visits and Billing.
+- Retained Patient Name card titles and existing View/Edit/Payment/Receipt actions.
+- Updated Service Worker cache name to force the new app shell to load.
 
-Data safety:
-- No LocalStorage keys, data structures, patient records, visit records, or clinical data were reset, migrated, or renamed.
-
-Checks:
-- ZIP integrity checked after packaging.
-- HTML parser check.
-- Inline JavaScript syntax check with Node.js.
-- Service Worker syntax check with Node.js.
-- Manifest JSON validation.
-- Targeted source checks for search input, filtering, result count, clear action, and existing visit card actions.
-- Browser/Android interaction testing was not performed.
+Validation:
+- ZIP integrity and HTML script syntax checks performed.
+- Browser testing was not performed; confirm startup and stored-data access after deployment.
 
 Rollback:
-- Redeploy the unchanged DentalFlow_V7.9.45_Treatment_Plan_Inline_Info_Fix.zip.
-
-
-Version: V7.9.47
-Change log:
-- Visits list cards reuse the Patient Details Clinical Visits mini-card layout and Details/Edit actions.
-- Billing list cards reuse the Patient Details Bills & Payments mini-card layout and Details/Edit/Payment/Receipt actions.
-- Preserved visit search, billing search, billing summary metrics, and existing data structures.
+- Redeploy the previously working ZIP if any regression occurs. Do not clear browser storage.
