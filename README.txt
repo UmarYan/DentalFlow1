@@ -16,3 +16,9 @@ Validation:
 
 Rollback:
 - Redeploy the previously working ZIP if any regression occurs. Do not clear browser storage.
+
+
+V7.9.53 change log:
+- Removed the unintended save() call at the end of renderBilling(). Rendering a list is now read-only and does not write to LocalStorage during startup.
+- Preserved the V7.9.52 project and date-wise Visits/Billing grouping.
+- Updated Service Worker cache identifier.
