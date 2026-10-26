@@ -1,28 +1,22 @@
-DentalFlow V7.9.58 — Treatment Plan Four-Line Cards
+DentalFlow V7.9.59 — Card Readability Update
 
-Base: DentalFlow V7.9.57_Four_Line_Cards_Download.zip (exact user-specified base).
+Base: DentalFlow V7.9.58_Treatment_Plan_Four_Line_Cards.zip (exact requested base).
 
 Changes:
-- Treatment Plan list cards now show four content lines: Patient Name; Date; Treatment Name/Items · Status; Estimated total.
-- Removed Plan Title and Examination from the Treatment Plan list card only. Stored plan data and detail/edit workflows are unchanged.
-- Preserved existing relevant action icons (Details/View, Edit, Schedule when applicable), search, and date-based collapsible grouping.
-- Updated service-worker cache identifier to V7.9.58.
+- Improved readability in Visits, Billing, and Treatment Plans list cards using a white background, a clearer border, darker primary text, and higher-contrast secondary text/action icons.
+- Preserved card geometry, spacing, typography sizes, action icons, search, date-wise grouping, underlying data, and LocalStorage structures.
+- Added a new service-worker cache identifier for V7.9.59.
 
 Validation performed:
-- JavaScript syntax check with Node.js (inline scripts).
-- HTML script-tag integrity/count check.
+- JavaScript syntax check for inline scripts (Node.js).
+- HTML script-tag integrity check.
 - ZIP integrity check.
 - Browser testing was not performed.
 
-Known limitations:
-- Treatment item names are displayed in a single line and may truncate on narrow screens, consistent with the existing compact card styling.
-- Confirm appearance and saved-data access after deployment.
-
 Post-deployment checklist:
-1. Open Treatment Plans and confirm the four lines and existing icons.
-2. Search by patient and treatment item.
-3. Open Details, Edit, and Schedule actions where available.
-4. Verify existing patient and treatment-plan data remain present.
+1. Open Visits, Billing, and Treatment Plans and check small-text readability on mobile.
+2. Check search, date-wise grouping, and existing action icons in all three sections.
+3. Verify existing patient, visit, bill, and treatment-plan data remains present.
 
 Rollback:
-Redeploy the previously working V7.9.57 ZIP. Do not clear browser storage or LocalStorage.
+Redeploy the previous V7.9.58 ZIP. Do not clear browser storage or LocalStorage.

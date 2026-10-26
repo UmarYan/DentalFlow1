@@ -666,7 +666,39 @@ main{padding:10px 10px 78px}
 @media(max-width:380px){#plans #treatmentPlanList .plan-list-card{padding:5px 7px!important;gap:4px!important}#plans .plan-list-copy b{font-size:12px}}
 </style>
 
-<style id="df-v7-9-46-visit-search">.visit-search-row{display:flex;align-items:center;gap:6px;margin:10px 0 4px}.visit-search-row input{min-width:0;flex:1;width:100%;padding:10px 11px;border:1px solid var(--line);border-radius:11px;background:#fff;outline:none;font-size:14px}.visit-search-row input:focus{border-color:var(--p);box-shadow:0 0 0 2px #0284c71a}.visit-search-row button{width:36px;height:36px;flex:0 0 36px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--muted);font-size:23px;line-height:1}.visit-search-row button:focus-visible{outline:2px solid var(--p);outline-offset:2px}#visitSearchCount{min-height:15px;font-size:11px;margin:2px 1px 6px}</style></head><body>
+<style id="df-v7-9-46-visit-search">.visit-search-row{display:flex;align-items:center;gap:6px;margin:10px 0 4px}.visit-search-row input{min-width:0;flex:1;width:100%;padding:10px 11px;border:1px solid var(--line);border-radius:11px;background:#fff;outline:none;font-size:14px}.visit-search-row input:focus{border-color:var(--p);box-shadow:0 0 0 2px #0284c71a}.visit-search-row button{width:36px;height:36px;flex:0 0 36px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--muted);font-size:23px;line-height:1}.visit-search-row button:focus-visible{outline:2px solid var(--p);outline-offset:2px}#visitSearchCount{min-height:15px;font-size:11px;margin:2px 1px 6px}</style>
+<style id="df-v7-9-59-card-readability">
+/* V7.9.59: improve contrast only in Visits, Billing, and Treatment Plans list cards. Keep geometry and actions unchanged. */
+#visitList .profile-mini-row.visit-card,
+#billingList .profile-mini-row.bill-card,
+#plans #treatmentPlanList .plan-list-card{
+  background:#ffffff!important;
+  border:1px solid #d9e4ec!important;
+  color:#172b3a!important;
+  box-shadow:none!important;
+}
+#visitList .profile-mini-copy b,
+#billingList .profile-mini-copy b,
+#plans #treatmentPlanList .plan-list-copy b{
+  color:#172b3a!important;
+}
+#visitList .profile-mini-copy span,
+#billingList .profile-mini-copy span,
+#plans #treatmentPlanList .plan-list-copy span{
+  color:#526779!important;
+}
+#visitList .df-action-icon,
+#billingList .df-action-icon,
+#plans #treatmentPlanList .plan-list-actions .df-action-icon{
+  color:#075985!important;
+}
+#visitList .df-action-icon:focus-visible,
+#billingList .df-action-icon:focus-visible,
+#plans #treatmentPlanList .plan-list-actions .df-action-icon:focus-visible{
+  outline:2px solid #0284c7!important;outline-offset:1px;
+}
+</style>
+</head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow needs recovery</h3><p id="bootErrorText" class="muted">The app could not safely read its saved data. Do not reset or clear site data. Export the stored data first, then retry loading.</p><div class="actions" style="justify-content:center"><button class="btn secondary" onclick="exportRecoveryData()">Export stored data</button><button class="btn" onclick="location.reload()">Retry load</button></div></div></div>
 <header class="top"><button class="icon-btn menu-trigger" aria-label="Open menu" title="Menu" onclick="toggleMenu(true)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="brand-wrap"><div class="brand">DentalFlow</div><div id="clinicLabel" class="sub">Dental Clinic Management</div></div><div class="header-actions"><button class="icon-btn" aria-label="Quick patient search" title="Quick patient search" aria-expanded="false" onclick="toggleHeaderQuickSearch()"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button></div></header>
 <div id="headerQuickSearch" class="header-quick-search" hidden><div class="header-quick-search-head"><strong>Quick patient search</strong><button type="button" class="close" aria-label="Close quick search" onclick="toggleHeaderQuickSearch(false)">×</button></div><div class="search"><input id="homeSearch" placeholder="Name, phone or Patient ID" autocomplete="off" oninput="renderHomeSearch(this.value)"></div><div id="homeResults"></div></div>
