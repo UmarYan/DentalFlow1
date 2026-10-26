@@ -1,22 +1,26 @@
-DentalFlow V7.9.59 — Card Readability Update
+DentalFlow V7.8.1 — Billing & Treatment Plans Status/Action Layout
 
-Base: DentalFlow V7.9.58_Treatment_Plan_Four_Line_Cards.zip (exact requested base).
+Base: DentalFlow_V7.9.59_Card_Readability.zip (exact requested base).
 
 Changes:
-- Improved readability in Visits, Billing, and Treatment Plans list cards using a white background, a clearer border, darker primary text, and higher-contrast secondary text/action icons.
-- Preserved card geometry, spacing, typography sizes, action icons, search, date-wise grouping, underlying data, and LocalStorage structures.
-- Added a new service-worker cache identifier for V7.9.59.
+- Billing cards: patient name, date, service/treatment items, and Total · Paid · Due are displayed as four content lines. Status is placed at the upper-right, with existing action icons arranged horizontally beneath it.
+- Treatment Plan cards: patient name, date, treatment items, and estimated total are displayed as four content lines. Status is placed at the upper-right, with existing action icons arranged horizontally beneath it.
+- Preserved Billing payment, view, edit, and receipt actions; preserved Treatment Plan details, edit, and scheduling actions.
+- Preserved search, date-wise grouping, stored records, and LocalStorage data structures.
+- Updated service-worker cache identifier to V7.8.1.
 
 Validation performed:
-- JavaScript syntax check for inline scripts (Node.js).
-- HTML script-tag integrity check.
+- JavaScript syntax check for all inline scripts (Node.js).
+- HTML script/style tag integrity check.
 - ZIP integrity check.
 - Browser testing was not performed.
 
 Post-deployment checklist:
-1. Open Visits, Billing, and Treatment Plans and check small-text readability on mobile.
-2. Check search, date-wise grouping, and existing action icons in all three sections.
-3. Verify existing patient, visit, bill, and treatment-plan data remains present.
+1. Open Billing and verify status is in the upper-right and action icons are horizontal directly beneath it.
+2. Verify the four Billing content lines and Total · Paid · Due.
+3. Open Treatment Plans and verify status/action placement and the four content lines.
+4. Test Payment, View, Edit, Receipt, Plan Details, Edit, and Schedule actions where available.
+5. Verify search, date-wise grouping, and existing patient/billing/plan records.
 
 Rollback:
-Redeploy the previous V7.9.58 ZIP. Do not clear browser storage or LocalStorage.
+Redeploy the previous DentalFlow V7.9.59 ZIP. Do not clear browser storage or LocalStorage.
