@@ -1,4 +1,4 @@
-DentalFlow V7.11.3 — Patient Section Layout Refinements
+DentalFlow V7.11.4 — Patient Details Save & Collapse
 
 Base: DentalFlow_V7.11.2_Patient_Visit_Entry_Focused_Editing.zip.
 
@@ -23,3 +23,6 @@ Post-deployment checklist:
 3. Confirm Phone/Address and Medical alert/Important note appear side-by-side on mobile.
 4. Save a patient with an Important note, reopen the workflow, and confirm it persists.
 5. Confirm existing Medical alert values remain present and other workflow actions still work.
+
+
+V7.11.4 changes: The Save patient details button retains its label without “only” and collapses Patient details / edit after a successful save. Medical alert and Important note are displayed on separate full-width rows.
