@@ -728,10 +728,10 @@ main{padding:10px 10px 78px}
 @media(max-width:520px){.vw-grid{grid-template-columns:1fr}.vw-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vw-hero{padding:13px}.vw-section{padding:11px}.visit-workspace-top .btn{font-size:12px;padding:8px 9px}}
 </style>
 
-<style id="df-v7-10-12-workflow-color-confirm-safe-bar">
-/* V7.10.12: stronger Save & Finish color and more footer/navigation breathing room. */
-#workflowSheet .wf-bottom-actions{position:sticky;bottom:calc(-1 * (20px + env(safe-area-inset-bottom)));z-index:5;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:9px;margin:12px -15px calc(-20px - env(safe-area-inset-bottom));padding:12px 15px calc(16px + env(safe-area-inset-bottom));background:rgba(255,255,255,.98);border-top:1px solid rgba(215,224,231,.85);box-shadow:0 -3px 9px rgba(31,54,72,.045)}
-#workflowSheet .wf-bottom-actions .btn{height:44px;min-height:44px;border-radius:9px;font-size:13px;line-height:1.15;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;margin:0;box-shadow:0 2px 0 rgba(35,58,75,.09),0 3px 7px rgba(35,58,75,.055);transition:transform .12s ease,box-shadow .12s ease}
+<style id="df-v7-10-14-workflow-floating-actions">
+/* V7.10.14: remove the action footer panel; keep the same button widths and let the buttons float with individual shadows. */
+#workflowSheet .wf-bottom-actions{position:sticky;bottom:calc(-1 * (20px + env(safe-area-inset-bottom)));z-index:5;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:9px;margin:12px -15px calc(-20px - env(safe-area-inset-bottom));padding:12px 15px calc(24px + env(safe-area-inset-bottom));background:transparent;border-top:0;box-shadow:none}
+#workflowSheet .wf-bottom-actions .btn{height:34px;min-height:34px;border-radius:18px;font-size:13px;line-height:1.15;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;margin:0;box-shadow:0 2px 0 rgba(35,58,75,.09),0 3px 7px rgba(35,58,75,.055);transition:transform .12s ease,box-shadow .12s ease}
 #workflowSheet .wf-bottom-actions .btn:active{transform:translateY(1px);box-shadow:0 1px 0 rgba(35,58,75,.08)}
 #workflowSheet .wf-bottom-actions .wf-discard-action{flex:0 0 auto;min-width:96px;padding:0 12px;color:#b54747!important;background:linear-gradient(180deg,#fff 0%,#fffafa 100%)!important;border:1px solid #ead2d2!important;box-shadow:0 2px 0 #eadede,0 3px 6px rgba(130,62,62,.055)}
 #workflowSheet .wf-bottom-actions .wf-finish-action{flex:0 1 auto;min-width:126px;padding:0 14px;font-size:13px;font-weight:700;color:#fff!important;background:linear-gradient(180deg,#3184d6 0%,#2168b2 100%)!important;border:1px solid #1f65aa!important;box-shadow:0 2px 0 #1b5794,0 4px 8px rgba(31,101,170,.22)}
