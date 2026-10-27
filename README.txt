@@ -1,6 +1,6 @@
-DentalFlow V7.11.1 — Patient Workflow Follow-up/Billing Order
+DentalFlow V7.11.5 — Clinical Visit Treatment Plan Link
 
-Base: DentalFlow_V7.11.0_Patient_Workflow_Section_Order.zip.
+Base: DentalFlow_V7.11.4_Workflow_Links_Final.zip.
 
 Change log:
 - Moved the existing Follow-up section to immediately after Treatment plan and before Billing & payment.
@@ -33,3 +33,9 @@ Version 7.11.3 change log
 
 Version 7.11.4 change log
 - Final cumulative workflow update: visit-plan item linkage, identity-based plan-to-billing deduplication, and follow-up-linked reminder/task creation.
+
+
+V7.11.5 change log
+- Added optional link from a Clinical Visit to one existing Treatment Plan item for the selected patient.
+- Added explicit status choice (no change / In progress / Completed); status is never inferred from free-text treatment notes.
+- Visit and plan keep reciprocal linked IDs. Existing unrelated sections and stored record structures are preserved.
