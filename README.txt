@@ -1,25 +1,26 @@
-DentalFlow V7.11.0 — Patient Workflow Section Order
+DentalFlow V7.11.1 — Patient Workflow Follow-up/Billing Order
 
-Base: DentalFlow_V7.10.15_Workflow_Finish_Width.zip (exact supplied base).
+Base: DentalFlow_V7.11.0_Patient_Workflow_Section_Order.zip.
 
 Change log:
-- Reordered only the eight Patient Workflow sections: Patient; Appointment / arrival; Clinical visit; Treatment plan; Billing & payment; Follow-up; Patient record / document; Reminder / task.
-- Preserved the existing section markup and contents; no data schema or LocalStorage changes.
-- Kept the complete Patient Details & History button, draft note, Discard draft, and Save & Finish bottom area unchanged.
-- Updated app title/About version and service-worker cache identifier to V7.11.0.
+- Moved the existing Follow-up section to immediately after Treatment plan and before Billing & payment.
+- All section contents and other UI areas remain unchanged.
+- No data schema or LocalStorage changes.
+- Updated the app version and service-worker cache identifier to V7.11.1.
 
 Validation performed:
-- JavaScript syntax check of all 15 inline JavaScript blocks (Node.js): passed.
-- HTML script/style/details tag counts balanced (15/15, 46/46, 29/29); requested section order verified: passed.
-- ZIP integrity test: passed after packaging.
-- Browser/UI testing: not performed.
+- JavaScript syntax check of all inline JavaScript blocks (Node.js).
+- HTML script/style/details tag balance checks.
+- Confirmed requested Patient Workflow section order.
+- ZIP integrity test.
+- Browser/UI runtime testing was not performed.
 
 Post-deployment checklist:
-1. Open Patient Workflow and confirm the eight sections appear in the requested order.
-2. Expand each section and confirm its fields and interactions remain available.
-3. Confirm View complete Patient Details & History remains below the sections.
-4. Confirm Draft stays on this device, Discard draft, and Save & Finish remain at the bottom and work as expected.
-5. Test with an existing patient and verify existing records remain intact.
+1. Open Patient Workflow and confirm Follow-up appears directly after Treatment plan and before Billing & payment.
+2. Expand Follow-up and Billing & payment and verify their fields and interactions.
+3. Confirm Patient record / document and Reminder / task remain after Billing & payment.
+4. Confirm the history button, draft note, Discard draft, and Save & Finish remain unchanged.
+5. Test with an existing patient; confirm existing records remain intact.
 
 Rollback:
-Redeploy DentalFlow_V7.10.15_Workflow_Finish_Width.zip. Do not clear LocalStorage.
+Redeploy DentalFlow_V7.11.0_Patient_Workflow_Section_Order.zip. Do not clear LocalStorage.
