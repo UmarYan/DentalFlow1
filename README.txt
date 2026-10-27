@@ -1,29 +1,25 @@
-DentalFlow V7.11.2 — Patient Workflow Follow-up/Billing Order
+DentalFlow V7.11.3 — Patient Section Layout Refinements
 
-Base: DentalFlow_V7.11.0_Patient_Workflow_Section_Order.zip.
+Base: DentalFlow_V7.11.2_Patient_Visit_Entry_Focused_Editing.zip.
 
 Change log:
-- Moved the existing Follow-up section to immediately after Treatment plan and before Billing & payment.
-- All section contents and other UI areas remain unchanged.
-- No data schema or LocalStorage changes.
-- Updated the app version and service-worker cache identifier to V7.11.2.
+- The Patient section header now shows the selected patient name on the right in both expanded and collapsed states.
+- Removed the extra selected-patient row beneath the patient search field from the visible UI.
+- Phone and Address now share one horizontal row.
+- Medical alert and Important note are separate, side-by-side fields.
+- Important note is saved and loaded as a backward-compatible patient property (`importantNote`); existing `medical` data remains intact.
+- Added the new field to local workflow draft persistence and updated the service-worker cache identifier.
+- No unrelated workflow sections or actions were intentionally changed.
 
 Validation performed:
 - JavaScript syntax check of all inline JavaScript blocks (Node.js).
-- HTML script/style/details tag balance checks.
-- Confirmed requested Patient Workflow section order.
+- HTML script/style tag balance checks.
 - ZIP integrity test.
-- Browser/UI runtime testing was not performed.
+- Browser/mobile runtime testing was not performed.
 
 Post-deployment checklist:
-1. Open Patient Workflow and confirm Follow-up appears directly after Treatment plan and before Billing & payment.
-2. Expand Follow-up and Billing & payment and verify their fields and interactions.
-3. Confirm Patient record / document and Reminder / task remain after Billing & payment.
-4. Confirm the history button, draft note, Discard draft, and Save & Finish remain unchanged.
-5. Test with an existing patient; confirm existing records remain intact.
-
-Rollback:
-Redeploy DentalFlow_V7.11.0_Patient_Workflow_Section_Order.zip. Do not clear LocalStorage.
-
-
-V7.11.2 update: Main central workflow title is Patient Visit Entry. Editing an existing individual record focuses the relevant section within the same central workspace, with Edit · [Section] titles. Related new actions from Visit Summary focus the relevant section with Add · [Section] titles. Save/Cancel/close returns to the normal workspace behavior.
+1. Select an existing patient and confirm their name appears in the Patient section header while open and closed.
+2. Confirm the extra selected-patient row is no longer visible.
+3. Confirm Phone/Address and Medical alert/Important note appear side-by-side on mobile.
+4. Save a patient with an Important note, reopen the workflow, and confirm it persists.
+5. Confirm existing Medical alert values remain present and other workflow actions still work.
