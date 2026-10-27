@@ -1,4 +1,4 @@
-DentalFlow V7.11.1 — Patient Workflow Follow-up/Billing Order
+DentalFlow V7.11.2 — Patient Workflow Follow-up/Billing Order
 
 Base: DentalFlow_V7.11.0_Patient_Workflow_Section_Order.zip.
 
@@ -6,7 +6,7 @@ Change log:
 - Moved the existing Follow-up section to immediately after Treatment plan and before Billing & payment.
 - All section contents and other UI areas remain unchanged.
 - No data schema or LocalStorage changes.
-- Updated the app version and service-worker cache identifier to V7.11.1.
+- Updated the app version and service-worker cache identifier to V7.11.2.
 
 Validation performed:
 - JavaScript syntax check of all inline JavaScript blocks (Node.js).
@@ -24,3 +24,6 @@ Post-deployment checklist:
 
 Rollback:
 Redeploy DentalFlow_V7.11.0_Patient_Workflow_Section_Order.zip. Do not clear LocalStorage.
+
+
+V7.11.2 update: Main central workflow title is Patient Visit Entry. Editing an existing individual record focuses the relevant section within the same central workspace, with Edit · [Section] titles. Related new actions from Visit Summary focus the relevant section with Add · [Section] titles. Save/Cancel/close returns to the normal workspace behavior.
