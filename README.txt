@@ -24,3 +24,12 @@ Post-deployment checklist:
 
 Rollback:
 Redeploy DentalFlow_V7.11.0_Patient_Workflow_Section_Order.zip. Do not clear LocalStorage.
+
+Version 7.11.2 change log
+- Link clinical visits to their selected treatment-plan item even when no appointment record is used; preserve existing status and data behavior.
+
+Version 7.11.3 change log
+- Carry treatment-plan item identity into bill items and prevent duplicate plan-to-bill additions while retaining legacy name/fee fallback.
+
+Version 7.11.4 change log
+- Final cumulative workflow update: visit-plan item linkage, identity-based plan-to-billing deduplication, and follow-up-linked reminder/task creation.
