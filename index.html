@@ -728,16 +728,16 @@ main{padding:10px 10px 78px}
 @media(max-width:520px){.vw-grid{grid-template-columns:1fr}.vw-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vw-hero{padding:13px}.vw-section{padding:11px}.visit-workspace-top .btn{font-size:12px;padding:8px 9px}}
 </style>
 
-<style id="df-v7-10-14-workflow-floating-actions">
-/* V7.10.14: remove the action footer panel; keep the same button widths and let the buttons float with individual shadows. */
+<style id="df-v7-10-15-workflow-finish-width">
+/* V7.10.15: slightly reduce Save & Finish width only; preserve floating layout and other action styles. */
 #workflowSheet .wf-bottom-actions{position:sticky;bottom:calc(-1 * (20px + env(safe-area-inset-bottom)));z-index:5;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:9px;margin:12px -15px calc(-20px - env(safe-area-inset-bottom));padding:12px 15px calc(24px + env(safe-area-inset-bottom));background:transparent;border-top:0;box-shadow:none}
 #workflowSheet .wf-bottom-actions .btn{height:34px;min-height:34px;border-radius:18px;font-size:13px;line-height:1.15;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;margin:0;box-shadow:0 2px 0 rgba(35,58,75,.09),0 3px 7px rgba(35,58,75,.055);transition:transform .12s ease,box-shadow .12s ease}
 #workflowSheet .wf-bottom-actions .btn:active{transform:translateY(1px);box-shadow:0 1px 0 rgba(35,58,75,.08)}
 #workflowSheet .wf-bottom-actions .wf-discard-action{flex:0 0 auto;min-width:96px;padding:0 12px;color:#b54747!important;background:linear-gradient(180deg,#fff 0%,#fffafa 100%)!important;border:1px solid #ead2d2!important;box-shadow:0 2px 0 #eadede,0 3px 6px rgba(130,62,62,.055)}
-#workflowSheet .wf-bottom-actions .wf-finish-action{flex:0 1 auto;min-width:126px;padding:0 14px;font-size:13px;font-weight:700;color:#fff!important;background:linear-gradient(180deg,#3184d6 0%,#2168b2 100%)!important;border:1px solid #1f65aa!important;box-shadow:0 2px 0 #1b5794,0 4px 8px rgba(31,101,170,.22)}
+#workflowSheet .wf-bottom-actions .wf-finish-action{flex:0 1 auto;min-width:112px;padding:0 11px;font-size:13px;font-weight:700;color:#fff!important;background:linear-gradient(180deg,#3184d6 0%,#2168b2 100%)!important;border:1px solid #1f65aa!important;box-shadow:0 2px 0 #1b5794,0 4px 8px rgba(31,101,170,.22)}
 #workflowSheet .wf-bottom-actions .wf-finish-action:active{background:linear-gradient(180deg,#246eb8 0%,#1c5795 100%)!important}
 #fabWrap.workflow-active-hidden{display:none!important}
-@media(max-width:360px){#workflowSheet .wf-bottom-actions{gap:7px;padding-left:12px;padding-right:12px}#workflowSheet .wf-bottom-actions .wf-discard-action{min-width:88px;padding:0 9px}#workflowSheet .wf-bottom-actions .wf-finish-action{min-width:116px;padding:0 10px;font-size:12.5px}}
+@media(max-width:360px){#workflowSheet .wf-bottom-actions{gap:7px;padding-left:12px;padding-right:12px}#workflowSheet .wf-bottom-actions .wf-discard-action{min-width:88px;padding:0 9px}#workflowSheet .wf-bottom-actions .wf-finish-action{min-width:106px;padding:0 8px;font-size:12.5px}}
 </style>
 </head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow needs recovery</h3><p id="bootErrorText" class="muted">The app could not safely read its saved data. Do not reset or clear site data. Export the stored data first, then retry loading.</p><div class="actions" style="justify-content:center"><button class="btn secondary" onclick="exportRecoveryData()">Export stored data</button><button class="btn" onclick="location.reload()">Retry load</button></div></div></div>
@@ -1111,7 +1111,37 @@ let editingPaymentBillId=null,editingPaymentId=null;
 function openPaymentForm(id){var b=data.bills.find(function(x){return x.id===id});if(!b)return;var due=billDue(b);if(due<=0){toast('No due balance');return}openUnifiedWorkflow(b.patientId);$('wfCollectExistingPayment').open=true;populateWorkflowExistingBills(b.id);$('wfExistingPayment').value=String(due);$('wfExistingMode').value=data.settings.defaultPaymentMode||'Cash';}
 
 function savePayment(){if(!editingPaymentId){alert('New payments must be recorded through Patient Workflow.');closeSheet('paymentSheet');return}let b=data.bills.find(function(x){return x.id===editingPaymentBillId});if(!b)return;let paymentBeforeEdit=JSON.stringify(b);let old=editingPaymentId?(b.payments||[]).find(function(x){return x.id===editingPaymentId}):null,due=billDue(b)+(old?Number(old.amount||0):0),amount=Number($('paymentAmount').value);if(!isFinite(amount)||amount<=0||amount>due){alert('Enter a valid amount up to the available balance.');return}b.payments=b.payments||[];if(old){old.correctionHistory=Array.isArray(old.correctionHistory)?old.correctionHistory:[];old.correctionHistory.push({correctedAt:new Date().toISOString(),previous:{date:old.date||'',amount:Number(old.amount||0),mode:old.mode||'',note:old.note||''},reason:'Edited through DentalFlow payment form'});old.date=$('paymentDate').value||day();old.amount=amount;old.mode=$('paymentMode').value;old.note=$('paymentNote').value.trim();old.updatedAt=new Date().toISOString()}else b.payments.push({id:'PM'+Date.now().toString(36),date:$('paymentDate').value||day(),amount:amount,mode:$('paymentMode').value,note:$('paymentNote').value.trim(),createdAt:new Date().toISOString()});updateBillStatus(b);if(!save()){var restoredBill=JSON.parse(paymentBeforeEdit);Object.keys(b).forEach(function(k){delete b[k]});Object.assign(b,restoredBill);alert('Payment could not be saved to device storage. The previous payment values were restored in memory. Please export a backup and retry.');return}closeSheet('paymentSheet');editingPaymentBillId=null;editingPaymentId=null;render();if(currentPatientId&&$('profile').classList.contains('active'))renderProfile(currentPatientId);toast(old?'Payment updated':'Payment recorded')}
-function printBill(id){let b=data.bills.find(function(x){return x.id===id});if(!b)return;let w=window.open('','_blank');if(!w){alert('Allow pop-ups to print the receipt.');return}let rows=(b.items||[]).map(function(it){return '<tr><td>'+esc(it.service)+'</td><td>'+it.qty+'</td><td>₹ '+(it.amount*it.qty).toLocaleString('en-IN')+'</td></tr>'}).join('');let clinicHead='<h2>'+esc(data.settings.clinicName||'Dental Clinic')+'</h2>'+(data.settings.showDoctorOnReceipt&&data.settings.doctorName?'<div>'+esc(data.settings.doctorName)+'</div>':'')+(data.settings.showContactOnReceipt&&data.settings.clinicPhone?'<div>'+esc(data.settings.clinicPhone)+'</div>':'')+(data.settings.showContactOnReceipt&&data.settings.clinicAddress?'<div>'+esc(data.settings.clinicAddress)+'</div>':'')+(data.settings.registrationNo?'<div>'+esc(data.settings.registrationNo)+'</div>':'');let html='<!doctype html><html><head><meta charset="utf-8"><title>'+esc(b.id)+'</title><style>body{font-family:Arial,sans-serif;padding:24px;max-width:700px;margin:auto}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #ddd;padding:8px;text-align:left}.total{text-align:right;font-weight:bold;margin-top:15px}</style></head><body>'+clinicHead+'<hr><h3>Dental Receipt</h3><p><b>Patient:</b> '+esc(b.patientName)+'<br><b>Bill:</b> '+esc(b.id)+'<br><b>Date:</b> '+esc(b.date)+'</p><table><tr><th>Service</th><th>Qty</th><th>Amount</th></tr>'+rows+'</table><p class="total">Total: ₹ '+billTotal(b).toLocaleString('en-IN')+'<br>Paid: ₹ '+billPaid(b).toLocaleString('en-IN')+'<br>Due: ₹ '+billDue(b).toLocaleString('en-IN')+'</p><p>Payment mode(s): '+esc((b.payments||[]).map(function(x){return x.mode}).join(', ')||'—')+'</p></body></html>';w.document.write(html);w.document.close();w.focus();w.print()}
+function printBill(id){let b=data.bills.find(function(x){return x.id===id});if(!b)return;let w=window.open('','_blank');if(!w){alert('Allow pop-ups to print the receipt.');return}let rows=(b.items||[]).map(function(it){return '<tr><td>'+esc(it.service)+'</td><td>'+it.qty+'</td><td>₹ '+(it.amount*it.qty).toLocaleString('en-IN')+'</td></tr>'}).join('');let clinicHead='<h2>'+esc(data.settings.clinicName||'Dental Clinic')+'</h2>'+(data.settings.showDoctorOnReceipt&&data.settings.doctorName?'<div>'+esc(data.settings.doctorName)+'</div>':'')+(data.settings.showContactOnReceipt&&data.settings.clinicPhone?'<div>'+esc(data.settings.clinicPhone)+'</div>':'')+(data.settings.showContactOnReceipt&&data.settings.clinicAddress?'<div>'+esc(data.settings.clinicAddress)+'</div>':'')+(data.settings.registrationNo?'<div>'+esc(data.settings.registrationNo)+'</div>':'');let html='<!doctype html><html><head><meta charset="utf-8"><title>'+esc(b.id)+'</title><style>body{font-family:Arial,sans-serif;padding:24px;max-width:700px;margin:auto}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #ddd;padding:8px;text-align:left}.total{text-align:right;font-weight:bold;margin-top:15px}</style></head><body>'+clinicHead+'<hr><h3>Dental Receipt</h3><p><b>Patient:</b> '+esc(b.patientName)+'<br><b>Bill:</b> '+esc(b.id)+'<br><b>Date:</b> '+esc(b.date)+'</p><table><tr><th>Service</th><th>Qty</th><th>Amount</th></tr>'+rows+'</table><p class="total">Total: ₹ '+billTotal(b).toLocaleString('en-IN')+'<br>Paid: ₹ '+billPaid(b).toLocaleString('en-IN')+'<br>Due: ₹ '+billDue(b).toLocaleString('en-IN')+'</p><p>Payment mode(s): '+esc((b.payments||[]).map(function(x){return x.mode}).join(', ')||'—')+'</p>
+<!-- V7.10.16: Patient Workflow sections follow the agreed clinic workflow sequence. -->
+<script id="df-v7-10-16-workflow-sequence">
+(function(){
+  function arrangePatientWorkflowSections(){
+    var sheet=document.querySelector('#workflowSheet .sheet');
+    if(!sheet) return;
+    var order=['wfPatientSection','wfArrivalSection','wfClinicalSection','wfTreatmentPlanSection','wfBillingSection','wfFollowupSection','wfRecordSection','wfReminderSection'];
+    var nodes=order.map(function(id){return document.getElementById(id)}).filter(Boolean);
+    if(nodes.length!==order.length) return;
+    var anchor=nodes[0];
+    nodes.forEach(function(node){
+      node.classList.remove('advanced-fields','wf-subsection');
+      node.classList.add('wf-section');
+      sheet.insertBefore(node,anchor);
+      anchor=node.nextSibling;
+    });
+    var plan=document.getElementById('wfTreatmentPlanSection');
+    if(plan){
+      var summary=plan.querySelector(':scope > summary');
+      if(summary){
+        summary.innerHTML='<span>Treatment plan</span><span class="wf-section-hint">Planned and remaining treatment</span>';
+      }
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',arrangePatientWorkflowSections,{once:true});
+  else arrangePatientWorkflowSections();
+})();
+</script>
+
+</body></html>';w.document.write(html);w.document.close();w.focus();w.print()}
 </script>
 <script>
 function templatesFor(cat){return(data.templates||[]).filter(function(t){return t.category===cat})}
