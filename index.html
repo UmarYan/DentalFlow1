@@ -728,14 +728,15 @@ main{padding:10px 10px 78px}
 @media(max-width:520px){.vw-grid{grid-template-columns:1fr}.vw-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vw-hero{padding:13px}.vw-section{padding:11px}.visit-workspace-top .btn{font-size:12px;padding:8px 9px}}
 </style>
 
-<style id="df-v7-10-10-workflow-bottom-actions">
-/* V7.10.10: one clear horizontal action row; the sheet header owns Close. */
-#workflowSheet .wf-bottom-actions{position:sticky;bottom:calc(-1 * (20px + env(safe-area-inset-bottom)));z-index:5;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:12px;margin:14px -15px calc(-20px - env(safe-area-inset-bottom));padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.98);border-top:1px solid var(--line);box-shadow:0 -5px 16px rgba(24,54,70,.06)}
-#workflowSheet .wf-bottom-actions .btn{height:48px;min-height:48px;border-radius:12px;font-size:15px;line-height:1.2;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;margin:0}
-#workflowSheet .wf-bottom-actions .wf-discard-action{flex:0 0 auto;min-width:112px;padding:0 14px}
-#workflowSheet .wf-bottom-actions .wf-finish-action{flex:1 1 auto;min-width:0;padding:0 16px;font-weight:700}
+<style id="df-v7-10-11-workflow-compact-3d-actions">
+/* V7.10.11: compact, soft raised actions; only the Workflow footer buttons are styled. */
+#workflowSheet .wf-bottom-actions{position:sticky;bottom:calc(-1 * (16px + env(safe-area-inset-bottom)));z-index:5;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:9px;margin:12px -15px calc(-16px - env(safe-area-inset-bottom));padding:9px 15px calc(9px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid rgba(215,224,231,.75);box-shadow:0 -3px 9px rgba(31,54,72,.035)}
+#workflowSheet .wf-bottom-actions .btn{height:38px;min-height:38px;border-radius:9px;font-size:13px;line-height:1.15;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;margin:0;box-shadow:0 2px 0 rgba(35,58,75,.09),0 3px 7px rgba(35,58,75,.055);transition:transform .12s ease,box-shadow .12s ease}
+#workflowSheet .wf-bottom-actions .btn:active{transform:translateY(1px);box-shadow:0 1px 0 rgba(35,58,75,.08)}
+#workflowSheet .wf-bottom-actions .wf-discard-action{flex:0 0 auto;min-width:96px;padding:0 12px;color:#b54747!important;background:linear-gradient(180deg,#fff 0%,#fffafa 100%)!important;border:1px solid #ead2d2!important;box-shadow:0 2px 0 #eadede,0 3px 6px rgba(130,62,62,.055)}
+#workflowSheet .wf-bottom-actions .wf-finish-action{flex:0 1 auto;min-width:126px;padding:0 14px;font-size:13px;font-weight:650;color:#244f78!important;background:linear-gradient(180deg,#fff 0%,#f5f9fc 100%)!important;border:1px solid #d5e1eb!important;box-shadow:0 2px 0 #d7e1e9,0 3px 7px rgba(35,75,105,.07)}
 #fabWrap.workflow-active-hidden{display:none!important}
-@media(max-width:360px){#workflowSheet .wf-bottom-actions{gap:8px;padding-left:12px;padding-right:12px}#workflowSheet .wf-bottom-actions .wf-discard-action{min-width:100px;padding:0 10px}#workflowSheet .wf-bottom-actions .wf-finish-action{padding:0 10px;font-size:14px}}
+@media(max-width:360px){#workflowSheet .wf-bottom-actions{gap:7px;padding-left:12px;padding-right:12px}#workflowSheet .wf-bottom-actions .wf-discard-action{min-width:88px;padding:0 9px}#workflowSheet .wf-bottom-actions .wf-finish-action{min-width:116px;padding:0 10px;font-size:12.5px}}
 </style>
 </head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow needs recovery</h3><p id="bootErrorText" class="muted">The app could not safely read its saved data. Do not reset or clear site data. Export the stored data first, then retry loading.</p><div class="actions" style="justify-content:center"><button class="btn secondary" onclick="exportRecoveryData()">Export stored data</button><button class="btn" onclick="location.reload()">Retry load</button></div></div></div>
