@@ -81,3 +81,6 @@ Post-deployment checklist:
 5. Confirm other view navigation and patient records still work.
 
 Rollback: redeploy DentalFlow_V7.11.15_Patient_Details_Visit_Summary_Layout.zip. Do not clear LocalStorage; the update does not change stored data structures.
+
+
+V7.11.17 hotfix: repaired printBill() inline-script boundary that caused JavaScript source text to appear at the bottom of the app. Retained V7.11.16 Android Back navigation changes.
