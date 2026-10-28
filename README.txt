@@ -1,6 +1,6 @@
-DentalFlow V7.11.20 — Clinical Visit Shared Form & Edit Prefill Fix
+DentalFlow V7.11.19 — Patient Visit Entry Section Alignment
 
-Base: DentalFlow_V7.11.19_Patient_Visit_Entry_Section_Alignment.zip.
+Base: DentalFlow_V7.11.18_Android_Back_Navigation_Fix.zip.
 
 Change log:
 - Patient Visit Entry sections now appear in the requested order: Patient; Appointment / arrival; Clinical visit; Treatment plan; Follow-up; Billing & payment; Reminder / task; Patient record / document.
@@ -23,18 +23,3 @@ Post-deployment checklist:
 5. Confirm Android Back navigation still returns to the previous app view.
 
 Rollback: redeploy DentalFlow_V7.11.18_Android_Back_Navigation_Fix.zip.
-
-
-V7.11.20 change log:
-- Clinical Visit Add continues to use the shared Patient Visit Entry form and starts with blank clinical fields.
-- Clinical Visit Edit explicitly rebinds the selected saved visit by record ID after the shared form opens, pre-filling chief complaint, history, examination, diagnosis, treatment, prescription, advice, and next-visit fields.
-- Existing save path continues to update the selected visit ID; no new visit is created by Edit.
-- Updated service-worker cache identifier.
-
-Validation performed for V7.11.20:
-- ZIP integrity test.
-- JavaScript syntax check of all inline script blocks and service worker.
-- Static checks for the new edit-prefill binding and existing-record save path.
-- Browser/mobile runtime testing was not performed.
-
-Rollback: redeploy DentalFlow_V7.11.19_Patient_Visit_Entry_Section_Alignment.zip.
