@@ -1,25 +1,25 @@
-DentalFlow V7.11.18 — Android Back Navigation Fix
+DentalFlow V7.11.19 — Patient Visit Entry Section Alignment
 
-Base: DentalFlow_V7.11.17_Print_Script_Fix.zip.
+Base: DentalFlow_V7.11.18_Android_Back_Navigation_Fix.zip.
 
 Change log:
-- Installed SPA navigation-history handling after all application scripts so later script declarations cannot overwrite it.
-- App view changes now add view state to browser history; Android/browser Back restores the previous DentalFlow view.
-- Fallback routing: Patient Details → Patients, Visit Summary → Visits, other views → Home when history lacks a DentalFlow view state.
-- Updated service-worker cache identifier to V7.11.18.
-- No patient data structures or LocalStorage keys changed.
+- Patient Visit Entry sections now appear in the requested order: Patient; Appointment / arrival; Clinical visit; Treatment plan; Follow-up; Billing & payment; Reminder / task; Patient record / document.
+- Reminder / task and Patient record / document now use the same card structure, left edge, summary padding, and optional hint alignment as the other sections.
+- Updated the service-worker cache identifier to V7.11.19.
+- No patient data structures, LocalStorage keys, clinical data, billing data, or unrelated workflows were intentionally changed.
 
 Validation performed:
-- JavaScript syntax check of all inline JavaScript blocks and service worker.
-- HTML script/style tag balance checks.
 - ZIP integrity test.
+- JavaScript syntax check of all inline JavaScript blocks and service worker.
+- HTML tag balance checks for script/style and workflow section structure.
+- Static checks for requested section order and consistent section classes.
 - Browser/mobile runtime testing was not performed.
 
 Post-deployment checklist:
-1. Patients → Patient Details → Android Back should return to Patients.
-2. Visits → Visit Summary → Android Back should return to Visits.
-3. Test Android system Back button and edge-swipe gesture.
-4. Confirm Home, Billing, and other navigation still work.
-5. Confirm Home does not display JavaScript source text.
+1. Open Patient Visit Entry and verify the eight sections appear in the listed order.
+2. Confirm all section cards begin at the same left edge and have matching arrow/title alignment.
+3. Expand Reminder / task and Patient record / document; verify all fields still work.
+4. Save a visit and confirm patient data and existing billing/clinical records remain available.
+5. Confirm Android Back navigation still returns to the previous app view.
 
-Rollback: redeploy DentalFlow_V7.11.17_Print_Script_Fix.zip.
+Rollback: redeploy DentalFlow_V7.11.18_Android_Back_Navigation_Fix.zip.
