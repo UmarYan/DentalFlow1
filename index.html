@@ -2131,3 +2131,75 @@ if(!Array.isArray(data.labCases))data.labCases=[];window.dfRenderLabCases();
 /* V7.11.7: Bill title & notes uses the same compact subsection styling as More billing options and Collect payment on an existing bill. */
 #workflowSheet #wfBillTitleNotes .field{margin:6px 0!important}
 </style>
+
+
+<script id="df-v7-11-20-clinical-visit-shared-form-prefill-fix">
+/* V7.11.20: Keep Add/Edit Clinical Visit on the Patient Visit Entry form. After the shared editor and focus wrappers finish, explicitly re-bind the selected saved visit to the shared fields. Add mode remains blank; Edit mode updates the same record ID. */
+(function(){
+  'use strict';
+  if (window.__dfClinicalVisitPrefillV71120) return;
+  window.__dfClinicalVisitPrefillV71120 = true;
+  var previousEdit = window.openCentralWorkflowEdit;
+  function setValue(id, value){
+    var el = document.getElementById(id);
+    if (el) el.value = value == null ? '' : String(value);
+  }
+  function bindVisit(v, id){
+    if (!v) return;
+    var sh = document.getElementById('workflowSheet');
+    if (!sh) return;
+    /* Ensure this is still the edit session requested; don't overwrite a newer form. */
+    if (String(sh.dataset.editType || '') !== 'visit' || String(sh.dataset.editId || '') !== String(id)) return;
+    var pid = v.patientId || sh.dataset.patientId || '';
+    var patientSelect = document.getElementById('wfPatient');
+    if (patientSelect && pid) { patientSelect.value = pid; patientSelect.disabled = true; }
+    sh.dataset.patientId = pid;
+    setValue('wfChief', v.chiefComplaint || v.complaint || v.reason || '');
+    setValue('wfHistory', v.history || v.medicalHistory || '');
+    setValue('wfExam', v.examination || v.exam || v.findings || '');
+    setValue('wfDiagnosis', v.diagnosis || v.reason || '');
+    setValue('wfTreatment', v.treatmentDone || v.treatment || '');
+    setValue('wfRx', v.prescription || v.rx || '');
+    setValue('wfAdvice', v.advice || '');
+    setValue('wfNext', v.nextVisit || v.followupDate || '');
+    setValue('wfNextTime', v.nextVisitTime || '');
+    var section = document.getElementById('wfClinicalSection');
+    if (section) section.open = true;
+    var title = document.getElementById('workflowSheetTitle');
+    if (title) title.textContent = 'Edit · Clinical Visit';
+  }
+  if (typeof previousEdit === 'function') {
+    window.openCentralWorkflowEdit = function(type, id){
+      var result = previousEdit.apply(this, arguments);
+      if (type === 'visit') {
+        var requestedId = String(id);
+        /* Read the record by ID after invoking the normal shared form flow. */
+        setTimeout(function(){
+          var record = (window.data && Array.isArray(window.data.visits) ? window.data.visits : []).find(function(v){ return String(v.id) === requestedId; });
+          bindVisit(record, requestedId);
+        }, 90);
+      }
+      return result;
+    };
+  }
+  /* New Clinical Visit continues to use Patient Visit Entry's shared form and starts empty. */
+  var previousWorkspaceAction = window.openVisitWorkspaceAction;
+  if (typeof previousWorkspaceAction === 'function') {
+    window.openVisitWorkspaceAction = function(kind){
+      var result = previousWorkspaceAction.apply(this, arguments);
+      if (kind === 'visit') {
+        setTimeout(function(){
+          var sh = document.getElementById('workflowSheet');
+          if (!sh || sh.dataset.editType === 'visit') return;
+          ['wfChief','wfHistory','wfExam','wfDiagnosis','wfTreatment','wfRx','wfAdvice','wfNext','wfNextTime'].forEach(function(id){ setValue(id, ''); });
+          var section = document.getElementById('wfClinicalSection');
+          if (section) section.open = true;
+          var title = document.getElementById('workflowSheetTitle');
+          if (title) title.textContent = 'Add · Clinical Visit';
+        }, 60);
+      }
+      return result;
+    };
+  }
+})();
+</script>
