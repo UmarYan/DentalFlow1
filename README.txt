@@ -26,3 +26,30 @@ Post-deployment checklist:
 
 
 V7.11.4 changes: The Save patient details button retains its label without “only” and collapses Patient details / edit after a successful save. Medical alert and Important note are displayed on separate full-width rows.
+
+
+DentalFlow V7.11.15 — Patient Details Section Layout Match
+Base: DentalFlow_V7.11.14_Visit_Summary_Toggle_Sections.zip.
+
+Change log:
+- Reordered Patient Details subsections to: Clinical Visits, Treatment Plans, Bills & Payments, Follow-ups, Appointments, Reminders, Documents & Records.
+- Split the previous combined Appointments & Follow-ups subsection into two independent sections.
+- Copied the Visit Summary subsection layout, spacing, heading typography, count badges, and triangular disclosure-toggle behavior to Patient Details.
+- All subsections remain independently collapsible and collapsed by default.
+- Preserved existing record rendering and actions, including the Add record action.
+- No data schema or LocalStorage migration was introduced.
+
+Validation performed for V7.11.15:
+- JavaScript syntax check of all inline JavaScript blocks (Node.js).
+- HTML script/style tag balance checks.
+- ZIP integrity test.
+- Browser/mobile runtime testing was not performed.
+
+Post-deployment checklist:
+1. Open a patient profile and confirm the seven subsection names and order.
+2. Confirm the headings, count badges, spacing, and triangular toggle match Visit Summary.
+3. Toggle each subsection independently and confirm its contents show/hide correctly.
+4. Confirm visits, plans, bills/payments, follow-ups, appointments, reminders, and documents still open/edit as before.
+5. Confirm existing patient data remains present.
+
+Rollback: redeploy DentalFlow_V7.11.14_Visit_Summary_Toggle_Sections.zip. Keep an exported app-data backup before deployment; do not clear LocalStorage.
