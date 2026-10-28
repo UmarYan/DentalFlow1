@@ -53,3 +53,31 @@ Post-deployment checklist:
 5. Confirm existing patient data remains present.
 
 Rollback: redeploy DentalFlow_V7.11.14_Visit_Summary_Toggle_Sections.zip. Keep an exported app-data backup before deployment; do not clear LocalStorage.
+
+
+DentalFlow V7.11.16 — Android Back Navigation
+Base: DentalFlow_V7.11.15_Patient_Details_Visit_Summary_Layout.zip.
+
+Change log:
+- Removed the in-page “← Patients” button from Patient Details.
+- Removed the in-page “← Back to Visits” button from Visit Summary.
+- Added browser-history-backed SPA navigation so Android system Back/browser Back returns to the previous DentalFlow view.
+- Added fallback destinations (Patients for Patient Details, Visits for Visit Summary) if a Back event has no DentalFlow view state.
+- Kept the Visit Summary Patient Profile action and all other page actions intact.
+- Updated the service-worker cache version so deployed clients can fetch the new app shell.
+- No patient data schema or LocalStorage migration was introduced.
+
+Validation performed for V7.11.16:
+- JavaScript syntax check of all inline JavaScript blocks and service worker (Node.js).
+- HTML script/style tag balance checks.
+- ZIP integrity test.
+- Browser/mobile runtime testing was not performed.
+
+Post-deployment checklist:
+1. Open Patients, open a patient profile, and press Android Back; confirm it returns to Patients.
+2. Open Visits, open a Visit Summary, and press Android Back; confirm it returns to Visits.
+3. Open a profile/summary directly after a refresh and verify fallback behavior.
+4. Confirm no top-left in-page back buttons remain on these two pages.
+5. Confirm other view navigation and patient records still work.
+
+Rollback: redeploy DentalFlow_V7.11.15_Patient_Details_Visit_Summary_Layout.zip. Do not clear LocalStorage; the update does not change stored data structures.
