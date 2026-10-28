@@ -758,6 +758,19 @@ main{padding:10px 10px 78px}
 #workflowSheet #wfTreatmentPlanSection .wf-plan-title-notes .field{margin:6px 0!important}
 @media(max-width:380px){#workflowSheet #wfTreatmentPlanSection>summary{min-height:49px!important;padding:10px 11px!important;gap:9px!important}#workflowSheet #wfTreatmentPlanSection>.wf-section-body{padding:0 10px 11px!important}}
 </style>
+
+<style id="df-v7-11-13-workflow-alignment-fix">
+/* V7.11.13: align Record/Reminder section summaries with the other workflow section summaries. */
+#workflowSheet #wfRecordSection,#workflowSheet #wfReminderSection{padding-left:0!important;padding-right:10px!important;margin-left:0!important;margin-right:0!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important}
+#workflowSheet #wfRecordSection>summary,#workflowSheet #wfReminderSection>summary{padding-left:10px!important;box-sizing:border-box!important}
+/* Match Plan title & notes outer size and summary geometry to Bill title & notes. */
+#workflowSheet #wfPlanTitleNotes{display:block;width:100%;max-width:100%;min-width:0;margin:6px 0!important;padding:0 8px!important;border:1px solid var(--line)!important;border-radius:9px!important;background:#f4faff!important;box-sizing:border-box!important;overflow:hidden}
+#workflowSheet #wfPlanTitleNotes>summary{display:list-item;list-style-position:inside!important;min-height:0!important;padding:8px 2px!important;font-family:inherit!important;font-size:12px!important;font-weight:700!important;line-height:1.35!important;color:var(--p2)!important;box-sizing:border-box!important;cursor:pointer!important}
+#workflowSheet #wfPlanTitleNotes .field{margin:6px 0!important;min-width:0;max-width:100%;box-sizing:border-box}
+#workflowSheet #wfPlanTitleNotes input,#workflowSheet #wfPlanTitleNotes textarea{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+@media(max-width:380px){#workflowSheet #wfRecordSection,#workflowSheet #wfReminderSection{padding-left:0!important;padding-right:8px!important}}
+</style>
+
 </head><body>
 <div id="bootError" class="boot"><div class="bootbox"><h3>DentalFlow needs recovery</h3><p id="bootErrorText" class="muted">The app could not safely read its saved data. Do not reset or clear site data. Export the stored data first, then retry loading.</p><div class="actions" style="justify-content:center"><button class="btn secondary" onclick="exportRecoveryData()">Export stored data</button><button class="btn" onclick="location.reload()">Retry load</button></div></div></div>
 <header class="top"><button class="icon-btn menu-trigger" aria-label="Open menu" title="Menu" onclick="toggleMenu(true)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="brand-wrap"><div class="brand">DentalFlow</div><div id="clinicLabel" class="sub">Dental Clinic Management</div></div><div class="header-actions"><button class="icon-btn" aria-label="Quick patient search" title="Quick patient search" aria-expanded="false" onclick="toggleHeaderQuickSearch()"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button></div></header>
