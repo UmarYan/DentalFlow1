@@ -1966,6 +1966,21 @@ if(!Array.isArray(data.labCases))data.labCases=[];window.dfRenderLabCases();
 @media(max-width:380px){#records #recordList,#reminders #reminderPageList,#reminders #reminderCompletedList{padding-left:2px;padding-right:2px}#records #recordList>.record-card{padding:9px!important}#reminders #reminderPageList .apt-card,#reminders #reminderCompletedList .apt-card{padding:9px!important}}
 </style>
 
+
+<style id="v7-11-11-plan-notes-and-subsection-width-fix">
+/* V7.11.11: Match Plan title & notes geometry to Bill title & notes. */
+#workflowSheet #wfPlanTitleNotes{margin:6px 0!important;border:1px solid var(--line)!important;border-radius:9px!important;background:#f4faff!important;padding:0 8px!important;box-sizing:border-box!important;width:100%;max-width:100%;min-width:0}
+#workflowSheet #wfPlanTitleNotes>summary{padding:8px 2px!important;font-size:12px!important;font-weight:700!important;color:var(--p2)!important;cursor:pointer;box-sizing:border-box}
+#workflowSheet #wfPlanTitleNotes .field{margin:6px 0!important;min-width:0;max-width:100%;box-sizing:border-box}
+#workflowSheet #wfPlanTitleNotes input,#workflowSheet #wfPlanTitleNotes textarea{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+/* Keep Record/Reminder subsections inside the same horizontal content gutter as other workflow sections. */
+#workflowSheet #wfRecordSection,#workflowSheet #wfReminderSection{display:block;width:100%;max-width:100%;min-width:0;box-sizing:border-box;margin-left:0!important;margin-right:0!important;padding-left:10px!important;padding-right:10px!important;overflow:hidden}
+#workflowSheet #wfRecordSection>summary,#workflowSheet #wfReminderSection>summary{max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}
+#workflowSheet #wfRecordSection .field,#workflowSheet #wfReminderSection .field,#workflowSheet #wfRecordSection .two,#workflowSheet #wfReminderSection .two{min-width:0;max-width:100%;box-sizing:border-box}
+#workflowSheet #wfRecordSection input,#workflowSheet #wfRecordSection select,#workflowSheet #wfRecordSection textarea,#workflowSheet #wfReminderSection input,#workflowSheet #wfReminderSection select,#workflowSheet #wfReminderSection textarea{min-width:0;max-width:100%;width:100%;box-sizing:border-box}
+#workflowSheet #wfRecordSection .two,#workflowSheet #wfReminderSection .two{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media(max-width:380px){#workflowSheet #wfRecordSection,#workflowSheet #wfReminderSection{padding-left:8px!important;padding-right:8px!important}#workflowSheet #wfRecordSection .two,#workflowSheet #wfReminderSection .two{gap:6px}}
+</style>
 </body></html>
 
 <style id="df-v7-11-5-treatment-plan-layout-edit">
