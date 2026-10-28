@@ -869,7 +869,7 @@ main{padding:10px 10px 78px}
 <details class="advanced-fields" id="wfCollectExistingPayment"><summary>Collect payment on an existing bill</summary><div class="field"><label>Outstanding bill</label><select id="wfExistingBill" onchange="updateWorkflowExistingBillInfo()"><option value="">Select an unpaid bill</option></select></div><div id="wfExistingBillInfo" class="muted" style="font-size:12px;margin:4px 0">Choose a patient and bill to see the outstanding balance.</div><div class="two"><div class="field"><label>Received now (₹)</label><input id="wfExistingPayment" inputmode="decimal" placeholder="0" autocomplete="off"></div><div class="field"><label>Payment method</label><select id="wfExistingMode"><option>Cash</option><option>UPI</option><option>Card</option><option>Bank transfer</option><option>Other</option></select></div></div></details>
 </div></details>
 <details class="wf-section" id="wfReminderSection"><summary><span>Reminder / task</span><span class="wf-section-hint">Optional</span></summary><div class="wf-section-body"><div class="two"><div class="field"><label>Due date</label><input id="wfReminderDate" type="date"></div><div class="field"><label>Time (optional)</label><input id="wfReminderTime" type="time"></div></div><div class="two"><div class="field"><label>Task type</label><select id="wfReminderType"><option>Follow-up</option><option>Call</option><option>Review</option><option>Payment</option><option>Treatment</option><option>Other</option></select></div><div class="field"><label>Task note</label><input id="wfReminderNote" placeholder="Call patient / payment due"></div></div></div></details>
-<details class="wf-section" id="wfRecordSection"><summary><span>Patient record / document</span><span class="wf-section-hint">Optional</span></summary><div class="wf-section-body"><div class="field"><label>Record type</label><select id="wfRecordType"><option>Medical history</option><option>Allergy</option><option>Investigation</option><option>Referral</option><option>Consent</option><option>Document note</option><option>Other</option></select></div><div class="two"><div class="field"><label>Date</label><input id="wfRecordDate" type="date"></div><div class="field"><label>Title</label><input id="wfRecordTitle" placeholder="e.g. OPG report or consent"></div></div><div class="field"><label>Details</label><textarea id="wfRecordDetails" placeholder="Record details or clinical note"></textarea></div></div></details><div id="wfExistingRecordsSection" class="wf-existing-records-link"><button type="button" class="btn secondary" style="width:100%" onclick="var pid=document.getElementById('wfPatient').value;if(pid){closeSheet('workflowSheet');openProfile(pid)}else{toast('Select a patient first')}" aria-label="Open complete patient details">▤ View complete Patient Details &amp; History</button></div><div id="wfDraftStatus" class="muted" style="font-size:11px;margin-top:8px">Draft stays on this device while you work.</div><div class="actions wf-bottom-actions"><button class="btn ghost wf-discard-action" onclick="discardWorkflowDraft()">Discard draft</button><button class="btn wf-finish-action" onclick="saveUnifiedWorkflow()">Save & Finish</button></div></div></div><div id="menuOverlay" class="menu-overlay" onclick="if(event.target===this)toggleMenu(false)"><aside class="menu-drawer"><div class="menu-head"><div><div class="menu-title">DentalFlow</div></div><button class="close" onclick="toggleMenu(false)" aria-label="Close menu">×</button></div><div class="menu-section"><button class="menu-item" onclick="menuGo('home')"><span class="mi">⌂</span><span>Home</span></button><button class="menu-item" onclick="menuGo('patients')"><span class="mi">♙</span><span>Patients</span></button><button class="menu-item" onclick="menuGo('visits')"><span class="mi">▣</span><span>Visits</span></button><button class="menu-item" onclick="menuGo('advancedSearch')"><span class="mi">⌕</span><span>Advanced Search</span></button><button class="menu-item" onclick="menuGo('appointments')"><span class="mi">◷</span><span>Clinical Workflow</span></button><button class="menu-item" onclick="menuGo('billing')"><span class="mi">₹</span><span>Billing &amp; Payments</span></button><button class="menu-item" onclick="menuGo('clinicManagement')"><span class="mi">▦</span><span>Clinic Management</span></button><button class="menu-item" onclick="menuGo('reports')"><span class="mi">▤</span><span>Reports</span></button><button class="menu-item" onclick="menuGo('settings')"><span class="mi">⚙</span><span>Settings</span></button></div><div class="menu-group-label">DATA &amp; SECURITY</div><div class="menu-section"><button class="menu-item" onclick="backup();toggleMenu(false)"><span class="mi">⇩</span><span>Backup Data</span></button><button class="menu-item" onclick="document.getElementById('restoreFile').click();toggleMenu(false)"><span class="mi">⇧</span><span>Restore Data</span></button><button class="menu-item" onclick="menuGo('backupCenter')"><span class="mi">🛡</span><span>Data Safety</span></button></div><div class="menu-group-label">ABOUT</div><div class="menu-section"><button class="menu-item" onclick="alert('DentalFlow V7.11.6 — Billing Section Order');toggleMenu(false)"><span class="mi">ⓘ</span><span>About DentalFlow</span></button></div></aside></div><div id="fabWrap" class="fab-wrap">
+<details class="wf-section" id="wfRecordSection"><summary><span>Patient record / document</span><span class="wf-section-hint">Optional</span></summary><div class="wf-section-body"><div class="field"><label>Record type</label><select id="wfRecordType"><option>Medical history</option><option>Allergy</option><option>Investigation</option><option>Referral</option><option>Consent</option><option>Document note</option><option>Other</option></select></div><div class="two"><div class="field"><label>Date</label><input id="wfRecordDate" type="date"></div><div class="field"><label>Title</label><input id="wfRecordTitle" placeholder="e.g. OPG report or consent"></div></div><div class="field"><label>Details</label><textarea id="wfRecordDetails" placeholder="Record details or clinical note"></textarea></div></div></details><div id="wfExistingRecordsSection" class="wf-existing-records-link"><button type="button" class="btn secondary" style="width:100%" onclick="var pid=document.getElementById('wfPatient').value;if(pid){closeSheet('workflowSheet');openProfile(pid)}else{toast('Select a patient first')}" aria-label="Open complete patient details">▤ View complete Patient Details &amp; History</button></div><div id="wfDraftStatus" class="muted" style="font-size:11px;margin-top:8px">Draft stays on this device while you work.</div><div class="actions wf-bottom-actions"><button class="btn ghost wf-discard-action" onclick="discardWorkflowDraft()">Discard draft</button><button class="btn wf-finish-action" onclick="saveUnifiedWorkflow()">Save & Finish</button></div></div></div><div id="menuOverlay" class="menu-overlay" onclick="if(event.target===this)toggleMenu(false)"><aside class="menu-drawer"><div class="menu-head"><div><div class="menu-title">DentalFlow</div></div><button class="close" onclick="toggleMenu(false)" aria-label="Close menu">×</button></div><div class="menu-section"><button class="menu-item" onclick="menuGo('home')"><span class="mi">⌂</span><span>Home</span></button><button class="menu-item" onclick="menuGo('patients')"><span class="mi">♙</span><span>Patients</span></button><button class="menu-item" onclick="menuGo('visits')"><span class="mi">▣</span><span>Visits</span></button><button class="menu-item" onclick="menuGo('advancedSearch')"><span class="mi">⌕</span><span>Advanced Search</span></button><button class="menu-item" onclick="menuGo('appointments')"><span class="mi">◷</span><span>Clinical Workflow</span></button><button class="menu-item" onclick="menuGo('billing')"><span class="mi">₹</span><span>Billing &amp; Payments</span></button><button class="menu-item" onclick="menuGo('clinicManagement')"><span class="mi">▦</span><span>Clinic Management</span></button><button class="menu-item" onclick="menuGo('reports')"><span class="mi">▤</span><span>Reports</span></button><button class="menu-item" onclick="menuGo('settings')"><span class="mi">⚙</span><span>Settings</span></button></div><div class="menu-group-label">DATA &amp; SECURITY</div><div class="menu-section"><button class="menu-item" onclick="backup();toggleMenu(false)"><span class="mi">⇩</span><span>Backup Data</span></button><button class="menu-item" onclick="document.getElementById('restoreFile').click();toggleMenu(false)"><span class="mi">⇧</span><span>Restore Data</span></button><button class="menu-item" onclick="menuGo('backupCenter')"><span class="mi">🛡</span><span>Data Safety</span></button></div><div class="menu-group-label">ABOUT</div><div class="menu-section"><button class="menu-item" onclick="alert('DentalFlow V7.11.22 — Clinical Visit Edit Prefill Fix');toggleMenu(false)"><span class="mi">ⓘ</span><span>About DentalFlow</span></button></div></aside></div><div id="fabWrap" class="fab-wrap">
   <div id="fabMenu" class="fab-menu"></div>
   <button id="fabMain" class="fab-main" aria-label="Quick add" title="Quick add" onclick="toggleFab()">+</button>
 </div><div id="dfLabSheet" class="overlay"><div class="sheet"><div class="sheet-head"><h2 id="dfLabTitle" style="margin:0">Add lab case</h2><button class="close" type="button" onclick="dfCloseLabCase()" aria-label="Close">×</button></div><form id="dfLabForm" class="df-lab-case-form" onsubmit="return dfSaveLabCase(event)"><div class="df-dialog-grid"><div class="field wide"><label for="dfLabPatient">Patient *</label><select id="dfLabPatient" required></select></div><div class="field"><label for="dfLabWork">Work type *</label><select id="dfLabWork" required><option>Crown</option><option>Bridge</option><option>Denture</option><option>Inlay / Onlay</option><option>Night guard</option><option>Other</option></select></div><div class="field"><label for="dfLabName">Laboratory</label><input id="dfLabName" placeholder="Lab name"></div><div class="field"><label for="dfLabStatus">Status</label><select id="dfLabStatus"><option>Planned</option><option>Sent to lab</option><option>Received</option><option>Fitted</option><option>Cancelled</option></select></div><div class="field"><label for="dfLabSent">Sent date</label><input id="dfLabSent" type="date"></div><div class="field"><label for="dfLabDue">Expected return</label><input id="dfLabDue" type="date"></div><div class="field"><label for="dfLabCost">Lab cost (₹)</label><input id="dfLabCost" type="number" min="0" step="any" value="0"></div><div class="field"><label for="dfLabAccount">Paid from account</label><select id="dfLabAccount"><option value="">Select account</option></select></div><div class="field wide muted" style="font-size:12px;margin-top:-6px">A lab cost above ₹0 is added to Clinic Finance. Select the account used for payment; its balance will decrease automatically.</div><div class="field wide"><label for="dfLabNote">Note (optional)</label><input id="dfLabNote" placeholder="Shade, design or other reminder"></div></div><div class="actions" style="margin-top:14px"><button class="btn" type="submit">Save case</button><button class="btn ghost" type="button" onclick="dfCloseLabCase()">Cancel</button></div></form></div></div>
@@ -1966,7 +1966,24 @@ if(!Array.isArray(data.labCases))data.labCases=[];window.dfRenderLabCases();
  var oldOpen=window.openUnifiedWorkflow;
  window.openUnifiedWorkflow=function(){clearFocus();var r=oldOpen.apply(this,arguments);setTitle('Patient Visit Entry');return r};
  var oldEdit=window.openCentralWorkflowEdit;
- window.openCentralWorkflowEdit=function(type,id){clearFocus();var r=oldEdit.apply(this,arguments);setTimeout(function(){focusSection(type,'edit')},30);return r};
+ /* V7.11.22: after the shared Patient Visit Entry form has been opened and focused,
+    re-bind the selected Clinical Visit from the live data store. This guards against
+    focus-mode/draft initialization overwriting the initial prefill. */
+ window.openCentralWorkflowEdit=function(type,id){
+   clearFocus();var r=oldEdit.apply(this,arguments);
+   setTimeout(function(){
+     focusSection(type,'edit');
+     if(type==='visit'){
+       var visit=(typeof data!=='undefined'&&Array.isArray(data.visits)?data.visits:[]).find(function(v){return String(v.id)===String(id)});
+       if(!visit)return;
+       var values={wfChief:visit.chiefComplaint||visit.reason||'',wfHistory:visit.history||'',wfExam:visit.examination||visit.exam||'',wfDiagnosis:visit.diagnosis||'',wfTreatment:visit.treatmentDone||visit.treatment||'',wfRx:visit.prescription||visit.rx||'',wfAdvice:visit.advice||'',wfNext:visit.nextVisit||'',wfNextTime:visit.nextVisitTime||''};
+       Object.keys(values).forEach(function(fid){var field=document.getElementById(fid);if(field)field.value=String(values[fid]||'')});
+       var clinical=document.getElementById('wfClinicalSection');if(clinical)clinical.open=true;
+       var advanced=clinical&&clinical.querySelector('details.advanced-fields');if(advanced&&[values.wfHistory,values.wfDiagnosis,values.wfRx,values.wfAdvice].some(function(v){return !!String(v).trim()}))advanced.open=true;
+     }
+   },45);
+   return r;
+ };
  var oldAction=window.openVisitWorkspaceAction;
  if(typeof oldAction==='function')window.openVisitWorkspaceAction=function(kind){var r=oldAction.apply(this,arguments);var map={visit:'visit',plan:'plan',bill:'bill',followup:'followup'};if(map[kind])setTimeout(function(){focusSection(map[kind],'new')},30);return r};
  window.focusPatientVisitEntrySection=function(type,patientId){window.openUnifiedWorkflow(patientId);setTimeout(function(){focusSection(type,'new')},30)};
@@ -2131,47 +2148,3 @@ if(!Array.isArray(data.labCases))data.labCases=[];window.dfRenderLabCases();
 /* V7.11.7: Bill title & notes uses the same compact subsection styling as More billing options and Collect payment on an existing bill. */
 #workflowSheet #wfBillTitleNotes .field{margin:6px 0!important}
 </style>
-
-
-<script id="df-v7-11-21-clinical-visit-edit-prefill-fix">
-/* V7.11.21: Final-stage binding for Clinical Visit edit, using the app's actual shared data store and shared Patient Visit Entry form. Add mode stays blank. */
-(function(){
-  'use strict';
-  if (window.__dfClinicalVisitEditPrefillV71121) return;
-  window.__dfClinicalVisitEditPrefillV71121 = true;
-  var original = window.openCentralWorkflowEdit;
-  if (typeof original !== 'function') return;
-  function val(id, value){ var el=document.getElementById(id); if(el) el.value = value == null ? '' : String(value); }
-  function applyVisit(id){
-    var sh=document.getElementById('workflowSheet');
-    if(!sh || String(sh.dataset.editType||'')!=='visit' || String(sh.dataset.editId||'')!==String(id)) return;
-    /* `data` is the app's existing lexical store; do not introduce a parallel store or migration. */
-    var list=(typeof data!=='undefined' && data && Array.isArray(data.visits)) ? data.visits : [];
-    var v=list.find(function(item){return String(item.id)===String(id);});
-    if(!v) return;
-    var pid=v.patientId || sh.dataset.patientId || '';
-    var patient=document.getElementById('wfPatient');
-    if(patient && pid){patient.value=pid;patient.disabled=true;}
-    sh.dataset.patientId=pid;
-    val('wfChief', v.chiefComplaint != null ? v.chiefComplaint : (v.reason||''));
-    val('wfHistory',v.history);
-    val('wfExam',v.examination != null ? v.examination : (v.exam||v.findings||''));
-    val('wfDiagnosis',v.diagnosis);
-    val('wfTreatment',v.treatmentDone != null ? v.treatmentDone : (v.treatment||''));
-    val('wfRx',v.prescription != null ? v.prescription : (v.rx||''));
-    val('wfAdvice',v.advice);
-    val('wfNext',v.nextVisit != null ? v.nextVisit : (v.followupDate||''));
-    val('wfNextTime',v.nextVisitTime);
-    var section=document.getElementById('wfClinicalSection'); if(section)section.open=true;
-    var head=document.querySelector('#workflowSheet .sheet-head h2'); if(head)head.textContent='Edit · Clinical visit';
-  }
-  window.openCentralWorkflowEdit=function(type,id){
-    var result=original.apply(this,arguments);
-    if(type==='visit'){
-      /* Reapply after the original form-population and focus wrappers have run. */
-      [0,60,180].forEach(function(delay){setTimeout(function(){applyVisit(id);},delay);});
-    }
-    return result;
-  };
-})();
-</script>

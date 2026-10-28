@@ -23,3 +23,10 @@ Post-deployment checklist:
 5. Confirm Android Back navigation still returns to the previous app view.
 
 Rollback: redeploy DentalFlow_V7.11.18_Android_Back_Navigation_Fix.zip.
+
+
+V7.11.22 — Clinical Visit Edit Prefill Fix
+- Retains the shared Patient Visit Entry form structure for Add/Edit Clinical Visit.
+- Rebinds the selected saved visit into the shared form after edit-mode focus initialization.
+- Preserves the existing visit record ID and save path; no data migration.
+- Browser testing not performed.
