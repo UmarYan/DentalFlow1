@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0284C7"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.11.20 — Central Workspace Add/Edit</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0284C7"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.11.24 — Clinical Visit Editor Rebuild</title><style>
 :root{--bg:#F0F9FF;--card:#FFFFFF;--text:#1E293B;--muted:#64748B;--p:#0284C7;--p2:#0369A1;--line:#BAE6FD;--soft:#E0F2FE;--danger:#B91C1C}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:10;background:#0284C7;border-bottom:1px solid #0369A1;padding:11px 14px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:20px;color:#FFFFFF}.sub,.muted{font-size:12px;color:var(--muted)}.top .sub{color:#BAE6FD}main{max-width:900px;margin:auto;padding:14px 14px 88px}.view{display:none}.view.active{display:block}.hero{background:var(--p);color:#fff;border-radius:18px;padding:18px}.hero h1{margin:0 0 4px}.hero p{margin:0;opacity:.9}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:0 1px 5px #0284C71F}.card h2,.card h3{margin-top:0}.metric{font-size:27px;font-weight:850;color:var(--p)}.btn{border:0;border-radius:11px;padding:10px 13px;background:var(--p);color:#fff;font-weight:700}.btn.secondary{background:var(--soft);color:var(--p2)}.top .btn.secondary{background:#E0F2FE;color:#0369A1}.btn.ghost{background:#fff;color:var(--p);border:1px solid var(--line)}.btn.danger{background:#feeceb;color:var(--danger)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.search{margin:11px 0}.search input,.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff;outline:none}.field{margin:11px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px}.field textarea{min-height:76px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.list{display:flex;flex-direction:column;gap:9px}.patient{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:13px;background:#fff}.avatar{width:43px;height:43px;border-radius:50%;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:850;flex:none}.patient-main{min-width:0;flex:1}.patient-name{font-weight:750}.patient-meta{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty{text-align:center;padding:26px 12px;color:var(--muted)}.profile-head{display:flex;align-items:center;gap:12px}.big-avatar{width:58px;height:58px;border-radius:18px;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:900;font-size:20px}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.info{background:var(--bg);border-radius:11px;padding:10px}.info b{display:block;font-size:12px}.info span{font-size:12px;color:var(--muted)}.section{margin-top:12px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff}.bottom{position:fixed;left:0;right:0;bottom:0;z-index:10;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:3px;padding:7px max(5px,env(safe-area-inset-bottom))}.nav{border:0;background:transparent;color:var(--muted);padding:8px 13px;border-radius:10px;font-size:12px}.nav.active{background:var(--soft);color:var(--p);font-weight:800}.overlay{position:fixed;inset:0;background:#0005;display:none;align-items:flex-end;z-index:30}.overlay.show{display:flex}.sheet{background:#fff;width:100%;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:17px 15px calc(20px + env(safe-area-inset-bottom))}.sheet-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:var(--soft);color:var(--p);width:36px;height:36px;border-radius:50%;font-size:20px}.boot{position:fixed;inset:0;background:var(--bg);display:none;align-items:center;justify-content:center;padding:25px;text-align:center;z-index:99}.boot.show{display:flex}.bootbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;max-width:430px}.toast{position:fixed;left:50%;bottom:74px;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 15px;border-radius:10px;display:none;z-index:40;font-size:13px}@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}.overlay{align-items:center;justify-content:center}.sheet{max-width:620px;border-radius:20px}}
 
 /* V3 navigation and menu */
@@ -1012,38 +1012,52 @@ function toggleWorkflowNewPatient(){wfNewPatient=!wfNewPatient;$('wfPatientDetai
 function centralEditSet(id,value){var el=$(id);if(el)el.value=value==null?'':String(value)}
 function openCentralWorkflowEdit(type,id){
  var listMap={visit:data.visits,plan:data.plans,appointment:data.appointments,followup:data.followups||[],reminder:data.reminders,record:data.records,bill:data.bills,patient:data.patients};
- var x=(listMap[type]||[]).find(function(r){return String(r.id)===String(id)});if(type==='payment'&&!x){for(var bi=0;bi<data.bills.length&&!x;bi++){var pp=(data.bills[bi].payments||[]).find(function(pm){return String(pm.id)===String(id)});if(pp){x=Object.assign({},pp,{billId:data.bills[bi].id})}}}if(!x){toast('Record not found');return}
- var pid=type==='patient'?x.id:x.patientId;if(type==='payment'){var parentBill=data.bills.find(function(b){return (b.payments||[]).some(function(pm){return String(pm.id)===String(id)})});if(parentBill){pid=parentBill.patientId;x=Object.assign({},x,{billId:parentBill.id})}}if(!patient(pid)){toast('Patient not found');return}
+ var x=(listMap[type]||[]).find(function(r){return String(r.id)===String(id)});
+ if(type==='payment'&&!x){for(var bi=0;bi<data.bills.length&&!x;bi++){var pp=(data.bills[bi].payments||[]).find(function(pm){return String(pm.id)===String(id)});if(pp){x=Object.assign({},pp,{billId:data.bills[bi].id})}}}
+ if(!x){toast('Record not found');return false}
+ var pid=type==='patient'?x.id:x.patientId;
+ if(type==='payment'){var parentBill=data.bills.find(function(b){return (b.payments||[]).some(function(pm){return String(pm.id)===String(id)})});if(parentBill){pid=parentBill.patientId;x=Object.assign({},x,{billId:parentBill.id})}}
+ if(!patient(pid)){toast('Patient not found');return false}
+ /* V7.11.24: reset/open the central workspace first, then synchronously bind the selected record.
+    No timer-based form hydration: this prevents later open/focus timers from racing the edit data. */
  openUnifiedWorkflow(pid);
- var sh=$('workflowSheet');sh.dataset.editType=type;sh.dataset.editId=String(id);
- sh.dataset.patientId=pid;
- setTimeout(function(){
-   var sectionMap={patient:'wfPatientDetails',visit:'wfClinicalSection',plan:'wfTreatmentPlanSection',appointment:'wfArrivalSection',followup:'wfFollowupSection',reminder:'wfReminderSection',record:'wfRecordSection',bill:'wfBillingSection',payment:'wfCollectExistingPayment'};
-   sh.querySelectorAll('details.wf-section, details.wf-subsection, details.advanced-fields').forEach(function(d){d.open=false});
-   var sec=$(sectionMap[type]);if(sec)sec.open=true;
-   $('wfPatient').value=pid;$('wfPatient').disabled=true;loadWorkflowPatientDetails();
-   if(type==='patient'){ $('wfPatientDetails').open=true;$('wfPatientDetailsSummary').textContent='Edit patient information'; }
-   if(type==='visit'){
-     centralEditSet('wfChief',x.chiefComplaint||x.reason);centralEditSet('wfHistory',x.history);centralEditSet('wfExam',x.examination);centralEditSet('wfDiagnosis',x.diagnosis);centralEditSet('wfTreatment',x.treatmentDone);centralEditSet('wfRx',x.prescription);centralEditSet('wfAdvice',x.advice);centralEditSet('wfNext',x.nextVisit);centralEditSet('wfNextTime',x.nextVisitTime);
-   }else if(type==='plan'){
-     centralEditSet('wfPlanTitle',x.title);centralEditSet('wfPlanNotes',x.notes);wfPlanItems=(x.items||[]).map(function(it){return{id:it.id,procedure:it.procedure,estimate:Number(it.estimate)||0,priority:it.priority||'Routine',status:it.status||'Planned',notes:it.notes||''}});renderWorkflowPlanItems();$('wfTreatmentPlanSection').open=true;
-   }else if(type==='appointment'){
-     centralEditSet('wfArrival','Appointment');$('wfArrivalSection').open=true;$('wfAppointmentFields').style.display='block';centralEditSet('wfAptDate',x.date);centralEditSet('wfAptTime',x.time);centralEditSet('wfAptNote',x.notes);centralEditSet('wfAptReason',x.reason);
-   }else if(type==='followup'){
-     centralEditSet('wfNext',x.dueDate);centralEditSet('wfNextTime',x.dueTime);centralEditSet('wfFollowupReason',x.reason);centralEditSet('wfFollowupNote',x.note);$('wfFollowupSection').open=true;
-   }else if(type==='reminder'){
-     centralEditSet('wfReminderDate',x.dueDate);centralEditSet('wfReminderTime',x.dueTime);centralEditSet('wfReminderType',x.type);centralEditSet('wfReminderNote',x.note);$('wfReminderSection').open=true;
-   }else if(type==='record'){
-     centralEditSet('wfRecordType',x.type||'Other');centralEditSet('wfRecordDate',x.date);centralEditSet('wfRecordTitle',x.title);centralEditSet('wfRecordDetails',x.details||x.note);$('wfRecordSection').open=true;
-   }else if(type==='bill'){
-     centralEditSet('wfBillTitle',x.title);centralEditSet('wfBillNotes',x.notes);centralEditSet('wfDiscount',x.discount||0);wfBillItems=(x.items||[]).map(function(it){return{service:it.service||it.title||'Treatment',fee:Number(it.amount!=null?it.amount:it.fee)||0,sourceId:it.id}});renderWorkflowBillItems();$('wfBillSection').open=true;
-   }else if(type==='payment'){
-     var bill=data.bills.find(function(b){return b.id===x.billId})||data.bills.find(function(b){return b.patientId===pid&&(b.payments||[]).some(function(pm){return pm.id===id})});
-     var pm=bill&&(bill.payments||[]).find(function(q){return q.id===id});if(!bill||!pm){toast('Payment not found');return}
-     sh.dataset.editBillId=bill.id;centralEditSet('wfExistingBill',bill.id);centralEditSet('wfExistingPayment',pm.amount);centralEditSet('wfExistingMode',pm.mode||'Cash');$('wfCollectExistingPayment').open=true;
-   }
-   var wh=sh.querySelector('.sheet-head h2');if(wh)wh.textContent='Edit · '+({patient:'Patient information',visit:'Clinical visit',plan:'Treatment plan',appointment:'Appointment',followup:'Follow-up',reminder:'Reminder / task',record:'Record / document',bill:'Bill',payment:'Payment'}[type]||'Record');
- },0);
+ var sh=$('workflowSheet'); if(!sh)return false;
+ sh.dataset.editType=type;sh.dataset.editId=String(id);sh.dataset.patientId=pid;
+ var sectionMap={patient:'wfPatientDetails',visit:'wfClinicalSection',plan:'wfTreatmentPlanSection',appointment:'wfArrivalSection',followup:'wfFollowupSection',reminder:'wfReminderSection',record:'wfRecordSection',bill:'wfBillingSection',payment:'wfCollectExistingPayment'};
+ sh.querySelectorAll('details.wf-section, details.wf-subsection, details.advanced-fields').forEach(function(d){d.open=false});
+ var sec=$(sectionMap[type]);if(sec)sec.open=true;
+ $('wfPatient').value=pid;$('wfPatient').disabled=true;loadWorkflowPatientDetails();
+ function put(field,value){centralEditSet(field,value);var el=$(field);if(el){el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));}}
+ if(type==='patient'){
+   $('wfPatientDetails').open=true;$('wfPatientDetailsSummary').textContent='Edit patient information';
+ }else if(type==='visit'){
+   put('wfChief',x.chiefComplaint||x.chief_complaint||x.reason||'');
+   put('wfHistory',x.history||x.medicalHistory||x.medical_history||'');
+   put('wfExam',x.examination||x.exam||x.clinicalFindings||x.clinical_findings||'');
+   put('wfDiagnosis',x.diagnosis||x.diagnosisText||x.diagnosis_text||x.reason||'');
+   put('wfTreatment',x.treatmentDone||x.treatment||x.treatment_done||'');
+   put('wfRx',x.prescription||x.rx||'');put('wfAdvice',x.advice||x.patientAdvice||x.patient_advice||'');
+   put('wfNext',x.nextVisit||x.next_visit||'');put('wfNextTime',x.nextVisitTime||x.next_visit_time||'');
+   $('wfClinicalSection').open=true;var adv=$('wfClinicalSection').querySelector('details.advanced-fields');if(adv)adv.open=true;
+ }else if(type==='plan'){
+   put('wfPlanTitle',x.title);put('wfPlanNotes',x.notes);wfPlanItems=(x.items||[]).map(function(it){return{id:it.id,procedure:it.procedure,estimate:Number(it.estimate)||0,priority:it.priority||'Routine',status:it.status||'Planned',notes:it.notes||''}});renderWorkflowPlanItems();$('wfTreatmentPlanSection').open=true;
+ }else if(type==='appointment'){
+   put('wfArrival','Appointment');$('wfArrivalSection').open=true;$('wfAppointmentFields').style.display='block';put('wfAptDate',x.date);put('wfAptTime',x.time);put('wfAptNote',x.notes);put('wfAptReason',x.reason);
+ }else if(type==='followup'){
+   put('wfNext',x.dueDate);put('wfNextTime',x.dueTime);put('wfFollowupReason',x.reason);put('wfFollowupNote',x.note);$('wfFollowupSection').open=true;
+ }else if(type==='reminder'){
+   put('wfReminderDate',x.dueDate);put('wfReminderTime',x.dueTime);put('wfReminderType',x.type);put('wfReminderNote',x.note);$('wfReminderSection').open=true;
+ }else if(type==='record'){
+   put('wfRecordType',x.type||'Other');put('wfRecordDate',x.date);put('wfRecordTitle',x.title);put('wfRecordDetails',x.details||x.note);$('wfRecordSection').open=true;
+ }else if(type==='bill'){
+   put('wfBillTitle',x.title);put('wfBillNotes',x.notes);put('wfDiscount',x.discount||0);wfBillItems=(x.items||[]).map(function(it){return{service:it.service||it.title||'Treatment',fee:Number(it.amount!=null?it.amount:it.fee)||0,sourceId:it.id}});renderWorkflowBillItems();$('wfBillingSection').open=true;
+ }else if(type==='payment'){
+   var bill=data.bills.find(function(b){return String(b.id)===String(x.billId)})||data.bills.find(function(b){return b.patientId===pid&&(b.payments||[]).some(function(pm){return String(pm.id)===String(id)})});
+   var pm=bill&&(bill.payments||[]).find(function(q){return String(q.id)===String(id)});if(!bill||!pm){toast('Payment not found');return false}
+   sh.dataset.editBillId=bill.id;put('wfExistingBill',bill.id);put('wfExistingPayment',pm.amount);put('wfExistingMode',pm.mode||'Cash');$('wfCollectExistingPayment').open=true;
+ }
+ var wh=sh.querySelector('.sheet-head h2');if(wh)wh.textContent='Edit · '+({patient:'Patient information',visit:'Clinical visit',plan:'Treatment plan',appointment:'Appointment',followup:'Follow-up',reminder:'Reminder / task',record:'Record / document',bill:'Billing & Payment',payment:'Payment'}[type]||'Record');
+ return true;
 }
 function saveCentralWorkflowEdit(){
  var sh=$('workflowSheet'),type=sh.dataset.editType,id=sh.dataset.editId,pid=sh.dataset.patientId;
@@ -2116,9 +2130,8 @@ if(!Array.isArray(data.labCases))data.labCases=[];window.dfRenderLabCases();
   });
 })();
 </script>
-
-<script id="df-v7-11-20-central-workspace-routing">
-/* V7.11.20: route section add/edit entry points through Patient Visit Entry.
+<script id="df-v7-11-24-central-workspace-routing">
+/* V7.11.24: route section add/edit entry points through Patient Visit Entry.
    Keep the existing central save routines and record schemas; legacy standalone
    forms are no longer used as fallback paths for these section entry points. */
 (function(){
@@ -2172,7 +2185,6 @@ if(!Array.isArray(data.labCases))data.labCases=[];window.dfRenderLabCases();
   };
 })();
 </script>
-
 </body></html>
 
 <style id="df-v7-11-5-treatment-plan-layout-edit">
