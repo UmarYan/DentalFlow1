@@ -1,6 +1,6 @@
-DentalFlow V7.11.26 — Compact Detail Rows
+DentalFlow V7.11.27 — Tooth-wise Treatment Tracking
 
-Base: DentalFlow_V7.11.25_Smart_Draft_Recovery.zip
+Base: DentalFlow_V7.11.26_Compact_Detail_Rows.zip
 
 Change log:
 - Updated Clinical Visit, Follow-up/Reminder, Bill/Payment and other context-detail popup fields to a compact horizontal label/value row layout with consistent alignment and subtle dividers.
@@ -19,7 +19,14 @@ Change log:
 Validation performed:
 - ZIP integrity check.
 - JavaScript syntax check for every inline script and service worker.
-- Static checks for compact detail-row styles and V7.11.26 version/cache labels.
+
+- Added optional FDI tooth-number fields to Patient Visit Entry for Clinical Visit, each planned treatment item, and each bill line. Supports entries such as 37 and 46 without creating duplicate patient records.
+- Tooth numbers are retained in workflow drafts, saved Treatment Plan items, visit records, and bill items; planned treatment can be added to the bill with its tooth number carried over.
+- Tooth identifiers are displayed alongside planned treatment and bill lines and included in Treatment Plan search.
+- Fixed linked Treatment Item progression so entering any treatment text during a visit no longer automatically marks the entire item Completed. A non-completed linked item moves to In progress; completion remains an explicit status decision.
+- Preserved existing Lab Tracking module and existing local data schema; older records without tooth values continue to load with blank tooth identifiers.
+
+- Static checks for tooth-wise fields, visit/item/bill mappings, status progression, and V7.11.27 version/cache labels.
 
 Validation performed (inherited from base):
 - ZIP integrity check.
@@ -35,4 +42,8 @@ Post-deployment checklist:
 5. Discard one draft and confirm other drafts and saved patient records remain intact.
 6. Test editing and saving an existing Clinical Visit; confirm it updates the same record without creating a duplicate.
 
-Rollback: redeploy DentalFlow_V7.11.25_Smart_Draft_Recovery.zip.
+Rollback: redeploy DentalFlow_V7.11.26_Compact_Detail_Rows.zip.
+
+7. Add planned items for Tooth 37 and Tooth 46; verify tooth numbers persist after save/edit and appear on the plan card.
+8. Add bill lines for Tooth 37 and Tooth 46; verify tooth numbers appear on bill details and survive editing.
+9. Record a partial visit against a linked planned item; verify it becomes In progress, not Completed automatically.
