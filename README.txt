@@ -1,25 +1,29 @@
-DentalFlow V7.11.19 — Patient Visit Entry Section Alignment
+DentalFlow V7.11.20 — Central Workspace Add/Edit
 
-Base: DentalFlow_V7.11.18_Android_Back_Navigation_Fix.zip.
+Base: DentalFlow_V7.11.19_Patient_Visit_Entry_Section_Alignment.zip.
 
 Change log:
-- Patient Visit Entry sections now appear in the requested order: Patient; Appointment / arrival; Clinical visit; Treatment plan; Follow-up; Billing & payment; Reminder / task; Patient record / document.
-- Reminder / task and Patient record / document now use the same card structure, left edge, summary padding, and optional hint alignment as the other sections.
-- Updated the service-worker cache identifier to V7.11.19.
-- No patient data structures, LocalStorage keys, clinical data, billing data, or unrelated workflows were intentionally changed.
+- Routed Clinical Visit, Treatment Plan, Billing & Payment, Appointment/Arrival, Follow-up, Reminder/Task, Patient Record/Document, and Patient add/edit entry points through the central Patient Visit Entry workspace.
+- Section-specific add actions open the relevant section; edit actions use the existing central section editor and existing save routines.
+- Removed legacy standalone-form fallback behavior from these entry points by routing them directly to the central workspace.
+- Preserved existing record IDs, data fields, LocalStorage keys, save logic, and unrelated workflows.
+- Updated service-worker cache identifier to V7.11.20.
 
 Validation performed:
-- ZIP integrity test.
-- JavaScript syntax check of all inline JavaScript blocks and service worker.
-- HTML tag balance checks for script/style and workflow section structure.
-- Static checks for requested section order and consistent section classes.
+- ZIP integrity test after packaging.
+- JavaScript syntax checks for inline scripts and service worker.
+- HTML tag balance checks for script/style and central section IDs.
+- Static route checks for all requested add/edit entry points.
 - Browser/mobile runtime testing was not performed.
 
 Post-deployment checklist:
-1. Open Patient Visit Entry and verify the eight sections appear in the listed order.
-2. Confirm all section cards begin at the same left edge and have matching arrow/title alignment.
-3. Expand Reminder / task and Patient record / document; verify all fields still work.
-4. Save a visit and confirm patient data and existing billing/clinical records remain available.
-5. Confirm Android Back navigation still returns to the previous app view.
+1. Open Patient Visit Entry and verify all eight sections appear in the expected order.
+2. Add a clinical visit and confirm it saves once for the selected patient.
+3. Edit an existing clinical visit and confirm the same visit is updated without creating a duplicate.
+4. Try Add/Edit for Treatment Plan, Appointment, Follow-up, Billing, Reminder, and Patient Record; confirm each opens the corresponding central section/editor.
+5. Confirm existing patient, clinical, appointment, payment, and billing data remain available after reload.
+6. On Android, test Back navigation and reopening Patient Visit Entry.
 
-Rollback: redeploy DentalFlow_V7.11.18_Android_Back_Navigation_Fix.zip.
+Rollback:
+- Redeploy the preserved base ZIP: DentalFlow_V7.11.19_Patient_Visit_Entry_Section_Alignment.zip.
+- Because this update does not intentionally change data schemas or LocalStorage keys, rollback should not require a data migration. Keep a backup of clinic data before deployment as usual.

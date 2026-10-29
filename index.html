@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0284C7"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.11.12 — Smart Box Option Navigation</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0284C7"><link rel="manifest" href="./manifest.json"><title>DentalFlow V7.11.20 — Central Workspace Add/Edit</title><style>
 :root{--bg:#F0F9FF;--card:#FFFFFF;--text:#1E293B;--muted:#64748B;--p:#0284C7;--p2:#0369A1;--line:#BAE6FD;--soft:#E0F2FE;--danger:#B91C1C}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:10;background:#0284C7;border-bottom:1px solid #0369A1;padding:11px 14px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:20px;color:#FFFFFF}.sub,.muted{font-size:12px;color:var(--muted)}.top .sub{color:#BAE6FD}main{max-width:900px;margin:auto;padding:14px 14px 88px}.view{display:none}.view.active{display:block}.hero{background:var(--p);color:#fff;border-radius:18px;padding:18px}.hero h1{margin:0 0 4px}.hero p{margin:0;opacity:.9}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:0 1px 5px #0284C71F}.card h2,.card h3{margin-top:0}.metric{font-size:27px;font-weight:850;color:var(--p)}.btn{border:0;border-radius:11px;padding:10px 13px;background:var(--p);color:#fff;font-weight:700}.btn.secondary{background:var(--soft);color:var(--p2)}.top .btn.secondary{background:#E0F2FE;color:#0369A1}.btn.ghost{background:#fff;color:var(--p);border:1px solid var(--line)}.btn.danger{background:#feeceb;color:var(--danger)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.search{margin:11px 0}.search input,.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff;outline:none}.field{margin:11px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px}.field textarea{min-height:76px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.list{display:flex;flex-direction:column;gap:9px}.patient{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:13px;background:#fff}.avatar{width:43px;height:43px;border-radius:50%;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:850;flex:none}.patient-main{min-width:0;flex:1}.patient-name{font-weight:750}.patient-meta{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty{text-align:center;padding:26px 12px;color:var(--muted)}.profile-head{display:flex;align-items:center;gap:12px}.big-avatar{width:58px;height:58px;border-radius:18px;background:var(--soft);color:var(--p);display:grid;place-items:center;font-weight:900;font-size:20px}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.info{background:var(--bg);border-radius:11px;padding:10px}.info b{display:block;font-size:12px}.info span{font-size:12px;color:var(--muted)}.section{margin-top:12px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff}.bottom{position:fixed;left:0;right:0;bottom:0;z-index:10;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:3px;padding:7px max(5px,env(safe-area-inset-bottom))}.nav{border:0;background:transparent;color:var(--muted);padding:8px 13px;border-radius:10px;font-size:12px}.nav.active{background:var(--soft);color:var(--p);font-weight:800}.overlay{position:fixed;inset:0;background:#0005;display:none;align-items:flex-end;z-index:30}.overlay.show{display:flex}.sheet{background:#fff;width:100%;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:17px 15px calc(20px + env(safe-area-inset-bottom))}.sheet-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:var(--soft);color:var(--p);width:36px;height:36px;border-radius:50%;font-size:20px}.boot{position:fixed;inset:0;background:var(--bg);display:none;align-items:center;justify-content:center;padding:25px;text-align:center;z-index:99}.boot.show{display:flex}.bootbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;max-width:430px}.toast{position:fixed;left:50%;bottom:74px;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 15px;border-radius:10px;display:none;z-index:40;font-size:13px}@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}.overlay{align-items:center;justify-content:center}.sheet{max-width:620px;border-radius:20px}}
 
 /* V3 navigation and menu */
@@ -2116,50 +2116,63 @@ if(!Array.isArray(data.labCases))data.labCases=[];window.dfRenderLabCases();
   });
 })();
 </script>
-<script id="df-v7-11-23-clinical-visit-edit-prefill-fix">
-/* V7.11.23: rehydrate the selected visit after the shared workflow and focus wrappers finish opening the form. */
+
+<script id="df-v7-11-20-central-workspace-routing">
+/* V7.11.20: route section add/edit entry points through Patient Visit Entry.
+   Keep the existing central save routines and record schemas; legacy standalone
+   forms are no longer used as fallback paths for these section entry points. */
 (function(){
-  if (window.__dfClinicalVisitEditHydrationV71123) return;
-  window.__dfClinicalVisitEditHydrationV71123 = true;
-  var previousEdit = window.openCentralWorkflowEdit;
-  if (typeof previousEdit !== 'function') return;
-  function setValue(id, value) {
-    var el = document.getElementById(id);
-    if (el) el.value = value == null ? '' : String(value);
-  }
-  function hydrateVisit(id) {
-    var visits = typeof data !== 'undefined' && data && Array.isArray(data.visits) ? data.visits : [];
-    var v = visits.find(function(item){ return String(item.id) === String(id); });
-    var sheet = document.getElementById('workflowSheet');
-    if (!v || !sheet || sheet.dataset.editType !== 'visit' || String(sheet.dataset.editId) !== String(id)) return;
-    var values = {
-      wfChief: v.chiefComplaint || v.chief_complaint || v.reason || '',
-      wfHistory: v.history || v.medicalHistory || '',
-      wfExam: v.examination || v.exam || v.clinicalFindings || '',
-      wfDiagnosis: v.diagnosis || v.reason || '',
-      wfTreatment: v.treatmentDone || v.treatment || v.treatment_done || '',
-      wfRx: v.prescription || v.rx || '',
-      wfAdvice: v.advice || v.patientAdvice || '',
-      wfNext: v.nextVisit || v.next_visit || '',
-      wfNextTime: v.nextVisitTime || v.next_visit_time || ''
-    };
-    Object.keys(values).forEach(function(key){ setValue(key, values[key]); });
-    var section = document.getElementById('wfClinicalSection');
-    if (section) section.open = true;
-    /* Keep secondary clinical fields visible in edit mode, so prefilled values are discoverable. */
-    var advanced = section && section.querySelector('details.advanced-fields');
-    if (advanced) advanced.open = true;
-  }
-  window.openCentralWorkflowEdit = function(type, id) {
-    var result = previousEdit.apply(this, arguments);
-    if (type === 'visit') {
-      /* The existing editor opens asynchronously; run after its focus/section wrappers. */
-      [60, 180].forEach(function(delay){ setTimeout(function(){ hydrateVisit(id); }, delay); });
+  'use strict';
+  function openSection(pid, sectionId){
+    if(typeof openUnifiedWorkflow!=='function') return;
+    openUnifiedWorkflow(pid||undefined);
+    var sheet=document.getElementById('workflowSheet');
+    var section=document.getElementById(sectionId);
+    if(section) section.open=true;
+    if(sheet){
+      var title=sheet.querySelector('.sheet-head h2');
+      if(title) title.textContent='Patient Visit Entry';
     }
-    return result;
+  }
+  window.openVisitForm=function(patientId){
+    openSection(patientId&&typeof patient==='function'&&patient(patientId)?patientId:(window.currentPatientId||''),'wfClinicalSection');
+  };
+  window.openPlanForm=function(patientId,planId){
+    if(planId){window.openCentralWorkflowEdit('plan',planId);return;}
+    openSection(patientId,'wfTreatmentPlanSection');
+  };
+  window.openBillForm=function(patientId,billId){
+    if(billId){window.openCentralWorkflowEdit('bill',billId);return;}
+    openSection(patientId,'wfBillingSection');
+  };
+  window.openAppointmentForm=function(appointmentId,patientId){
+    if(appointmentId){window.openCentralWorkflowEdit('appointment',appointmentId);return;}
+    openSection(patientId,'wfArrivalSection');
+    var arrival=document.getElementById('wfArrival');
+    var fields=document.getElementById('wfAppointmentFields');
+    if(arrival)arrival.value='Appointment';
+    if(fields)fields.style.display='block';
+  };
+  window.openFollowupForm=function(followupId,patientId){
+    if(followupId){window.openCentralWorkflowEdit('followup',followupId);return;}
+    openSection(patientId,'wfFollowupSection');
+  };
+  window.openReminderForm=function(reminderId,patientId){
+    if(reminderId){window.openCentralWorkflowEdit('reminder',reminderId);return;}
+    openSection(patientId,'wfReminderSection');
+  };
+  window.openRecordForm=function(recordId,patientId){
+    if(recordId){window.openCentralWorkflowEdit('record',recordId);return;}
+    openSection(patientId,'wfRecordSection');
+  };
+  window.openPatientForm=function(patientId){
+    if(patientId){window.openCentralWorkflowEdit('patient',patientId);return;}
+    openSection('', 'wfPatientDetails');
+    if(typeof wfNewPatient!=='undefined'&&!wfNewPatient&&typeof toggleWorkflowNewPatient==='function')toggleWorkflowNewPatient();
   };
 })();
 </script>
+
 </body></html>
 
 <style id="df-v7-11-5-treatment-plan-layout-edit">
